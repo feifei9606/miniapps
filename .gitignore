@@ -8,3 +8,6 @@ Thumbs.db
 
 # logs
 *.log
+
+# local assistant workspace
+.codebuddy/

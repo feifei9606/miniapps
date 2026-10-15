@@ -35,5 +35,8 @@ miniapps/
 
 ## 部署（GitHub Pages）
 
-1. 仓库设置 → Pages → Source 选择 `main` 分支 / 根目录
-2. 保存后等待 1–2 分钟即可访问
+采用 GitHub Actions 自动部署（`.github/workflows/deploy.yml`）：
+
+1. 仓库 Settings → Pages → Source 选择 **GitHub Actions**
+2. 推送到 `main` 分支即自动部署（也可在 Actions 页手动 Run workflow）
+3. 部署成功后访问 `https://feifei9606.github.io/miniapps/`
