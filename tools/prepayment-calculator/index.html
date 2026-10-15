@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>提前还款计算器 · MiniApps</title>
+  <link rel="stylesheet" href="../../shared/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"
+          onerror="window.__CHART_OK=false" onload="window.__CHART_OK=true"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container tool-header">
+      <a class="back-link" href="../../index.html">← 返回工具列表</a>
+      <div class="brand">
+        <span class="brand-mark">💰</span>
+        <div>
+          <h1 class="tool-title">提前还款计算器</h1>
+          <p class="tool-subtitle">多笔提前还款 · 缩短期限 / 减少月供 · LPR 浮动利率</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container layout">
+    <!-- 左侧：输入面板 -->
+    <section class="panel input-panel">
+      <h2 class="panel-title">贷款信息</h2>
+
+      <form id="calc-form" autocomplete="off">
+        <div class="field-grid">
+          <div class="field">
+            <label for="principal">贷款总额（万元）</label>
+            <input type="number" id="principal" value="100" min="0.1" step="0.1" required>
+          </div>
+          <div class="field">
+            <label for="termYears">贷款期限（年）</label>
+            <input type="number" id="termYears" value="30" min="1" max="30" step="1" required>
+          </div>
+          <div class="field">
+            <label for="method">还款方式</label>
+            <select id="method">
+              <option value="annuity">等额本息</option>
+              <option value="equal-principal">等额本金</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="startDate">首期还款月份</label>
+            <input type="month" id="startDate" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>利率模式</label>
+          <div class="segmented" id="rate-mode">
+            <button type="button" class="seg active" data-mode="fixed">固定利率</button>
+            <button type="button" class="seg" data-mode="lpr">LPR 加点</button>
+          </div>
+        </div>
+
+        <div id="fixed-rate-box" class="field">
+          <label for="fixedRate">年利率（%）</label>
+          <input type="number" id="fixedRate" value="3.6" min="0" max="36" step="0.01">
+        </div>
+
+        <div id="lpr-box" class="hidden">
+          <div class="field-grid">
+            <div class="field">
+              <label for="lprSpread">加点（BP，100BP = 1%）</label>
+              <input type="number" id="lprSpread" value="30" step="1">
+            </div>
+          </div>
+          <div class="field">
+            <label>各还款年度 LPR（%）
+              <button type="button" class="btn-mini" id="lpr-add-year">＋ 添加年度</button>
+            </label>
+            <div id="lpr-year-list" class="lpr-list"></div>
+          </div>
+        </div>
+
+        <h2 class="panel-title mt">
+          提前还款计划
+          <button type="button" class="btn-mini" id="add-prepay">＋ 添加一笔</button>
+        </h2>
+        <p class="hint">按期数填写：第 N 期正常月供归还后，额外归还该笔金额。留空则只计算原计划。</p>
+        <div id="prepay-list"></div>
+
+        <div class="actions">
+          <button type="submit" class="btn-primary" id="btn-calc">开始计算</button>
+          <button type="button" class="btn-ghost" id="btn-reset">重置</button>
+        </div>
+        <p id="form-error" class="form-error hidden"></p>
+      </form>
+    </section>
+
+    <!-- 右侧：结果区 -->
+    <section class="panel result-panel">
+      <h2 class="panel-title">计算结果</h2>
+
+      <div id="empty-state" class="empty-state">
+        <p>填写左侧贷款信息后点击「开始计算」。<br>支持对比原计划与提前还款后的新计划。</p>
+      </div>
+
+      <div id="result" class="hidden">
+        <!-- 省息高亮 -->
+        <div id="save-banner" class="save-banner">
+          <div class="save-num" id="save-interest">--</div>
+          <div class="save-label">节省利息（元）</div>
+          <div class="save-extra" id="save-months"></div>
+        </div>
+
+        <!-- 对比卡片 -->
+        <div class="compare-grid">
+          <div class="compare-card">
+            <h3>原计划</h3>
+            <div class="kv"><span>月供（首期）</span><b id="base-payment">--</b></div>
+            <div class="kv"><span>总利息</span><b id="base-interest">--</b></div>
+            <div class="kv"><span>还款总额</span><b id="base-total">--</b></div>
+            <div class="kv"><span>还款期数</span><b id="base-months">--</b></div>
+            <div class="kv"><span>结清日期</span><b id="base-end">--</b></div>
+          </div>
+          <div class="compare-card highlight">
+            <h3>提前还款后</h3>
+            <div class="kv"><span>月供（首期）</span><b id="plan-payment">--</b></div>
+            <div class="kv"><span>总利息</span><b id="plan-interest">--</b></div>
+            <div class="kv"><span>还款总额</span><b id="plan-total">--</b></div>
+            <div class="kv"><span>还款期数</span><b id="plan-months">--</b></div>
+            <div class="kv"><span>结清日期</span><b id="plan-end">--</b></div>
+          </div>
+        </div>
+
+        <!-- 图表 -->
+        <div id="charts">
+          <h3 class="section-title">剩余本金对比</h3>
+          <div class="chart-box"><canvas id="chart-balance"></canvas></div>
+          <h3 class="section-title">月供构成对比（本金 / 利息）</h3>
+          <div class="chart-box"><canvas id="chart-payment"></canvas></div>
+          <p id="chart-fallback" class="hint hidden">图表组件（Chart.js CDN）加载失败，已降级展示，不影响计算结果。</p>
+        </div>
+
+        <!-- 明细表 -->
+        <h3 class="section-title">
+          还款计划明细
+          <span class="table-switch">
+            <button type="button" class="seg active" data-table="plan">新计划</button>
+            <button type="button" class="seg" data-table="baseline">原计划</button>
+          </span>
+        </h3>
+        <div class="table-wrap">
+          <table id="schedule-table">
+            <thead>
+              <tr>
+                <th>期数</th><th>月份</th><th>月供(元)</th><th>本金(元)</th>
+                <th>利息(元)</th><th>提前还款(元)</th><th>剩余本金(元)</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>计算结果仅供参考，实际以银行核算为准 · MiniApps</p>
+    </div>
+  </footer>
+
+  <script type="module" src="ui.js"></script>
+</body>
+</html>

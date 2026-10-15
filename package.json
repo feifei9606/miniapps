@@ -1,0 +1,11 @@
+{
+  "name": "miniapps",
+  "version": "1.0.0",
+  "description": "纯前端小工具合集（GitHub Pages 托管）",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test:calc": "node --input-type=module -e \"import('./tools/prepayment-calculator/calc.js').then(m=>console.log('calc.js 加载成功:', Object.keys(m)))\""
+  },
+  "license": "MIT"
+}
