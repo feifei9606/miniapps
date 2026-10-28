@@ -1,0 +1,5457 @@
+{
+  "meta": {
+    "title": "古今数学思想",
+    "subtitle": "伴读手册 · 第一册",
+    "author": "莫里斯·克莱因（Morris Kline）",
+    "authorNote": "美国数学家、数学史家，本书原为作者在纽约大学讲授数学史课程的讲义，1953 年初版。",
+    "scope": "全三册 · 第 1–51 章",
+    "period": "约公元前 3000 年 — 20 世纪",
+    "intro": "克莱因不满足于罗列“谁在何时发现了什么”，他要回答的是：数学的概念与方法，是在什么样的问题压力下、沿着什么思路长出来的。这个伴读手册按章给出时代处境、核心问题、关键结论与承接关系，并配概念卡片与自测题，供读完一章后回看。",
+    "notice": "本应用为个人学习用的伴读笔记，不含原书正文。所有年代、人名与书目信息以原书为准；少量引文仅作评述之用，并标注所在章次。"
+  },
+  "volumes": [
+    {
+      "id": "v1",
+      "label": "第一册",
+      "range": "第 1–13 章",
+      "period": "远古 — 17 世纪",
+      "status": "published",
+      "summary": "从巴比伦泥版与埃及草片上的实用算法，到希腊人确立的演绎证明，再到中世纪的停滞、文艺复兴的复苏，最后收在 16、17 世纪算术与代数的爆发前夜。",
+      "chapters": [
+        "ch01",
+        "ch02",
+        "ch03",
+        "ch04",
+        "ch05",
+        "ch06",
+        "ch07",
+        "ch08",
+        "ch09",
+        "ch10",
+        "ch11",
+        "ch12",
+        "ch13"
+      ]
+    },
+    {
+      "id": "v2",
+      "label": "第二册",
+      "range": "第 14–26 章",
+      "period": "17 — 18 世纪",
+      "status": "published",
+      "summary": "射影几何、坐标几何、科学的数学化与微积分的创立，随后是 18 世纪分析学的全面展开。",
+      "chapters": [
+        "ch14",
+        "ch15",
+        "ch16",
+        "ch17",
+        "ch18",
+        "ch19",
+        "ch20",
+        "ch21",
+        "ch22",
+        "ch23",
+        "ch24",
+        "ch25",
+        "ch26"
+      ]
+    },
+    {
+      "id": "v3",
+      "label": "第三册",
+      "range": "第 27–51 章",
+      "period": "19 世纪",
+      "status": "published",
+      "summary": "单复变函数、非欧几何、抽象代数、拓扑与数学基础，19 世纪数学的全面重构。",
+      "chapters": [
+        "ch27",
+        "ch28",
+        "ch29",
+        "ch30",
+        "ch31",
+        "ch32",
+        "ch33",
+        "ch34",
+        "ch35",
+        "ch36",
+        "ch37",
+        "ch38",
+        "ch39",
+        "ch40",
+        "ch41",
+        "ch42",
+        "ch43",
+        "ch44",
+        "ch45",
+        "ch46",
+        "ch47",
+        "ch48",
+        "ch49",
+        "ch50",
+        "ch51"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch01",
+      "no": 1,
+      "title": "美索不达米亚的数学",
+      "era": "约公元前 3000 — 前 300",
+      "blurb": "数学最初不是思辨的产物，而是记账、分粮、算利息与观星的副产品。",
+      "minutes": 18,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch02",
+      "no": 2,
+      "title": "埃及的数学",
+      "era": "约公元前 4000 — 前 500",
+      "blurb": "两批草片文书留住了古埃及的算法：一套只为“得出答案”而存在的技术。",
+      "minutes": 14,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch03",
+      "no": 3,
+      "title": "古典希腊数学的产生",
+      "era": "公元前 600 — 前 300",
+      "blurb": "希腊人做了什么，使“数学”从此与“计算”分道扬镳：追问理由，而不是只要结果。",
+      "minutes": 40,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch04",
+      "no": 4,
+      "title": "欧几里得和阿波罗尼斯",
+      "era": "公元前 300 — 前 190",
+      "blurb": "《原本》把散落的定理编成一条从公理出发的链条，这条链条成了“数学应当是什么样子”的范本。",
+      "minutes": 42,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch05",
+      "no": 5,
+      "title": "希腊亚历山大时期：几何与三角",
+      "era": "公元前 300 — 公元 200",
+      "blurb": "阿基米德把穷竭法用到极致，天文学的需求催生了三角术。",
+      "minutes": 32,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch06",
+      "no": 6,
+      "title": "亚历山大时期：算术和代数的复兴",
+      "era": "公元 1 — 4 世纪",
+      "blurb": "算术第一次脱离几何独立成书，计算从“匠人的手艺”变成可教可学的学科。",
+      "minutes": 18,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch07",
+      "no": 7,
+      "title": "希腊人对自然形成理性观点的过程",
+      "era": "公元前 600 — 公元 200",
+      "blurb": "数学为什么值得研究？希腊人的回答是：宇宙本身就是按数学设计的。",
+      "minutes": 30,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch08",
+      "no": 8,
+      "title": "希腊世界的衰替",
+      "era": "公元 1 — 6 世纪",
+      "blurb": "希腊数学的辉煌与局限是同一件事：它把“数”挡在门外，也就把自己关进了几何。",
+      "minutes": 16,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch09",
+      "no": 9,
+      "title": "印度和阿拉伯的数学",
+      "era": "公元 5 — 13 世纪",
+      "blurb": "印度送来位值制与零，阿拉伯送来代数学与更自由的数观——欧洲后来接手的正是这一包东西。",
+      "minutes": 24,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch10",
+      "no": 10,
+      "title": "欧洲中世纪时期",
+      "era": "公元 500 — 1400",
+      "blurb": "七百年停滞之后，翻译运动把希腊与阿拉伯的成果搬进欧洲，数学重新有了可读的书。",
+      "minutes": 24,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch11",
+      "no": 11,
+      "title": "文艺复兴",
+      "era": "1400 — 1600",
+      "blurb": "印刷术、希腊原稿、人文主义与工匠经验，共同改变了知识的生产方式。",
+      "minutes": 24,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch12",
+      "no": 12,
+      "title": "文艺复兴时期数学的贡献",
+      "era": "1400 — 1600",
+      "blurb": "透视法、三角与日心说：数学在这段时间里的贡献不在纯理论，而在改造了“看世界”的方式。",
+      "minutes": 30,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch13",
+      "no": 13,
+      "title": "16，17世纪的算术和代数",
+      "era": "1500 — 1700",
+      "blurb": "符号、三次方程、虚根与费马的手稿：代数在这一百年里终于有了自己的语言。",
+      "minutes": 44,
+      "volume": 1,
+      "status": "published"
+    },
+    {
+      "id": "ch14",
+      "no": 14,
+      "title": "射影几何的肇始",
+      "era": "1600 — 1700",
+      "blurb": "不作图、不度量：只问投影之下什么保持不变。",
+      "minutes": 26,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch15",
+      "no": 15,
+      "title": "坐标几何",
+      "era": "1600 — 1700",
+      "blurb": "把方程与曲线对应起来，代数从工具变成语言。",
+      "minutes": 32,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch16",
+      "no": 16,
+      "title": "科学的数学化",
+      "era": "1600 — 1700",
+      "blurb": "17 世纪真正的新东西是“用数学做科学”的程序。",
+      "minutes": 28,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch17",
+      "no": 17,
+      "title": "微积分的创立",
+      "era": "1660 — 1700",
+      "blurb": "切线、面积、极值、速度，四类问题合成一套方法。",
+      "minutes": 48,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch18",
+      "no": 18,
+      "title": "17世纪的数学",
+      "era": "1600 — 1700",
+      "blurb": "一个世纪内改写面貌：代数、坐标、微积分同时登场。",
+      "minutes": 20,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch19",
+      "no": 19,
+      "title": "18世纪的微积分",
+      "era": "1700 — 1800",
+      "blurb": "不发明新概念，只把微积分磨成能处理一切函数的工具。",
+      "minutes": 36,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch20",
+      "no": 20,
+      "title": "无穷级数",
+      "era": "1700 — 1800",
+      "blurb": "把函数展开成无穷和：最顺手的工具，也最容易出错。",
+      "minutes": 32,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch21",
+      "no": 21,
+      "title": "18世纪的常微分方程",
+      "era": "1700 — 1800",
+      "blurb": "物理给的不是数而是方程；解是函数，难点在此。",
+      "minutes": 36,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch22",
+      "no": 22,
+      "title": "18世纪的偏微分方程",
+      "era": "1700 — 1800",
+      "blurb": "函数依赖两个变量，方程开始描述整个场。",
+      "minutes": 36,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch23",
+      "no": 23,
+      "title": "18世纪的解析几何和微分几何",
+      "era": "1700 — 1800",
+      "blurb": "从“形状是什么”到“每一点怎样弯曲”。",
+      "minutes": 32,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch24",
+      "no": 24,
+      "title": "18世纪的变分法",
+      "era": "1700 — 1800",
+      "blurb": "不再求某个数，而是求整条曲线。",
+      "minutes": 28,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch25",
+      "no": 25,
+      "title": "18世纪的代数",
+      "era": "1700 — 1800",
+      "blurb": "退到分析背后，却在方程、行列式与数论里换了骨架。",
+      "minutes": 30,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch26",
+      "no": 26,
+      "title": "18世纪的数学",
+      "era": "1700 — 1800",
+      "blurb": "成果最多、基础最松：严密性留给了 19 世纪。",
+      "minutes": 22,
+      "volume": 2,
+      "status": "published"
+    },
+    {
+      "id": "ch27",
+      "no": 27,
+      "title": "单复变函数",
+      "era": "1800 — 1870",
+      "blurb": "把函数放到复平面上，几何与代数突然对齐。",
+      "minutes": 42,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch28",
+      "no": 28,
+      "title": "19世纪的偏微分方程",
+      "era": "1800 — 1900",
+      "blurb": "热、波、势、电磁：物理每扩展一步，方程就多一类。",
+      "minutes": 34,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch29",
+      "no": 29,
+      "title": "19世纪的常微分方程",
+      "era": "1800 — 1900",
+      "blurb": "从“解出方程”到“理解解的行为”。",
+      "minutes": 32,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch30",
+      "no": 30,
+      "title": "19世纪的变分法",
+      "era": "1800 — 1900",
+      "blurb": "从必要条件到充分条件，补上判定这一环。",
+      "minutes": 22,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch31",
+      "no": 31,
+      "title": "伽罗瓦理论",
+      "era": "1800 — 1832",
+      "blurb": "能不能用根式解，不取决于次数，而取决于对称性。",
+      "minutes": 34,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch32",
+      "no": 32,
+      "title": "四元数，向量和线性结合代数",
+      "era": "1830 — 1900",
+      "blurb": "放弃乘法交换律，代数从此不止一种。",
+      "minutes": 30,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch33",
+      "no": 33,
+      "title": "行列式和矩阵",
+      "era": "1800 — 1900",
+      "blurb": "从“一个数”到“一张表”，运算本身成为对象。",
+      "minutes": 26,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch34",
+      "no": 34,
+      "title": "19世纪的数论",
+      "era": "1800 — 1900",
+      "blurb": "从零散巧思到一门学科：记号、方法与方向。",
+      "minutes": 32,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch35",
+      "no": 35,
+      "title": "射影几何学的复兴",
+      "era": "1800 — 1900",
+      "blurb": "被分析压制两百年后，综合几何带着齐次坐标回来。",
+      "minutes": 30,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch36",
+      "no": 36,
+      "title": "非欧几里得几何",
+      "era": "1800 — 1860",
+      "blurb": "两千年试证第五公设都失败，最后发现它本可替换。",
+      "minutes": 34,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch37",
+      "no": 37,
+      "title": "高斯和黎曼的微分几何",
+      "era": "1820 — 1870",
+      "blurb": "曲面只用自己的度量描述自己，这一步通向弯曲空间。",
+      "minutes": 28,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch38",
+      "no": 38,
+      "title": "射影几何与度量几何",
+      "era": "1850 — 1880",
+      "blurb": "几何不再按“研究什么”，而按“允许什么变换”分类。",
+      "minutes": 26,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch39",
+      "no": 39,
+      "title": "代数几何",
+      "era": "1850 — 1900",
+      "blurb": "换坐标后还剩下的东西，才是几何。",
+      "minutes": 30,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch40",
+      "no": 40,
+      "title": "分析中注入严密性",
+      "era": "1800 — 1870",
+      "blurb": "一百多年的“先用后证”到此收账。",
+      "minutes": 40,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch41",
+      "no": 41,
+      "title": "实数和超限数的基础",
+      "era": "1870 — 1900",
+      "blurb": "用了两千年的实数才有定义，无穷开始分大小。",
+      "minutes": 36,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch42",
+      "no": 42,
+      "title": "几何基础",
+      "era": "1880 — 1900",
+      "blurb": "被当作严密典范的《原本》，终于被发现漏洞。",
+      "minutes": 26,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch43",
+      "no": 43,
+      "title": "19世纪的数学",
+      "era": "1800 — 1900",
+      "blurb": "最大变化不是某条定理，而是数学不再自称自然真理。",
+      "minutes": 24,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch44",
+      "no": 44,
+      "title": "实变函数论",
+      "era": "1880 — 1910",
+      "blurb": "“可积”不再靠连续性保证，勒贝格把积分建在测度上。",
+      "minutes": 26,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch45",
+      "no": 45,
+      "title": "积分方程",
+      "era": "1890 — 1910",
+      "blurb": "未知函数藏在积分号里，这类方程长成了泛函分析。",
+      "minutes": 24,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch46",
+      "no": 46,
+      "title": "泛函分析",
+      "era": "1900 — 1930",
+      "blurb": "把函数当点、把运算当算子，数学第一次研究空间本身。",
+      "minutes": 28,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch47",
+      "no": 47,
+      "title": "发散级数",
+      "era": "1880 — 1910",
+      "blurb": "被赶出门的发散级数，又以渐近展开的身份回来。",
+      "minutes": 24,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch48",
+      "no": 48,
+      "title": "张量分析和微分几何",
+      "era": "1890 — 1920",
+      "blurb": "“换坐标也不变”的写法，成了广义相对论的语言。",
+      "minutes": 24,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch49",
+      "no": 49,
+      "title": "抽象代数的出现",
+      "era": "1900 — 1930",
+      "blurb": "运算本身成为对象，代数从解方程变成研究结构。",
+      "minutes": 30,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch50",
+      "no": 50,
+      "title": "拓扑的开始",
+      "era": "1850 — 1930",
+      "blurb": "连续变形下不变的性质：几何第一次不谈长度与角度。",
+      "minutes": 30,
+      "volume": 3,
+      "status": "published"
+    },
+    {
+      "id": "ch51",
+      "no": 51,
+      "title": "数学基础",
+      "era": "1900 — 1940",
+      "blurb": "数学能否证明自己不矛盾？这个问题把 20 世纪推向深处。",
+      "minutes": 30,
+      "volume": 3,
+      "status": "published"
+    }
+  ],
+  "timeline": [
+    {
+      "year": -3000,
+      "label": "约前 3000",
+      "text": "巴比伦与埃及出现有组织的计算技术：记数、四则运算、面积体积法则。",
+      "chapter": "ch01",
+      "kind": "event"
+    },
+    {
+      "year": -1700,
+      "label": "约前 1700",
+      "text": "莱因德草片文书与莫斯科草片文书成书，保存下埃及的算法与题目。",
+      "chapter": "ch02",
+      "kind": "work"
+    },
+    {
+      "year": -585,
+      "label": "前 585",
+      "text": "相传泰勒斯预报日蚀，希腊数学传统习惯由此时起算。",
+      "chapter": "ch03",
+      "kind": "person"
+    },
+    {
+      "year": -500,
+      "label": "约前 500",
+      "text": "毕达哥拉斯派发现不可公度比，连续量与数之间的矛盾浮现。",
+      "chapter": "ch03",
+      "kind": "event"
+    },
+    {
+      "year": -450,
+      "label": "约前 450",
+      "text": "芝诺提出运动与多的悖论，迫使希腊人正视无限与连续。",
+      "chapter": "ch03",
+      "kind": "person"
+    },
+    {
+      "year": -430,
+      "label": "约前 430",
+      "text": "倍立方、化圆为方、三等分角三大作图难题在诡辩学派中流行。",
+      "chapter": "ch03",
+      "kind": "event"
+    },
+    {
+      "year": -370,
+      "label": "约前 370",
+      "text": "欧多克索斯创立比例论与穷竭法，为处理不可公度量提供逻辑依据。",
+      "chapter": "ch03",
+      "kind": "person"
+    },
+    {
+      "year": -300,
+      "label": "约前 300",
+      "text": "欧几里得在亚历山大城授徒，《原本》十三篇成书。",
+      "chapter": "ch04",
+      "kind": "work"
+    },
+    {
+      "year": -287,
+      "label": "前 287",
+      "text": "阿基米德生于叙拉古，后成为古代最伟大的数学家。",
+      "chapter": "ch05",
+      "kind": "person"
+    },
+    {
+      "year": -262,
+      "label": "约前 262",
+      "text": "阿波罗尼斯生，后著《圆锥曲线》八篇共 487 个命题。",
+      "chapter": "ch04",
+      "kind": "person"
+    },
+    {
+      "year": -212,
+      "label": "前 212",
+      "text": "罗马人攻入叙拉古，阿基米德死于士兵之手。",
+      "chapter": "ch05",
+      "kind": "event"
+    },
+    {
+      "year": -150,
+      "label": "约前 150",
+      "text": "希帕恰斯活跃，为推算天体位置而系统使用三角关系。",
+      "chapter": "ch05",
+      "kind": "person"
+    },
+    {
+      "year": 100,
+      "label": "约 100",
+      "text": "尼科马修斯《算术入门》成书，算术首次脱离几何独立叙述。",
+      "chapter": "ch06",
+      "kind": "work"
+    },
+    {
+      "year": 150,
+      "label": "2 世纪",
+      "text": "托勒玫整理天文与三角知识，本轮-均轮体系成为此后千余年的标准。",
+      "chapter": "ch05",
+      "kind": "person"
+    },
+    {
+      "year": 250,
+      "label": "3 世纪",
+      "text": "丢番图《算术》引入缩写记号处理不定方程，为后世代数记号之先声。",
+      "chapter": "ch06",
+      "kind": "work"
+    },
+    {
+      "year": 300,
+      "label": "3 世纪末",
+      "text": "帕普斯《数学汇编》成书，保存了大量今已失传的希腊著作。",
+      "chapter": "ch08",
+      "kind": "work"
+    },
+    {
+      "year": 476,
+      "label": "476",
+      "text": "阿里亚伯哈塔生，印度天文与算术著作中夹带数学内容。",
+      "chapter": "ch09",
+      "kind": "person"
+    },
+    {
+      "year": 598,
+      "label": "598",
+      "text": "婆罗摩笈多生，印度代数在方程与负数上继续推进。",
+      "chapter": "ch09",
+      "kind": "person"
+    },
+    {
+      "year": 632,
+      "label": "632",
+      "text": "穆罕默德去世，阿拉伯势力在此后半个世纪扩至印度至西班牙。",
+      "chapter": "ch09",
+      "kind": "event"
+    },
+    {
+      "year": 830,
+      "label": "约 830",
+      "text": "花拉子米著书讲述解方程，algebra（代数）一词即由其书名而来。",
+      "chapter": "ch09",
+      "kind": "work"
+    },
+    {
+      "year": 1202,
+      "label": "1202",
+      "text": "斐波那契《算经》成书，印度-阿拉伯记数法由此传入欧洲。",
+      "chapter": "ch10",
+      "kind": "work"
+    },
+    {
+      "year": 1450,
+      "label": "约 1450",
+      "text": "古登堡发明活版印刷，数学著作开始以印本流传。",
+      "chapter": "ch11",
+      "kind": "event"
+    },
+    {
+      "year": 1453,
+      "label": "1453",
+      "text": "君士坦丁堡陷落，希腊学者携大量手稿西迁意大利。",
+      "chapter": "ch11",
+      "kind": "event"
+    },
+    {
+      "year": 1494,
+      "label": "1494",
+      "text": "帕乔利《总论算术、几何、比例和比例性》出版，汇总当时的实用数学。",
+      "chapter": "ch12",
+      "kind": "work"
+    },
+    {
+      "year": 1543,
+      "label": "1543",
+      "text": "哥白尼《天体运行论》出版；同年塔尔塔利亚刊出欧几里得《原本》意大利文译本。",
+      "chapter": "ch12",
+      "kind": "work"
+    },
+    {
+      "year": 1545,
+      "label": "1545",
+      "text": "卡丹《大衍术》出版，三次与四次方程的解法公开于世。",
+      "chapter": "ch13",
+      "kind": "work"
+    },
+    {
+      "year": 1557,
+      "label": "1557",
+      "text": "雷科德以两条平行线表示相等，等号由此进入代数。",
+      "chapter": "ch13",
+      "kind": "event"
+    },
+    {
+      "year": 1591,
+      "label": "1591",
+      "text": "德萨格生，后以投射锥与截景创立射影方法。",
+      "chapter": "ch14",
+      "kind": "person"
+    },
+    {
+      "year": 1629,
+      "label": "1629",
+      "text": "费马设计出求极值与切线的方法（次切线法）。",
+      "chapter": "ch17",
+      "kind": "event"
+    },
+    {
+      "year": 1637,
+      "label": "1637",
+      "text": "笛卡儿《几何》出版，坐标几何公开；同年《折光》给出折射定律。",
+      "chapter": "ch15",
+      "kind": "work"
+    },
+    {
+      "year": 1640,
+      "label": "1640",
+      "text": "费马在致德贝西的信中给出后来被称为“费马小定理”的结论。",
+      "chapter": "ch13",
+      "kind": "event"
+    },
+    {
+      "year": 1669,
+      "label": "1669",
+      "text": "巴罗《几何讲义》以几何法求切线，同年让位牛顿。",
+      "chapter": "ch17",
+      "kind": "work"
+    },
+    {
+      "year": 1684,
+      "label": "1684",
+      "text": "莱布尼茨发表微分学，符号 dy/dx 开始流传。",
+      "chapter": "ch17",
+      "kind": "work"
+    },
+    {
+      "year": 1687,
+      "label": "1687",
+      "text": "牛顿《自然哲学的数学原理》出版，力学被纳入数学。",
+      "chapter": "ch17",
+      "kind": "work"
+    },
+    {
+      "year": 1696,
+      "label": "1696",
+      "text": "约翰·伯努利提出最速降线问题，变分法由此发端。",
+      "chapter": "ch24",
+      "kind": "event"
+    },
+    {
+      "year": 1734,
+      "label": "1734",
+      "text": "欧拉推广最速降线问题并给出变分法的基本微分方程。",
+      "chapter": "ch24",
+      "kind": "work"
+    },
+    {
+      "year": 1736,
+      "label": "1736",
+      "text": "欧拉证明费马小定理，并引入 totient 函数。",
+      "chapter": "ch25",
+      "kind": "work"
+    },
+    {
+      "year": 1746,
+      "label": "1746",
+      "text": "达朗贝尔处理弦振动，波动方程进入数学。",
+      "chapter": "ch22",
+      "kind": "work"
+    },
+    {
+      "year": 1748,
+      "label": "1748",
+      "text": "欧拉《引论》系统阐述无穷小分析，函数记号开始通行。",
+      "chapter": "ch19",
+      "kind": "work"
+    },
+    {
+      "year": 1755,
+      "label": "1755",
+      "text": "拉格朗日以纯分析方法重建变分法。",
+      "chapter": "ch24",
+      "kind": "work"
+    },
+    {
+      "year": 1760,
+      "label": "1760",
+      "text": "欧拉建立曲面理论，引入主曲率与曲面几何的记号。",
+      "chapter": "ch23",
+      "kind": "work"
+    },
+    {
+      "year": 1770,
+      "label": "1770",
+      "text": "拉格朗日“完成”代数基本定理的证明；欧拉《代数指南》出版。",
+      "chapter": "ch25",
+      "kind": "work"
+    },
+    {
+      "year": 1799,
+      "label": "1799",
+      "text": "拉普拉斯《天体力学》开始出版，太阳系力学被统一为分析体系。",
+      "chapter": "ch21",
+      "kind": "work"
+    },
+    {
+      "year": 1801,
+      "label": "1801",
+      "text": "高斯《算术探讨》出版，数论获得统一记号与方法。",
+      "chapter": "ch34",
+      "kind": "work"
+    },
+    {
+      "year": 1824,
+      "label": "1824",
+      "text": "阿贝尔证明一般五次方程不能用根式求解。",
+      "chapter": "ch31",
+      "kind": "work"
+    },
+    {
+      "year": 1831,
+      "label": "1831",
+      "text": "伽罗瓦提交用群论判定方程可解性的论文。",
+      "chapter": "ch31",
+      "kind": "work"
+    },
+    {
+      "year": 1843,
+      "label": "1843",
+      "text": "哈密顿发现四元数，乘法首次不交换。",
+      "chapter": "ch32",
+      "kind": "event"
+    },
+    {
+      "year": 1844,
+      "label": "1844",
+      "text": "格拉斯曼《线性扩张论》出版，给出更一般的线性结构。",
+      "chapter": "ch32",
+      "kind": "work"
+    },
+    {
+      "year": 1854,
+      "label": "1854",
+      "text": "黎曼就职演讲提出以度量为基础的任意维几何。",
+      "chapter": "ch37",
+      "kind": "work"
+    },
+    {
+      "year": 1872,
+      "label": "1872",
+      "text": "克莱因提出埃尔朗根纲领，以变换群统一几何。",
+      "chapter": "ch38",
+      "kind": "work"
+    },
+    {
+      "year": 1882,
+      "label": "1882",
+      "text": "帕施给出较完整的射影几何公理系统。",
+      "chapter": "ch42",
+      "kind": "work"
+    },
+    {
+      "year": 1886,
+      "label": "1886",
+      "text": "庞加莱与斯蒂尔切斯独立定义渐近级数。",
+      "chapter": "ch47",
+      "kind": "work"
+    },
+    {
+      "year": 1889,
+      "label": "1889",
+      "text": "皮亚诺给出自然数与欧氏几何的公理集。",
+      "chapter": "ch42",
+      "kind": "work"
+    },
+    {
+      "year": 1899,
+      "label": "1899",
+      "text": "希尔伯特《几何基础》出版，五组公理与独立性讨论。",
+      "chapter": "ch42",
+      "kind": "work"
+    },
+    {
+      "year": 1902,
+      "label": "1902",
+      "text": "勒贝格建立测度与积分理论。",
+      "chapter": "ch44",
+      "kind": "work"
+    },
+    {
+      "year": 1915,
+      "label": "1915",
+      "text": "爱因斯坦完成广义相对论，黎曼几何成为物理语言。",
+      "chapter": "ch48",
+      "kind": "work"
+    },
+    {
+      "year": 1931,
+      "label": "1931",
+      "text": "哥德尔发表不完备定理，希尔伯特纲领受挫。",
+      "chapter": "ch51",
+      "kind": "work"
+    }
+  ],
+  "figures": [
+    {
+      "id": "thales",
+      "name": "泰勒斯",
+      "en": "Thales",
+      "life": "约前 624 — 前 546",
+      "note": "爱奥尼亚学派领袖，相传曾游历埃及并把几何知识带回米利都。",
+      "chapters": [
+        "ch03"
+      ]
+    },
+    {
+      "id": "pythagoras",
+      "name": "毕达哥拉斯",
+      "en": "Pythagoras",
+      "life": "约前 570 — 前 495",
+      "note": "在克罗顿立派，其学派以“万物皆数”为信念，也在这里撞上了不可公度比。",
+      "chapters": [
+        "ch03",
+        "ch07"
+      ]
+    },
+    {
+      "id": "zeno",
+      "name": "芝诺",
+      "en": "Zeno of Elea",
+      "life": "约前 490 — 前 430",
+      "note": "埃利亚学派，用二分、阿基里斯等悖论攻击“多”与“运动”的实在性。",
+      "chapters": [
+        "ch03"
+      ]
+    },
+    {
+      "id": "democritus",
+      "name": "德谟克利特",
+      "en": "Democritus",
+      "life": "约前 460 — 前 370",
+      "note": "原子论者，据说先于欧多克索斯发现锥体体积为同底同高柱体的三分之一，但未给出证明。",
+      "chapters": [
+        "ch03"
+      ]
+    },
+    {
+      "id": "hippocrates-chios",
+      "name": "希波克拉底（开俄斯）",
+      "en": "Hippocrates of Chios",
+      "life": "约前 470 — 前 410",
+      "note": "以“月牙形求积”著称，最早系统编纂几何原理的人之一。",
+      "chapters": [
+        "ch03"
+      ]
+    },
+    {
+      "id": "hippias",
+      "name": "希比亚斯",
+      "en": "Hippias of Elis",
+      "life": "约前 460 — 前 400",
+      "note": "诡辩学派头面人物，以割圆曲线（quadratrix）著名，该曲线可用于化圆为方与三等分角。",
+      "chapters": [
+        "ch03"
+      ]
+    },
+    {
+      "id": "plato",
+      "name": "柏拉图",
+      "en": "Plato",
+      "life": "约前 427 — 前 347",
+      "note": "以“不懂几何者不得入内”标举数学的地位，其学派把数学当作通往理念的阶梯。",
+      "chapters": [
+        "ch03",
+        "ch07"
+      ]
+    },
+    {
+      "id": "eudoxus",
+      "name": "欧多克索斯",
+      "en": "Eudoxus",
+      "life": "约前 408 — 前 355",
+      "note": "克莱因称他为古希腊最大的数学家，创立比例论与穷竭法。",
+      "chapters": [
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "id": "aristotle",
+      "name": "亚里士多德",
+      "en": "Aristotle",
+      "life": "前 384 — 前 322",
+      "note": "学园派创立者，其逻辑学与运动理论统治欧洲近两千年。",
+      "chapters": [
+        "ch03",
+        "ch07"
+      ]
+    },
+    {
+      "id": "euclid",
+      "name": "欧几里得",
+      "en": "Euclid",
+      "life": "约前 300 前后",
+      "note": "在亚历山大城授徒，《原本》以定义、公设、公理起首，把几何编成演绎链条。",
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "id": "apollonius",
+      "name": "阿波罗尼斯",
+      "en": "Apollonius",
+      "life": "约前 262 — 前 190",
+      "note": "《圆锥曲线》八篇，以同一套方式处理三种圆锥曲线，得“大几何学家”之名。",
+      "chapters": [
+        "ch04"
+      ]
+    },
+    {
+      "id": "archimedes",
+      "name": "阿基米德",
+      "en": "Archimedes",
+      "life": "前 287 — 前 212",
+      "note": "用穷竭法与力学方法求面积、体积与重心，古代最接近积分思想的人。",
+      "chapters": [
+        "ch05"
+      ]
+    },
+    {
+      "id": "hero",
+      "name": "赫伦",
+      "en": "Hero of Alexandria",
+      "life": "约前 100 — 公元 100 之间",
+      "note": "工程师兼测绘者，其《度量论》给出以三边求三角形面积的公式。",
+      "chapters": [
+        "ch05"
+      ]
+    },
+    {
+      "id": "hipparchus",
+      "name": "希帕恰斯",
+      "en": "Hipparchus",
+      "life": "约前 190 — 前 120",
+      "note": "为天文计算建立弦表，三角术的实际开端。",
+      "chapters": [
+        "ch05"
+      ]
+    },
+    {
+      "id": "menelaus",
+      "name": "梅内劳斯",
+      "en": "Menelaus",
+      "life": "约公元 1 世纪",
+      "note": "球面三角的奠基者，《球面学》中的“梅内劳斯定理”长期为标准工具。",
+      "chapters": [
+        "ch05"
+      ]
+    },
+    {
+      "id": "ptolemy",
+      "name": "托勒玫",
+      "en": "Claudius Ptolemy",
+      "life": "公元 2 世纪",
+      "note": "《天文学大成》集希腊天文之大成，其体系被后世奉为权威千余年。",
+      "chapters": [
+        "ch05",
+        "ch07"
+      ]
+    },
+    {
+      "id": "nicomachus",
+      "name": "尼科马修斯",
+      "en": "Nicomachus",
+      "life": "约公元 100",
+      "note": "《算术入门》不依赖几何讲述整数性质，成为此后千年的标准课本。",
+      "chapters": [
+        "ch06"
+      ]
+    },
+    {
+      "id": "diophantus",
+      "name": "丢番图",
+      "en": "Diophantus",
+      "life": "公元 3 世纪",
+      "note": "《算术》用缩写记号处理不定方程，是古代最接近符号代数的人。",
+      "chapters": [
+        "ch06",
+        "ch08"
+      ]
+    },
+    {
+      "id": "pappus",
+      "name": "帕普斯",
+      "en": "Pappus",
+      "life": "公元 3 世纪末",
+      "note": "《数学汇编》保存了大量失传的希腊著作，后世据此重拾古典成果。",
+      "chapters": [
+        "ch05",
+        "ch08"
+      ]
+    },
+    {
+      "id": "proclus",
+      "name": "普罗克洛斯",
+      "en": "Proclus",
+      "life": "约 410 — 485",
+      "note": "新柏拉图主义者，其《原本评述》是欧几里得生平与早期几何史的主要来源。",
+      "chapters": [
+        "ch04",
+        "ch08"
+      ]
+    },
+    {
+      "id": "aryabhata",
+      "name": "阿里亚伯哈塔",
+      "en": "Aryabhata",
+      "life": "476 — 550",
+      "note": "印度天文学家，其著作中的数学章节记录了当时的算术与三角方法。",
+      "chapters": [
+        "ch09"
+      ]
+    },
+    {
+      "id": "brahmagupta",
+      "name": "婆罗摩笈多",
+      "en": "Brahmagupta",
+      "life": "598 — 668",
+      "note": "印度代数代表，系统处理方程与负数运算。",
+      "chapters": [
+        "ch09"
+      ]
+    },
+    {
+      "id": "bhaskara",
+      "name": "婆什迦罗",
+      "en": "Bhaskara",
+      "life": "1114 — 1185",
+      "note": "《天文系统极致》中“论美”“论求根”两章专论算术与代数。",
+      "chapters": [
+        "ch09"
+      ]
+    },
+    {
+      "id": "khayyam",
+      "name": "海亚姆",
+      "en": "Omar Khayyam",
+      "life": "1048 — 1122",
+      "note": "以圆锥曲线解三次方程，并主张不可公度量之比也是数。",
+      "chapters": [
+        "ch09"
+      ]
+    },
+    {
+      "id": "nasir-eddin",
+      "name": "纳西尔丁",
+      "en": "Nasir al-Din al-Tusi",
+      "life": "1201 — 1274",
+      "note": "《论四边形》把平面与球面三角系统化，使其脱离天文学的附庸地位。",
+      "chapters": [
+        "ch09"
+      ]
+    },
+    {
+      "id": "al-khwarizmi",
+      "name": "花拉子米",
+      "en": "al-Khwarizmi",
+      "life": "约 780 — 850",
+      "note": "其解方程的著作在 12 世纪译成拉丁文，algebra 一词即由其书名 al-jabr 而来。",
+      "chapters": [
+        "ch09"
+      ]
+    },
+    {
+      "id": "gerbert",
+      "name": "热尔贝",
+      "en": "Gerbert of Aurillac",
+      "life": "约 945 — 1003",
+      "note": "后为教皇西尔维斯特二世，把算盘与初等算术引入欧洲教会学校。",
+      "chapters": [
+        "ch10"
+      ]
+    },
+    {
+      "id": "fibonacci",
+      "name": "斐波那契",
+      "en": "Leonardo of Pisa (Fibonacci)",
+      "life": "约 1170 — 1250",
+      "note": "《算经》系统介绍印度-阿拉伯记数法与算法，改变了欧洲计算的面貌。",
+      "chapters": [
+        "ch10",
+        "ch12"
+      ]
+    },
+    {
+      "id": "grosseteste",
+      "name": "格罗斯泰特",
+      "en": "Robert Grosseteste",
+      "life": "约 1168 — 1253",
+      "note": "林肯郡主教，主张由经验得出原则、再用数学推演并以事实检验。",
+      "chapters": [
+        "ch10"
+      ]
+    },
+    {
+      "id": "oresme",
+      "name": "奥雷姆",
+      "en": "Nicole Oresme",
+      "life": "约 1323 — 1382",
+      "note": "在《比例算法》中引入分数指数记法，并讨论过坐标式的图形表示。",
+      "chapters": [
+        "ch10"
+      ]
+    },
+    {
+      "id": "regiomontanus",
+      "name": "雷格蒙塔努斯",
+      "en": "Regiomontanus",
+      "life": "1436 — 1476",
+      "note": "《论三角》整合平面与球面三角，给出球面三角的正弦定律。",
+      "chapters": [
+        "ch12"
+      ]
+    },
+    {
+      "id": "pacioli",
+      "name": "帕乔利",
+      "en": "Luca Pacioli",
+      "life": "约 1445 — 约 1514",
+      "note": "《总论》汇总当时的算术与代数，是学术著作与工匠知识之间的桥梁。",
+      "chapters": [
+        "ch12",
+        "ch13"
+      ]
+    },
+    {
+      "id": "copernicus",
+      "name": "哥白尼",
+      "en": "Nicolaus Copernicus",
+      "life": "1473 — 1543",
+      "note": "《天体运行论》以日心方案取代本轮体系，其优势在于简洁而非精度。",
+      "chapters": [
+        "ch12"
+      ]
+    },
+    {
+      "id": "tartaglia",
+      "name": "塔尔塔利亚",
+      "en": "Niccolò Tartaglia",
+      "life": "1499 — 1557",
+      "note": "出身贫寒、自学成才，1535 年在公开挑战中解出全部三次方程。",
+      "chapters": [
+        "ch13"
+      ]
+    },
+    {
+      "id": "cardano",
+      "name": "卡丹",
+      "en": "Girolamo Cardano",
+      "life": "1501 — 1576",
+      "note": "《大衍术》公开三次与四次方程解法，并注意到复数根的存在。",
+      "chapters": [
+        "ch13"
+      ]
+    },
+    {
+      "id": "ferrari",
+      "name": "费拉里",
+      "en": "Lodovico Ferrari",
+      "life": "1522 — 1565",
+      "note": "卡丹的学生，把四次方程化归为三次方程求解。",
+      "chapters": [
+        "ch13"
+      ]
+    },
+    {
+      "id": "vieta",
+      "name": "韦达",
+      "en": "François Viète",
+      "life": "1540 — 1603",
+      "note": "以字母表示已知量与未知量，使方程从文字叙述变成可运算的形式。",
+      "chapters": [
+        "ch13"
+      ]
+    },
+    {
+      "id": "recorde",
+      "name": "雷科德",
+      "en": "Robert Recorde",
+      "life": "1510 — 1558",
+      "note": "1557 年在《砺智石》中以两条平行线表示相等，等号由此通行。",
+      "chapters": [
+        "ch13"
+      ]
+    },
+    {
+      "id": "stifel",
+      "name": "施蒂费尔",
+      "en": "Michael Stifel",
+      "life": "1486 — 1567",
+      "note": "引入“二项式系数”之名，并整理鲁道夫的《代数》。",
+      "chapters": [
+        "ch13"
+      ]
+    },
+    {
+      "id": "stevin",
+      "name": "斯蒂文",
+      "en": "Simon Stevin",
+      "life": "1548 — 1620",
+      "note": "在方程中同时使用正负系数并接受负根，推进了数的算术化。",
+      "chapters": [
+        "ch13"
+      ]
+    },
+    {
+      "id": "girard",
+      "name": "吉拉德",
+      "en": "Albert Girard",
+      "life": "1595 — 1632",
+      "note": "《代数中的新发明》断言 n 次方程有 n 个根（含复根、计重数），但未证明。",
+      "chapters": [
+        "ch13"
+      ]
+    },
+    {
+      "id": "fermat",
+      "name": "费马",
+      "en": "Pierre de Fermat",
+      "life": "1601 — 1665",
+      "note": "在丢番图书页边缘写下大量数论结论，决定了此后数论的研究方向。",
+      "chapters": [
+        "ch13"
+      ]
+    },
+    {
+      "id": "desargues",
+      "name": "德萨格",
+      "en": "Girard Desargues",
+      "life": "1591 — 1661",
+      "note": "工程师兼建筑师，把投射锥与截景用于圆锥曲线，证明交比在投影下不变。",
+      "chapters": [
+        "ch14"
+      ]
+    },
+    {
+      "id": "pascal",
+      "name": "帕斯卡",
+      "en": "Blaise Pascal",
+      "life": "1623 — 1662",
+      "note": "以射影方法得神奇六边形定理，也是概率论与流体静力学的开创者之一。",
+      "chapters": [
+        "ch14"
+      ]
+    },
+    {
+      "id": "la-hire",
+      "name": "拉伊尔",
+      "en": "Philippe de La Hire",
+      "life": "1640 — 1718",
+      "note": "继承德萨格与帕斯卡的射影方法，把它系统化并用于圆锥曲线研究。",
+      "chapters": [
+        "ch14"
+      ]
+    },
+    {
+      "id": "kepler",
+      "name": "开普勒",
+      "en": "Johannes Kepler",
+      "life": "1571 — 1630",
+      "note": "发现行星运动定律；注意到圆锥曲线可连续互变，为射影与代数几何留下线索。",
+      "chapters": [
+        "ch14",
+        "ch16"
+      ]
+    },
+    {
+      "id": "descartes",
+      "name": "笛卡儿",
+      "en": "René Descartes",
+      "life": "1596 — 1650",
+      "note": "以“科学本质是数学”为纲领，用代数解作图问题，创立坐标几何。",
+      "chapters": [
+        "ch15",
+        "ch16"
+      ]
+    },
+    {
+      "id": "galileo",
+      "name": "伽利略",
+      "en": "Galileo Galilei",
+      "life": "1564 — 1642",
+      "note": "确立“选定可测量、实验检验、数学表述”的程序，使科学真正数学化。",
+      "chapters": [
+        "ch16"
+      ]
+    },
+    {
+      "id": "huygens",
+      "name": "惠更斯",
+      "en": "Christiaan Huygens",
+      "life": "1629 — 1695",
+      "note": "摆钟与光的波动说；引进渐伸线、渐屈线与曲率半径等概念。",
+      "chapters": [
+        "ch16",
+        "ch23"
+      ]
+    },
+    {
+      "id": "newton",
+      "name": "牛顿",
+      "en": "Isaac Newton",
+      "life": "1643 — 1727",
+      "note": "以流数为基本对象建立微积分，并以《原理》把力学纳入数学。",
+      "chapters": [
+        "ch17"
+      ]
+    },
+    {
+      "id": "leibniz",
+      "name": "莱布尼茨",
+      "en": "Gottfried Wilhelm Leibniz",
+      "life": "1646 — 1716",
+      "note": "独立创立微积分，给出 dy/dx 与积分号，符号系统沿用至今。",
+      "chapters": [
+        "ch17"
+      ]
+    },
+    {
+      "id": "barrow",
+      "name": "巴罗",
+      "en": "Isaac Barrow",
+      "life": "1630 — 1677",
+      "note": "《几何讲义》以几何法求切线，1669 年让位给牛顿。",
+      "chapters": [
+        "ch17"
+      ]
+    },
+    {
+      "id": "cavalieri",
+      "name": "卡瓦列里",
+      "en": "Bonaventura Cavalieri",
+      "life": "1598 — 1647",
+      "note": "以“不可分量”求和求积，方法有效但逻辑遭到批评。",
+      "chapters": [
+        "ch17"
+      ]
+    },
+    {
+      "id": "bernoulli-james",
+      "name": "詹姆斯·伯努利",
+      "en": "Jacob Bernoulli",
+      "life": "1655 — 1705",
+      "note": "伯努利家族的兄长，研究等时曲线、悬链线与级数，为分析扩展奠基。",
+      "chapters": [
+        "ch17",
+        "ch20"
+      ]
+    },
+    {
+      "id": "euler",
+      "name": "欧拉",
+      "en": "Leonhard Euler",
+      "life": "1707 — 1783",
+      "note": "18 世纪分析的枢纽：函数记号、Γ 函数、变分法、微分方程与曲面理论。",
+      "chapters": [
+        "ch19",
+        "ch21",
+        "ch22",
+        "ch23",
+        "ch24",
+        "ch25"
+      ]
+    },
+    {
+      "id": "taylor",
+      "name": "泰勒",
+      "en": "Brook Taylor",
+      "life": "1685 — 1731",
+      "note": "《增量法》以有限差分为基础阐述微积分，给出泰勒级数。",
+      "chapters": [
+        "ch19",
+        "ch20"
+      ]
+    },
+    {
+      "id": "d-alembert",
+      "name": "达朗贝尔",
+      "en": "Jean le Rond d'Alembert",
+      "life": "1717 — 1783",
+      "note": "1746 年处理弦振动，导出波动方程；也是《百科全书》的编者。",
+      "chapters": [
+        "ch19",
+        "ch22"
+      ]
+    },
+    {
+      "id": "clairaut",
+      "name": "克莱罗",
+      "en": "Alexis-Claude Clairaut",
+      "life": "1713 — 1765",
+      "note": "空间曲线理论的奠基者，研究地球形状与克莱罗方程。",
+      "chapters": [
+        "ch22",
+        "ch23"
+      ]
+    },
+    {
+      "id": "legendre",
+      "name": "勒让德",
+      "en": "Adrien-Marie Legendre",
+      "life": "1752 — 1833",
+      "note": "椭圆积分、数论与位势理论；猜测 π 不是有理系数方程的根。",
+      "chapters": [
+        "ch19",
+        "ch25"
+      ]
+    },
+    {
+      "id": "lagrange",
+      "name": "拉格朗日",
+      "en": "Joseph-Louis Lagrange",
+      "life": "1736 — 1813",
+      "note": "以纯分析方法重建变分法，并把最小作用原理写成分析形式。",
+      "chapters": [
+        "ch24",
+        "ch25"
+      ]
+    },
+    {
+      "id": "maclaurin",
+      "name": "麦克劳林",
+      "en": "Colin Maclaurin",
+      "life": "1698 — 1746",
+      "note": "《流数论》给出泰勒定理在 0 点的特例，并研究高次曲线交点。",
+      "chapters": [
+        "ch20",
+        "ch23"
+      ]
+    },
+    {
+      "id": "stirling",
+      "name": "斯特林",
+      "en": "James Stirling",
+      "life": "1692 — 1770",
+      "note": "研究插值与三次曲线，其公式与 Γ 函数相关。",
+      "chapters": [
+        "ch20",
+        "ch23"
+      ]
+    },
+    {
+      "id": "gregory",
+      "name": "詹姆斯·格雷戈里",
+      "en": "James Gregory",
+      "life": "1638 — 1675",
+      "note": "早期级数研究者，给出 arctan 等函数的级数展开。",
+      "chapters": [
+        "ch20"
+      ]
+    },
+    {
+      "id": "laplace",
+      "name": "拉普拉斯",
+      "en": "Pierre-Simon Laplace",
+      "life": "1749 — 1827",
+      "note": "《天体力学》把太阳系力学统一为分析体系，并推广奇解概念。",
+      "chapters": [
+        "ch21"
+      ]
+    },
+    {
+      "id": "riccati",
+      "name": "黎卡提",
+      "en": "Jacopo Riccati",
+      "life": "1676 — 1754",
+      "note": "其名后用于一类一阶非线性方程，18 世纪微分方程研究的重要案例。",
+      "chapters": [
+        "ch21"
+      ]
+    },
+    {
+      "id": "monge",
+      "name": "蒙日",
+      "en": "Gaspard Monge",
+      "life": "1746 — 1818",
+      "note": "把几何语言引入偏微分方程，开创特征理论与画法几何。",
+      "chapters": [
+        "ch22"
+      ]
+    },
+    {
+      "id": "maupertuis",
+      "name": "莫佩尔蒂",
+      "en": "Pierre Louis Maupertuis",
+      "life": "1698 — 1759",
+      "note": "提出最小作用原理，并把它当作自然界经济性的证据。",
+      "chapters": [
+        "ch24"
+      ]
+    },
+    {
+      "id": "cramer",
+      "name": "克莱姆",
+      "en": "Gabriel Cramer",
+      "life": "1704 — 1752",
+      "note": "线性方程组与行列式理论的早期作者之一。",
+      "chapters": [
+        "ch25"
+      ]
+    },
+    {
+      "id": "vandermonde",
+      "name": "范德蒙德",
+      "en": "Alexandre-Théophile Vandermonde",
+      "life": "1735 — 1796",
+      "note": "行列式展开规则的先行者，其规则由拉普拉斯推广。",
+      "chapters": [
+        "ch25"
+      ]
+    },
+    {
+      "id": "bezout",
+      "name": "贝祖",
+      "en": "Étienne Bézout",
+      "life": "1730 — 1783",
+      "note": "消元法与方程理论，给出两曲线交点个数的估计。",
+      "chapters": [
+        "ch25"
+      ]
+    },
+    {
+      "id": "condorcet",
+      "name": "孔多塞",
+      "en": "Nicolas de Condorcet",
+      "life": "1743 — 1794",
+      "note": "数学家兼启蒙思想家，预言数学将继续扩张。",
+      "chapters": [
+        "ch26"
+      ]
+    },
+    {
+      "id": "gauss",
+      "name": "高斯",
+      "en": "Carl Friedrich Gauss",
+      "life": "1777 — 1855",
+      "note": "数论、微分几何、非欧几何的先驱；《算术探讨》重建数论。",
+      "chapters": [
+        "ch27",
+        "ch31",
+        "ch34",
+        "ch36",
+        "ch37"
+      ]
+    },
+    {
+      "id": "cauchy",
+      "name": "柯西",
+      "en": "Augustin-Louis Cauchy",
+      "life": "1789 — 1857",
+      "note": "以极限重建分析基础，建立复积分与行列式的系统理论。",
+      "chapters": [
+        "ch27",
+        "ch28",
+        "ch30",
+        "ch33",
+        "ch40"
+      ]
+    },
+    {
+      "id": "riemann",
+      "name": "黎曼",
+      "en": "Bernhard Riemann",
+      "life": "1826 — 1866",
+      "note": "黎曼面、黎曼几何与 ζ 函数；把几何建立在度量之上。",
+      "chapters": [
+        "ch27",
+        "ch34",
+        "ch37"
+      ]
+    },
+    {
+      "id": "weierstrass",
+      "name": "魏尔斯特拉斯",
+      "en": "Karl Weierstrass",
+      "life": "1815 — 1897",
+      "note": "以幂级数定义解析性，用 ε-δ 严格化分析，构造处处不可导的连续函数。",
+      "chapters": [
+        "ch27",
+        "ch30",
+        "ch40"
+      ]
+    },
+    {
+      "id": "abel",
+      "name": "阿贝尔",
+      "en": "Niels Henrik Abel",
+      "life": "1802 — 1829",
+      "note": "证明五次方程不可根式解；椭圆函数与级数收敛的批评者。",
+      "chapters": [
+        "ch27",
+        "ch31",
+        "ch40"
+      ]
+    },
+    {
+      "id": "jacobi",
+      "name": "雅可比",
+      "en": "Carl Gustav Jacob Jacobi",
+      "life": "1804 — 1851",
+      "note": "椭圆函数、变分法的共轭点条件、行列式与动力学。",
+      "chapters": [
+        "ch27",
+        "ch30",
+        "ch33"
+      ]
+    },
+    {
+      "id": "dirichlet",
+      "name": "狄利克雷",
+      "en": "Peter Gustav Lejeune Dirichlet",
+      "life": "1805 — 1859",
+      "note": "解析数论与函数概念；给出“任意对应”的函数观。",
+      "chapters": [
+        "ch34"
+      ]
+    },
+    {
+      "id": "fourier",
+      "name": "傅里叶",
+      "en": "Joseph Fourier",
+      "life": "1768 — 1830",
+      "note": "热方程与傅里叶级数；主张任意函数可展为三角级数。",
+      "chapters": [
+        "ch28"
+      ]
+    },
+    {
+      "id": "green",
+      "name": "格林",
+      "en": "George Green",
+      "life": "1793 — 1841",
+      "note": "格林定理与位势理论，把边界值与内部解联系起来。",
+      "chapters": [
+        "ch28"
+      ]
+    },
+    {
+      "id": "lame",
+      "name": "拉梅",
+      "en": "Gabriel Lamé",
+      "life": "1795 — 1870",
+      "note": "引入曲线坐标系，使方程适应物体形状。",
+      "chapters": [
+        "ch28"
+      ]
+    },
+    {
+      "id": "bessel",
+      "name": "贝塞尔",
+      "en": "Friedrich Bessel",
+      "life": "1784 — 1846",
+      "note": "贝塞尔方程与贝塞尔函数；天文观测与精密测量。",
+      "chapters": [
+        "ch29"
+      ]
+    },
+    {
+      "id": "sturm",
+      "name": "斯图姆",
+      "en": "Jacques Charles François Sturm",
+      "life": "1803 — 1855",
+      "note": "与刘维尔共同建立特征值理论，处理边界值问题。",
+      "chapters": [
+        "ch29"
+      ]
+    },
+    {
+      "id": "liouville",
+      "name": "刘维尔",
+      "en": "Joseph Liouville",
+      "life": "1809 — 1882",
+      "note": "斯图姆—刘维尔理论；超越数的存在性证明。",
+      "chapters": [
+        "ch29"
+      ]
+    },
+    {
+      "id": "poincare",
+      "name": "庞加莱",
+      "en": "Henri Poincaré",
+      "life": "1854 — 1912",
+      "note": "自守函数、定性理论、组合拓扑与相对论；最后的全才。",
+      "chapters": [
+        "ch29",
+        "ch38",
+        "ch43",
+        "ch47",
+        "ch50"
+      ]
+    },
+    {
+      "id": "klein",
+      "name": "克莱因",
+      "en": "Felix Klein",
+      "life": "1849 — 1925",
+      "note": "埃尔朗根纲领：以变换群统一几何；非欧几何的模型。",
+      "chapters": [
+        "ch29",
+        "ch38",
+        "ch43"
+      ]
+    },
+    {
+      "id": "hill",
+      "name": "希尔",
+      "en": "George William Hill",
+      "life": "1838 — 1914",
+      "note": "月球运动理论中的周期解，激发庞加莱的定性研究。",
+      "chapters": [
+        "ch29"
+      ]
+    },
+    {
+      "id": "galois",
+      "name": "伽罗瓦",
+      "en": "Évariste Galois",
+      "life": "1811 — 1832",
+      "note": "用置换群判定方程可解性，群与域的思想由此出现。",
+      "chapters": [
+        "ch31"
+      ]
+    },
+    {
+      "id": "ruffini",
+      "name": "鲁菲尼",
+      "en": "Paolo Ruffini",
+      "life": "1765 — 1822",
+      "note": "早期尝试证明五次方程不可根式解，引入传递群与本原群。",
+      "chapters": [
+        "ch31"
+      ]
+    },
+    {
+      "id": "hamilton",
+      "name": "哈密顿",
+      "en": "William Rowan Hamilton",
+      "life": "1805 — 1865",
+      "note": "四元数的创立者；光学与力学的数学化。",
+      "chapters": [
+        "ch32"
+      ]
+    },
+    {
+      "id": "grassmann",
+      "name": "格拉斯曼",
+      "en": "Hermann Grassmann",
+      "life": "1809 — 1877",
+      "note": "《线性扩张论》给出比四元数更一般的线性结构。",
+      "chapters": [
+        "ch32"
+      ]
+    },
+    {
+      "id": "maxwell",
+      "name": "麦克斯韦",
+      "en": "James Clerk Maxwell",
+      "life": "1831 — 1879",
+      "note": "电磁理论；推动向量分析从四元数中独立。",
+      "chapters": [
+        "ch32"
+      ]
+    },
+    {
+      "id": "clifford",
+      "name": "克利福德",
+      "en": "William Kingdon Clifford",
+      "life": "1845 — 1879",
+      "note": "推广四元数与超复数，研究几何与物理的代数结构。",
+      "chapters": [
+        "ch32"
+      ]
+    },
+    {
+      "id": "sylvester",
+      "name": "西尔维斯特",
+      "en": "James Joseph Sylvester",
+      "life": "1814 — 1897",
+      "note": "提出“矩阵”一词；不变量理论与数论。",
+      "chapters": [
+        "ch33"
+      ]
+    },
+    {
+      "id": "cayley",
+      "name": "凯莱",
+      "en": "Arthur Cayley",
+      "life": "1821 — 1895",
+      "note": "矩阵运算、不变量理论与射影几何的代数化。",
+      "chapters": [
+        "ch33",
+        "ch35",
+        "ch39"
+      ]
+    },
+    {
+      "id": "dedekind",
+      "name": "戴德金",
+      "en": "Richard Dedekind",
+      "life": "1831 — 1916",
+      "note": "用分割定义实数；引入理想，重建代数数域的唯一分解。",
+      "chapters": [
+        "ch34",
+        "ch41"
+      ]
+    },
+    {
+      "id": "kummer",
+      "name": "库默尔",
+      "en": "Ernst Kummer",
+      "life": "1810 — 1893",
+      "note": "引入理想数，处理代数数域中唯一分解的失效。",
+      "chapters": [
+        "ch34"
+      ]
+    },
+    {
+      "id": "mobius",
+      "name": "默比乌斯",
+      "en": "August Ferdinand Möbius",
+      "life": "1790 — 1868",
+      "note": "齐次坐标与射影几何的代数化；拓扑中的默比乌斯带。",
+      "chapters": [
+        "ch35"
+      ]
+    },
+    {
+      "id": "plucker",
+      "name": "普吕克",
+      "en": "Julius Plücker",
+      "life": "1801 — 1868",
+      "note": "研究三次与四次曲线，自由使用射影概念。",
+      "chapters": [
+        "ch35"
+      ]
+    },
+    {
+      "id": "poncelet",
+      "name": "庞斯列",
+      "en": "Jean-Victor Poncelet",
+      "life": "1788 — 1867",
+      "note": "射影几何的综合复兴者，区分射影性质与度量性质。",
+      "chapters": [
+        "ch35"
+      ]
+    },
+    {
+      "id": "steiner",
+      "name": "施泰纳",
+      "en": "Jakob Steiner",
+      "life": "1796 — 1863",
+      "note": "综合射影几何的代表，强调纯几何方法。",
+      "chapters": [
+        "ch35"
+      ]
+    },
+    {
+      "id": "lobachevsky",
+      "name": "罗巴切夫斯基",
+      "en": "Nikolai Lobachevsky",
+      "life": "1792 — 1856",
+      "note": "独立建立双曲几何，率先公开发表。",
+      "chapters": [
+        "ch36"
+      ]
+    },
+    {
+      "id": "bolyai",
+      "name": "约翰·波尔约",
+      "en": "János Bolyai",
+      "life": "1802 — 1860",
+      "note": "独立发现非欧几何，附于其父著作发表。",
+      "chapters": [
+        "ch36"
+      ]
+    },
+    {
+      "id": "saccheri",
+      "name": "萨凯里",
+      "en": "Giovanni Girolamo Saccheri",
+      "life": "1667 — 1733",
+      "note": "以反证法研究平行公设，得到“奇怪但不矛盾”的结论。",
+      "chapters": [
+        "ch36"
+      ]
+    },
+    {
+      "id": "lambert-ji",
+      "name": "兰伯特",
+      "en": "Johann Heinrich Lambert",
+      "life": "1728 — 1777",
+      "note": "研究三直角四边形，逼近非欧几何的自洽性。",
+      "chapters": [
+        "ch36"
+      ]
+    },
+    {
+      "id": "beltrami",
+      "name": "贝尔特拉米",
+      "en": "Eugenio Beltrami",
+      "life": "1835 — 1900",
+      "note": "给出非欧几何的曲面模型，证明其相容性。",
+      "chapters": [
+        "ch37",
+        "ch38"
+      ]
+    },
+    {
+      "id": "christoffel",
+      "name": "克里斯托费尔",
+      "en": "Elwin Bruno Christoffel",
+      "life": "1829 — 1900",
+      "note": "联络系数与协变微分，黎曼几何的工具奠基者。",
+      "chapters": [
+        "ch37",
+        "ch48"
+      ]
+    },
+    {
+      "id": "von-staudt",
+      "name": "冯·施陶特",
+      "en": "Karl Georg Christian von Staudt",
+      "life": "1798 — 1867",
+      "note": "在不依赖度量的基础上重建射影几何。",
+      "chapters": [
+        "ch38"
+      ]
+    },
+    {
+      "id": "laguerre",
+      "name": "拉盖尔",
+      "en": "Edmond Laguerre",
+      "life": "1834 — 1886",
+      "note": "用射影概念刻画角度，连接射影与度量几何。",
+      "chapters": [
+        "ch38"
+      ]
+    },
+    {
+      "id": "clebsch",
+      "name": "克莱布什",
+      "en": "Alfred Clebsch",
+      "life": "1833 — 1872",
+      "note": "用代数方法重建阿贝尔积分理论；代数几何的先驱。",
+      "chapters": [
+        "ch39"
+      ]
+    },
+    {
+      "id": "gordan",
+      "name": "戈丹",
+      "en": "Paul Gordan",
+      "life": "1837 — 1912",
+      "note": "不变量理论；与克莱布什合作研究阿贝尔函数。",
+      "chapters": [
+        "ch39"
+      ]
+    },
+    {
+      "id": "kronecker",
+      "name": "克罗内克",
+      "en": "Leopold Kronecker",
+      "life": "1823 — 1891",
+      "note": "代数数论与算术方法；主张一切应可构造。",
+      "chapters": [
+        "ch39"
+      ]
+    },
+    {
+      "id": "noether-max",
+      "name": "马克斯·诺特",
+      "en": "Max Noether",
+      "life": "1844 — 1921",
+      "note": "代数曲线与曲面的代数理论。",
+      "chapters": [
+        "ch39"
+      ]
+    },
+    {
+      "id": "bolzano",
+      "name": "波尔查诺",
+      "en": "Bernard Bolzano",
+      "life": "1781 — 1848",
+      "note": "强调收敛性，研究中值定理与无穷集合。",
+      "chapters": [
+        "ch40",
+        "ch41"
+      ]
+    },
+    {
+      "id": "cantor",
+      "name": "康托尔",
+      "en": "Georg Cantor",
+      "life": "1845 — 1918",
+      "note": "集合论与超限数；证明实数不可数。",
+      "chapters": [
+        "ch41"
+      ]
+    },
+    {
+      "id": "peano",
+      "name": "皮亚诺",
+      "en": "Giuseppe Peano",
+      "life": "1858 — 1932",
+      "note": "自然数与几何的公理化；符号逻辑的推进者。",
+      "chapters": [
+        "ch41",
+        "ch42"
+      ]
+    },
+    {
+      "id": "hilbert",
+      "name": "希尔伯特",
+      "en": "David Hilbert",
+      "life": "1862 — 1943",
+      "note": "几何基础、积分方程、希尔伯特空间与形式主义纲领。",
+      "chapters": [
+        "ch41",
+        "ch42",
+        "ch43",
+        "ch45",
+        "ch49",
+        "ch51"
+      ]
+    },
+    {
+      "id": "pasch",
+      "name": "帕施",
+      "en": "Moritz Pasch",
+      "life": "1843 — 1930",
+      "note": "第一个较完整的射影几何公理系统，明确“介于”。",
+      "chapters": [
+        "ch42"
+      ]
+    },
+    {
+      "id": "pieri",
+      "name": "皮埃里",
+      "en": "Mario Pieri",
+      "life": "1860 — 1913",
+      "note": "给出类似皮亚诺的几何公理集。",
+      "chapters": [
+        "ch42"
+      ]
+    },
+    {
+      "id": "lebesgue",
+      "name": "勒贝格",
+      "en": "Henri Lebesgue",
+      "life": "1875 — 1941",
+      "note": "测度与积分理论；实变函数论的奠基者。",
+      "chapters": [
+        "ch44"
+      ]
+    },
+    {
+      "id": "borel",
+      "name": "波莱尔",
+      "en": "Émile Borel",
+      "life": "1871 — 1956",
+      "note": "测度论的先驱；把长度推广到一般点集。",
+      "chapters": [
+        "ch44",
+        "ch47"
+      ]
+    },
+    {
+      "id": "stieltjes",
+      "name": "斯蒂尔切斯",
+      "en": "Thomas Joannes Stieltjes",
+      "life": "1856 — 1894",
+      "note": "推广积分；与庞加莱独立定义渐近级数。",
+      "chapters": [
+        "ch44"
+      ]
+    },
+    {
+      "id": "jordan",
+      "name": "若尔当",
+      "en": "Camille Jordan",
+      "life": "1838 — 1922",
+      "note": "点集与容量理论；若尔当曲线定理。",
+      "chapters": [
+        "ch44"
+      ]
+    },
+    {
+      "id": "volterra",
+      "name": "沃尔泰拉",
+      "en": "Vito Volterra",
+      "life": "1860 — 1940",
+      "note": "积分方程一般理论与泛函概念的创立者。",
+      "chapters": [
+        "ch45",
+        "ch46"
+      ]
+    },
+    {
+      "id": "fredholm",
+      "name": "弗雷德霍姆",
+      "en": "Erik Ivar Fredholm",
+      "life": "1866 — 1927",
+      "note": "弗雷德霍姆积分方程与择一定理。",
+      "chapters": [
+        "ch45"
+      ]
+    },
+    {
+      "id": "schmidt",
+      "name": "施密特",
+      "en": "Erhard Schmidt",
+      "life": "1876 — 1959",
+      "note": "简化希尔伯特方法，推广特征函数到非对称核。",
+      "chapters": [
+        "ch45"
+      ]
+    },
+    {
+      "id": "banach",
+      "name": "巴拿赫",
+      "en": "Stefan Banach",
+      "life": "1892 — 1945",
+      "note": "巴拿赫空间与泛函分析的公理化。",
+      "chapters": [
+        "ch46"
+      ]
+    },
+    {
+      "id": "riesz",
+      "name": "里斯",
+      "en": "Frigyes Riesz",
+      "life": "1880 — 1956",
+      "note": "函数空间与线性泛函的表示定理。",
+      "chapters": [
+        "ch46"
+      ]
+    },
+    {
+      "id": "von-neumann",
+      "name": "冯·诺依曼",
+      "en": "John von Neumann",
+      "life": "1903 — 1957",
+      "note": "希尔伯特空间谱理论的公理化；量子力学与博弈论。",
+      "chapters": [
+        "ch46"
+      ]
+    },
+    {
+      "id": "weyl",
+      "name": "外尔",
+      "en": "Hermann Weyl",
+      "life": "1885 — 1955",
+      "note": "群表示论与量子力学；评论泛函分析的“幸运”。",
+      "chapters": [
+        "ch46"
+      ]
+    },
+    {
+      "id": "ricci",
+      "name": "里奇",
+      "en": "Gregorio Ricci-Curbastro",
+      "life": "1853 — 1925",
+      "note": "张量分析与绝对微分学的创立者。",
+      "chapters": [
+        "ch48"
+      ]
+    },
+    {
+      "id": "levi-civita",
+      "name": "列维-齐维塔",
+      "en": "Tullio Levi-Civita",
+      "life": "1873 — 1941",
+      "note": "协变微分与平行位移；张量分析的共同创立者。",
+      "chapters": [
+        "ch48"
+      ]
+    },
+    {
+      "id": "einstein",
+      "name": "爱因斯坦",
+      "en": "Albert Einstein",
+      "life": "1879 — 1955",
+      "note": "广义相对论使黎曼几何与张量分析成为物理语言。",
+      "chapters": [
+        "ch48"
+      ]
+    },
+    {
+      "id": "cartan",
+      "name": "嘉当",
+      "en": "Élie Cartan",
+      "life": "1869 — 1951",
+      "note": "微分形式、李群与联络理论，推广几何结构。",
+      "chapters": [
+        "ch48"
+      ]
+    },
+    {
+      "id": "noether-emmy",
+      "name": "诺特",
+      "en": "Emmy Noether",
+      "life": "1882 — 1935",
+      "note": "抽象环论与理想理论；诺特定理连接对称与守恒。",
+      "chapters": [
+        "ch49"
+      ]
+    },
+    {
+      "id": "artin",
+      "name": "阿廷",
+      "en": "Emil Artin",
+      "life": "1898 — 1962",
+      "note": "抽象代数与类域论；推动结构主义代数。",
+      "chapters": [
+        "ch49"
+      ]
+    },
+    {
+      "id": "wedderburn",
+      "name": "韦德伯恩",
+      "en": "Joseph Wedderburn",
+      "life": "1882 — 1948",
+      "note": "有限除环与代数结构定理。",
+      "chapters": [
+        "ch49"
+      ]
+    },
+    {
+      "id": "brouwer",
+      "name": "布劳威尔",
+      "en": "L. E. J. Brouwer",
+      "life": "1881 — 1966",
+      "note": "拓扑的不动点定理与维数理论；直觉主义创始人。",
+      "chapters": [
+        "ch50",
+        "ch51"
+      ]
+    },
+    {
+      "id": "betti",
+      "name": "贝蒂",
+      "en": "Enrico Betti",
+      "life": "1823 — 1892",
+      "note": "贝蒂数的提出者，组合拓扑的早期贡献。",
+      "chapters": [
+        "ch50"
+      ]
+    },
+    {
+      "id": "alexander",
+      "name": "亚历山大",
+      "en": "J. W. Alexander",
+      "life": "1888 — 1971",
+      "note": "证明贝蒂数与挠系数是同胚不变量；对偶定理。",
+      "chapters": [
+        "ch50"
+      ]
+    },
+    {
+      "id": "zermelo",
+      "name": "策梅洛",
+      "en": "Ernst Zermelo",
+      "life": "1871 — 1953",
+      "note": "集合论公理化（Z 系统）与选择公理。",
+      "chapters": [
+        "ch51"
+      ]
+    },
+    {
+      "id": "russell",
+      "name": "罗素",
+      "en": "Bertrand Russell",
+      "life": "1872 — 1970",
+      "note": "罗素悖论；与怀特海合著《数学原理》，逻辑主义代表。",
+      "chapters": [
+        "ch51"
+      ]
+    },
+    {
+      "id": "godel",
+      "name": "哥德尔",
+      "en": "Kurt Gödel",
+      "life": "1906 — 1978",
+      "note": "不完备定理：足够强的相容系统不能自证相容。",
+      "chapters": [
+        "ch51"
+      ]
+    },
+    {
+      "id": "gentzen",
+      "name": "根岑",
+      "en": "Gerhard Gentzen",
+      "life": "1909 — 1945",
+      "note": "证明论；用超限归纳证明算术的相容性。",
+      "chapters": [
+        "ch51"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "sexagesimal",
+      "name": "六十进制记数",
+      "en": "sexagesimal notation",
+      "firstChapter": "ch01",
+      "definition": "巴比伦人以 60 为进位单位记数，1 与 10 是基本记号，其余数由二者组合而成。",
+      "why": "它使大数的乘除有了可循的步骤，也让天文中的度、分、秒沿用到今天。",
+      "evolution": [
+        {
+          "chapter": "ch05",
+          "text": "托勒玫把 60 用于把度分为分、把分分为秒，成为天文计算的通用底数。"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "positional-notation",
+      "name": "位值制",
+      "en": "positional numeration",
+      "firstChapter": "ch01",
+      "definition": "同一个记号依其所处位置表示不同的量级；巴比伦晚期泥版中已出现这种写法与表示空位的记号。",
+      "why": "没有位值制，运算就只能靠算盘或手指；有了它，算法才能写在纸上被检验与传授。",
+      "evolution": [
+        {
+          "chapter": "ch09",
+          "text": "印度人把位值制与零结合，形成 1–9 加零的完整十进位记数法。"
+        },
+        {
+          "chapter": "ch10",
+          "text": "斐波那契《算经》把这一记数法及其算法引入欧洲。"
+        }
+      ],
+      "figures": [
+        "fibonacci"
+      ]
+    },
+    {
+      "id": "babylonian-quadratic",
+      "name": "巴比伦二次方程解法",
+      "en": "Babylonian quadratic solution",
+      "firstChapter": "ch01",
+      "definition": "巴比伦人用纯算术步骤解出形如“和与积”“差与积”的问题，等价于今日的二次方程求解。",
+      "why": "这是代数的最早雏形：未知量有了名字与记号，解法可以照步骤执行。",
+      "evolution": [
+        {
+          "chapter": "ch13",
+          "text": "配方法解二次方程一路传到文艺复兴，直到三次方程才遇到真正的对手。"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "pythagorean-theorem",
+      "name": "毕达哥拉斯定理",
+      "en": "Pythagorean theorem",
+      "firstChapter": "ch01",
+      "definition": "直角三角形斜边上的正方形等于两直角边上正方形之和；巴比伦泥版中已有其数值例证，希腊人给出了证明。",
+      "why": "它同时是几何定理与代数关系的原型，也是不可公度比被发现的人口。",
+      "evolution": [
+        {
+          "chapter": "ch04",
+          "text": "欧几里得《原本》第一篇给出证明，并以此推出余弦定理的几何形式。"
+        }
+      ],
+      "figures": [
+        "pythagoras",
+        "euclid"
+      ]
+    },
+    {
+      "id": "unit-fraction",
+      "name": "单位分数",
+      "en": "unit fractions",
+      "firstChapter": "ch02",
+      "definition": "埃及人把分数一律写成若干分子为 1 的分数之和，并用表把 2/n 拆成单位分数。",
+      "why": "这套写法便于分配实物，却极难运算，也说明“分数是一个数”的观念尚未成形。",
+      "evolution": [
+        {
+          "chapter": "ch06",
+          "text": "希腊人沿用以字母表示的分量记法，分数运算仍是几何量的附属。"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "egyptian-pi",
+      "name": "圆周率的早期估值",
+      "en": "early values of π",
+      "firstChapter": "ch02",
+      "definition": "埃及人按面积法则反推出的 π 约为 3.16；巴比伦人常取 3，也有更精确的取值。",
+      "why": "这是“以算法逼近常数”的最早例证，也暴露了没有证明时估值难以改进的困境。",
+      "evolution": [
+        {
+          "chapter": "ch05",
+          "text": "阿基米德用内接与外切正多边形夹逼，把 π 定在 3 1/7 与 3 10/71 之间。"
+        },
+        {
+          "chapter": "ch13",
+          "text": "韦达以无穷乘积表示 π，把估值问题转成了分析问题。"
+        }
+      ],
+      "figures": [
+        "archimedes",
+        "vieta"
+      ]
+    },
+    {
+      "id": "incommensurable",
+      "name": "不可公度比",
+      "en": "incommensurable magnitudes",
+      "firstChapter": "ch03",
+      "definition": "两条线段没有公共度量单位，其比不能表为整数之比；正方形边与对角线即为一例。",
+      "why": "它击穿了“万物皆数（整数比）”的信念，迫使希腊数学转向几何、回避算术。",
+      "evolution": [
+        {
+          "chapter": "ch04",
+          "text": "欧多克索斯的比例论使不可公度量之比也能参与推理，《原本》第五篇即其成果。"
+        },
+        {
+          "chapter": "ch08",
+          "text": "希腊人始终不肯承认无理量是数，这一局限成为后世突破的入口。"
+        },
+        {
+          "chapter": "ch09",
+          "text": "印度与阿拉伯人则把无理量当作数自由运算。"
+        }
+      ],
+      "figures": [
+        "pythagoras",
+        "eudoxus"
+      ]
+    },
+    {
+      "id": "zeno-paradox",
+      "name": "芝诺悖论",
+      "en": "Zeno's paradoxes",
+      "firstChapter": "ch03",
+      "definition": "二分法、阿基里斯与龟等论证表明：若把连续量无限分割，运动与到达似乎都成为不可能。",
+      "why": "它把“无限”与“连续”变成必须回答的数学问题，此后两千年一直是分析学的暗礁。",
+      "evolution": [
+        {
+          "chapter": "ch04",
+          "text": "欧多克索斯的穷竭法以“任意逼近而不真正穷尽”的方式回避了无限分割。"
+        },
+        {
+          "chapter": "ch05",
+          "text": "阿基米德用穷竭法求出抛物线弓形面积，实质上处理了无限求和。"
+        }
+      ],
+      "figures": [
+        "zeno",
+        "eudoxus"
+      ]
+    },
+    {
+      "id": "proof-by-contradiction",
+      "name": "反证法",
+      "en": "proof by contradiction",
+      "firstChapter": "ch03",
+      "definition": "先假定结论不成立，推出矛盾，从而确认结论；希腊人用它证明 √2 不可公度、素数无穷多。",
+      "why": "它使“不存在”也能被严格证明，是演绎数学最有力的工具之一。",
+      "evolution": [
+        {
+          "chapter": "ch04",
+          "text": "《原本》第九篇以反证法证明素数个数无穷。"
+        }
+      ],
+      "figures": [
+        "euclid"
+      ]
+    },
+    {
+      "id": "geometric-algebra",
+      "name": "几何代数法",
+      "en": "geometric algebra",
+      "firstChapter": "ch03",
+      "definition": "把数与运算翻译成线段、面积与体积的关系，用几何作图代替算术求解。",
+      "why": "它是希腊人绕开无理数的办法，也解释了何以代数在希腊长期不能独立。",
+      "evolution": [
+        {
+          "chapter": "ch04",
+          "text": "《原本》第二篇的“面积应用”实质上是解二次方程的几何版本。"
+        },
+        {
+          "chapter": "ch08",
+          "text": "希腊数学的局限之一，正是把代数拴在几何上。"
+        }
+      ],
+      "figures": [
+        "euclid"
+      ]
+    },
+    {
+      "id": "three-classical-problems",
+      "name": "三大作图难题",
+      "en": "the three classical problems",
+      "firstChapter": "ch03",
+      "definition": "仅用尺规作倍立方、化圆为方、三等分任意角——三题在古典时期被反复尝试而未果。",
+      "why": "它们驱动了圆锥曲线、割圆曲线等新曲线的发现，也第一次逼出“不可能性”问题。",
+      "evolution": [
+        {
+          "chapter": "ch04",
+          "text": "阿波罗尼斯的圆锥曲线后来成为解倍立方与三等分角的工具。"
+        },
+        {
+          "chapter": "ch12",
+          "text": "文艺复兴的艺术家与数学家仍在讨论圆内接正多边形的近似作图。"
+        }
+      ],
+      "figures": [
+        "hippias"
+      ]
+    },
+    {
+      "id": "deductive-method",
+      "name": "演绎证明",
+      "en": "deductive demonstration",
+      "firstChapter": "ch03",
+      "definition": "从少数不加证明的前提出发，按逻辑规则推出其余结论，并要求每一步都有理由。",
+      "why": "这是希腊人留给数学最根本的遗产：数学从此是关于“为什么”的学问。",
+      "evolution": [
+        {
+          "chapter": "ch04",
+          "text": "《原本》把这一方法固化为定义—公设—公理—命题的体例。"
+        },
+        {
+          "chapter": "ch13",
+          "text": "代数在 16、17 世纪仍缺自己的逻辑基础，与几何形成鲜明对照。"
+        }
+      ],
+      "figures": [
+        "aristotle",
+        "euclid"
+      ]
+    },
+    {
+      "id": "axiom-postulate",
+      "name": "公设与公理",
+      "en": "postulates and axioms",
+      "firstChapter": "ch04",
+      "definition": "《原本》开篇列出五条公设与若干公理，作为全部命题的出发点；第五公设（平行公设）形式最复杂。",
+      "why": "把前提与结论分离，才使“更换前提会得到什么”成为可能——非欧几何的伏笔正在此。",
+      "evolution": [
+        {
+          "chapter": "ch09",
+          "text": "阿拉伯学者对平行公设作过评注，试图给出证明。"
+        }
+      ],
+      "figures": [
+        "euclid"
+      ]
+    },
+    {
+      "id": "theory-of-proportion",
+      "name": "欧多克索斯比例论",
+      "en": "Eudoxus' theory of proportion",
+      "firstChapter": "ch04",
+      "definition": "以“对任意同类的量，若 ma 与 nb 的大小关系恒一致”来定义两比相等，不预设量可公度。",
+      "why": "它让不可公度量之比也能进入严格推理，被克莱因视为《原本》的最大成就。",
+      "evolution": [
+        {
+          "chapter": "ch05",
+          "text": "阿基米德以此为基础处理曲边形体的度量。"
+        },
+        {
+          "chapter": "ch13",
+          "text": "无理数的运算仍要靠它作逻辑依据，直到 19 世纪才被实数理论取代。"
+        }
+      ],
+      "figures": [
+        "eudoxus"
+      ]
+    },
+    {
+      "id": "method-of-exhaustion",
+      "name": "穷竭法",
+      "en": "method of exhaustion",
+      "firstChapter": "ch04",
+      "definition": "用内接多边形不断逼近曲边形，证明两者之差小于任意给定量的方法。",
+      "why": "它是积分思想的前身：以“任意小”替代“无限小”，绕开实无穷。",
+      "evolution": [
+        {
+          "chapter": "ch05",
+          "text": "阿基米德用它求抛物线弓形、球与锥体的面积体积。"
+        }
+      ],
+      "figures": [
+        "eudoxus",
+        "archimedes"
+      ]
+    },
+    {
+      "id": "conic-sections",
+      "name": "圆锥曲线",
+      "en": "conic sections",
+      "firstChapter": "ch04",
+      "definition": "以平面截圆锥所得的三类曲线，阿波罗尼斯用同一种方式导出其性质，并命名椭圆、抛物线、双曲线。",
+      "why": "这是古代最系统的曲线研究，一千八百年后成为解析几何与天体力学的现成工具。",
+      "evolution": [
+        {
+          "chapter": "ch09",
+          "text": "海亚姆用圆锥曲线相交来解三次方程。"
+        },
+        {
+          "chapter": "ch12",
+          "text": "开普勒与伽利略之后，行星轨道被确认为椭圆。"
+        }
+      ],
+      "figures": [
+        "apollonius",
+        "khayyam"
+      ]
+    },
+    {
+      "id": "euclid-number-theory",
+      "name": "《原本》数论",
+      "en": "number theory in the Elements",
+      "firstChapter": "ch04",
+      "definition": "第七至九篇讨论整数与整数之比：最大公度量、素数无穷、完全数等，论证用文字陈述而不靠几何。",
+      "why": "它是古代最接近纯粹算术的部分，也是数论作为独立题材的起点。",
+      "evolution": [
+        {
+          "chapter": "ch13",
+          "text": "费马以丢番图为出发点，把数论推向新阶段。"
+        }
+      ],
+      "figures": [
+        "euclid",
+        "fermat"
+      ]
+    },
+    {
+      "id": "method-of-mechanics",
+      "name": "力学方法",
+      "en": "mechanical method",
+      "firstChapter": "ch05",
+      "definition": "阿基米德先把图形设想为有重量的薄片，用杠杆平衡推测出面积或体积，再用穷竭法给出严格证明。",
+      "why": "它展示了“发现”与“证明”的分工：直觉先行，演绎收尾。",
+      "evolution": [
+        {
+          "chapter": "ch07",
+          "text": "希腊力学由亚里士多德奠基，阿基米德把它与几何结合。"
+        }
+      ],
+      "figures": [
+        "archimedes",
+        "aristotle"
+      ]
+    },
+    {
+      "id": "trigonometry",
+      "name": "三角术",
+      "en": "trigonometry",
+      "firstChapter": "ch05",
+      "definition": "以弦表或正弦关系处理三角形边角对应，最初服务于天文定位与历法计算。",
+      "why": "它是第一门完全为“应用”而生的数学分支，也第一次把函数关系制成表。",
+      "evolution": [
+        {
+          "chapter": "ch09",
+          "text": "印度人把弦改为半弦（正弦），使三角计算更便利。"
+        },
+        {
+          "chapter": "ch12",
+          "text": "雷格蒙塔努斯整合平面与球面三角，给出球面正弦定律。"
+        }
+      ],
+      "figures": [
+        "hipparchus",
+        "ptolemy",
+        "regiomontanus"
+      ]
+    },
+    {
+      "id": "epicycle",
+      "name": "均轮与周转圆",
+      "en": "epicycles",
+      "firstChapter": "ch05",
+      "definition": "以一个大圆（均轮）上滚动的较小圆（周转圆）组合解释行星的逆行与亮度变化。",
+      "why": "这是古代最成功的“用数学拟合观测”的范例，也是过度拟合的经典教训。",
+      "evolution": [
+        {
+          "chapter": "ch12",
+          "text": "哥白尼以日心方案减少周转圆数量，胜在简洁而不在精度。"
+        }
+      ],
+      "figures": [
+        "ptolemy",
+        "copernicus"
+      ]
+    },
+    {
+      "id": "greek-numerals",
+      "name": "希腊字母记数",
+      "en": "Greek alphabetic numerals",
+      "firstChapter": "ch06",
+      "definition": "用 27 个字母（含三个古字母）分别表示 1–9、10–90、100–900，中间数由并写表示相加。",
+      "why": "它没有位值、零与运算记号，运算只能在算板或沙盘上进行，结果需另行记下。",
+      "evolution": [
+        {
+          "chapter": "ch09",
+          "text": "印度-阿拉伯记数法取代字母记数，运算得以直接写在纸上。"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "logistica",
+      "name": "计算术与算术之分",
+      "en": "logistica vs. arithmetica",
+      "firstChapter": "ch06",
+      "definition": "古典希腊人把商业实用的计算称为 logistica，把研究整数性质的学问称为 arithmetica，前者长期受轻视。",
+      "why": "这一区分决定了希腊数学的取向：重思辨、轻算法，直到尼科马修斯才让算术独立成书。",
+      "evolution": [
+        {
+          "chapter": "ch09",
+          "text": "印度与阿拉伯人把实用计算提到首位，算术不再是低等技艺。"
+        }
+      ],
+      "figures": [
+        "nicomachus"
+      ]
+    },
+    {
+      "id": "mathematical-design",
+      "name": "数学设计信念",
+      "en": "mathematical design of nature",
+      "firstChapter": "ch07",
+      "definition": "自然按数学方案运行，人可以用理性揭示其秩序——这是希腊人研究自然的根本信念。",
+      "why": "它把数学从“技巧”提升为“理解世界的钥匙”，此后一直是自然科学的前提。",
+      "evolution": [
+        {
+          "chapter": "ch10",
+          "text": "中世纪的经院学者继承这一信念，但把它置于神学框架之内。"
+        },
+        {
+          "chapter": "ch12",
+          "text": "文艺复兴的艺术家与天文学家把这一信念变成可计算的理论。"
+        }
+      ],
+      "figures": [
+        "plato",
+        "pythagoras"
+      ]
+    },
+    {
+      "id": "astrology",
+      "name": "占星术与天文学",
+      "en": "astrology and astronomy",
+      "firstChapter": "ch07",
+      "definition": "希腊化时期的占星术以日月五星在出生时刻的黄道位置推算个人命运，为此发展出大量计算技术。",
+      "why": "它是天文计算的现实驱动力之一，也说明数学的应用不保证其前提可靠。",
+      "evolution": [
+        {
+          "chapter": "ch10",
+          "text": "占星术在中世纪大学里与医学、天文并设，成为数学进入课程的理由。"
+        }
+      ],
+      "figures": [
+        "ptolemy"
+      ]
+    },
+    {
+      "id": "greek-limitations",
+      "name": "希腊数学的局限",
+      "en": "limitations of Greek mathematics",
+      "firstChapter": "ch08",
+      "definition": "拒斥无理数为数、把代数依附于几何、以几何直观限制研究对象、缺乏符号与算法意识。",
+      "why": "读克莱因的关键线索：希腊的成就与局限出自同一套选择，理解局限才理解后来的突破。",
+      "evolution": [
+        {
+          "chapter": "ch09",
+          "text": "印度与阿拉伯数学在数观与算法上恰恰补上了这几处缺口。"
+        },
+        {
+          "chapter": "ch13",
+          "text": "符号代数与解析几何最终解开了代数对几何的依附。"
+        }
+      ],
+      "figures": [
+        "pappus"
+      ]
+    },
+    {
+      "id": "indian-numerals",
+      "name": "印度数字与零",
+      "en": "Hindu-Arabic numerals",
+      "firstChapter": "ch09",
+      "definition": "1–9 九个数字记号加一个表示空位的零，配合十进位位值制，构成完整的记数与运算体系。",
+      "why": "它让笔算成为可能，是此后一千年数学能在纸上推进的物质前提。",
+      "evolution": [
+        {
+          "chapter": "ch10",
+          "text": "斐波那契《算经》把这套记数法与算法带入欧洲。"
+        }
+      ],
+      "figures": [
+        "fibonacci"
+      ]
+    },
+    {
+      "id": "negative-numbers",
+      "name": "负数",
+      "en": "negative numbers",
+      "firstChapter": "ch09",
+      "definition": "印度数学家把负数当作可参与运算的数，用以表示欠款与相反方向的量。",
+      "why": "承认负数意味着数系第一次主动扩张，而这在欧洲长期被当作“不可思议”。",
+      "evolution": [
+        {
+          "chapter": "ch13",
+          "text": "斯蒂文在方程中接受负根，吉拉德与哈里奥特用减号表示负数。"
+        }
+      ],
+      "figures": [
+        "brahmagupta",
+        "stevin"
+      ]
+    },
+    {
+      "id": "algebra-word",
+      "name": "algebra（代数）一词",
+      "en": "the word algebra",
+      "firstChapter": "ch09",
+      "definition": "源自花拉子米著作书名 al-jabr，原指“还原”“移项”，12 世纪随拉丁译本进入欧洲语言。",
+      "why": "一个词的旅行说明了知识的路径：印度的数、阿拉伯的方程、欧洲的符号，逐层叠加。",
+      "evolution": [
+        {
+          "chapter": "ch13",
+          "text": "16 世纪 algebra 在意大利用来指解方程之术，逐渐固定为学科之名。"
+        }
+      ],
+      "figures": [
+        "al-khwarizmi"
+      ]
+    },
+    {
+      "id": "spherical-trig",
+      "name": "球面三角",
+      "en": "spherical trigonometry",
+      "firstChapter": "ch09",
+      "definition": "处理球面三角形边角关系的公式体系，纳西尔丁《论四边形》给出解球面直角三角形的六个基本公式。",
+      "why": "它是天文、航海与地理的计算基础，也是最早脱离平面几何的“应用几何”。",
+      "evolution": [
+        {
+          "chapter": "ch12",
+          "text": "雷格蒙塔努斯据纳西尔丁等人的工作整合出球面正弦定律。"
+        }
+      ],
+      "figures": [
+        "nasir-eddin",
+        "regiomontanus"
+      ]
+    },
+    {
+      "id": "quadrivium",
+      "name": "四艺",
+      "en": "quadrivium",
+      "firstChapter": "ch10",
+      "definition": "中世纪课程中的算术、音乐、几何、天文四科，与文法、修辞、辩证“三文”并列。",
+      "why": "数学因四艺而在中世纪教育中保住了位置，虽然内容极为浅近。",
+      "evolution": [
+        {
+          "chapter": "ch11",
+          "text": "人文主义者以希腊原典取代教科书式的四艺，课程重心随之转移。"
+        }
+      ],
+      "figures": [
+        "gerbert"
+      ]
+    },
+    {
+      "id": "fractional-exponent",
+      "name": "分数指数",
+      "en": "fractional exponents",
+      "firstChapter": "ch10",
+      "definition": "奥雷姆由 4³=64 而 (4³)^(1/2)=8 推得 4^(3/2)=8，引入分数指数的记法与算法。",
+      "why": "它是把幂运算从整数推广到有理数的第一步，为后来的对数与解析运算铺路。",
+      "evolution": [
+        {
+          "chapter": "ch13",
+          "text": "16 世纪数位作者重又提出分数指数，17 世纪才被广泛采用。"
+        }
+      ],
+      "figures": [
+        "oresme"
+      ]
+    },
+    {
+      "id": "printing",
+      "name": "印刷术与数学传播",
+      "en": "printing and the spread of mathematics",
+      "firstChapter": "ch11",
+      "definition": "约 1450 年活版印刷问世，1474 年起数学与天文著作开始印行，1482 年出现《原本》首个印本。",
+      "why": "印本使文本可比对、可订正、可批量流通，知识生产从抄写转向校勘与传播。",
+      "evolution": [
+        {
+          "chapter": "ch12",
+          "text": "16 世纪出现大量希腊著作的通俗语言译本，读者群从学者扩至工匠。"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "perspective",
+      "name": "透视法",
+      "en": "perspective",
+      "firstChapter": "ch12",
+      "definition": "以单一视点把三维空间投影到平面上，使画面中的远近、大小符合几何关系。",
+      "why": "它把绘画变成可推导的几何问题，也让射影性质的观念第一次进入实用技艺。",
+      "evolution": [
+        {
+          "chapter": "ch12",
+          "text": "1500–1600 年间艺术家与数学家把它从经验法则变成演绎学科。"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "heliocentrism",
+      "name": "日心说",
+      "en": "heliocentrism",
+      "firstChapter": "ch12",
+      "definition": "以太阳而非地球为宇宙中心，用地球自转与公转解释天体视运动。",
+      "why": "它的优势不在精度而在简洁与统一，这是“数学美学影响理论选择”的经典案例。",
+      "evolution": [
+        {
+          "chapter": "ch12",
+          "text": "哥白尼体系对内外行星采用同一处理方式，天体位置计算也更为简便。"
+        }
+      ],
+      "figures": [
+        "copernicus"
+      ]
+    },
+    {
+      "id": "algebraic-symbolism",
+      "name": "代数符号体系",
+      "en": "algebraic symbolism",
+      "firstChapter": "ch13",
+      "definition": "+、−、×、=、>、<、括号与根号等在 15–17 世纪陆续引入，取代文字缩写式的书写。",
+      "why": "符号不是速记，而是让运算本身成为可操作对象的条件：代数由此才可能成为科学。",
+      "evolution": [
+        {
+          "chapter": "ch13",
+          "text": "韦达以字母表示已知与未知量，笛卡儿以 ∝ 表示相等并采用平方根号。"
+        }
+      ],
+      "figures": [
+        "recorde",
+        "vieta",
+        "stifel"
+      ]
+    },
+    {
+      "id": "cubic-quartic",
+      "name": "三次与四次方程解法",
+      "en": "solution of cubic and quartic equations",
+      "firstChapter": "ch13",
+      "definition": "费罗解出 x³+mx=n，塔尔塔利亚在竞赛中解出全部三次型，卡丹与费拉里将四次方程化归三次。",
+      "why": "它第一次越过了“二次方程即代数全部”的心理界限，也暴露了负数与虚根无法回避。",
+      "evolution": [
+        {
+          "chapter": "ch13",
+          "text": "解法公开后引发优先权之争，也促使人们思考方程根的个数与复数根的意义。"
+        }
+      ],
+      "figures": [
+        "tartaglia",
+        "cardano",
+        "ferrari"
+      ]
+    },
+    {
+      "id": "multiplicity-of-roots",
+      "name": "方程根的个数",
+      "en": "number of roots of an equation",
+      "firstChapter": "ch13",
+      "definition": "卡丹注意到三次方程可有三个根；吉拉德断言 n 次方程计复根与重数共有 n 个根，但未证明。",
+      "why": "它把“解方程”变成“研究根的整体结构”，是代数基本定理的雏形。",
+      "evolution": [
+        {
+          "chapter": "ch13",
+          "text": "笛卡儿在《几何》第三篇中重述次数与根数的关系。"
+        }
+      ],
+      "figures": [
+        "cardano",
+        "girard"
+      ]
+    },
+    {
+      "id": "binomial-theorem",
+      "name": "二项式定理与系数表",
+      "en": "binomial theorem",
+      "firstChapter": "ch13",
+      "definition": "(a+b)^n 在 n 为正整数时的展开，其系数依“帕斯卡三角”排布；施蒂费尔引入“二项式系数”之名。",
+      "why": "它是组合思想与代数运算的交汇点，也为后来的级数展开提供模板。",
+      "evolution": [
+        {
+          "chapter": "ch13",
+          "text": "系数表由阿拉伯人已知，经施蒂费尔与帕斯卡等人逐步形式化。"
+        }
+      ],
+      "figures": [
+        "stifel"
+      ]
+    },
+    {
+      "id": "fermat-theorem",
+      "name": "费马小定理与大定理",
+      "en": "Fermat's little and last theorems",
+      "firstChapter": "ch13",
+      "definition": "小定理：p 为素数且 a 与 p 互质，则 p 整除 a^p−a；大定理：n>2 时 x^n+y^n=z^n 无正整数解。",
+      "why": "它们从丢番图的问题出发，把数论从零散技巧变成有方向的研究领域。",
+      "evolution": [
+        {
+          "chapter": "ch13",
+          "text": "费马的结果多记在书页边缘，由其子整理出版后才公之于世。"
+        }
+      ],
+      "figures": [
+        "fermat"
+      ]
+    },
+    {
+      "id": "cross-ratio",
+      "name": "交比",
+      "en": "cross ratio",
+      "firstChapter": "ch14",
+      "definition": "一直线上四点 A、B、C、D 所成的比 (AC/CB)÷(AD/DB)，在投影变换下保持不变。",
+      "why": "它是射影几何的基本不变量：长度会变、角度会变，交比不变。",
+      "evolution": [
+        {
+          "chapter": "ch14",
+          "text": "德萨格证明投射锥的每个截线上交比相等，使它成为射影方法的工具。"
+        }
+      ],
+      "figures": [
+        "desargues",
+        "pappus"
+      ]
+    },
+    {
+      "id": "projection-invariance",
+      "name": "投影不变量",
+      "en": "projective invariance",
+      "firstChapter": "ch14",
+      "definition": "在中心投影下保持不变的几何性质，如共线性、交比、圆锥曲线的类型。",
+      "why": "它把“哪些性质是本质的”变成可判断的问题，而不依赖度量。",
+      "evolution": [
+        {
+          "chapter": "ch14",
+          "text": "德萨格与帕斯卡用不变量统一处理截景，射影几何由此成形。"
+        }
+      ],
+      "figures": [
+        "desargues",
+        "pascal"
+      ]
+    },
+    {
+      "id": "projective-geometry",
+      "name": "射影几何",
+      "en": "projective geometry",
+      "firstChapter": "ch14",
+      "definition": "研究图形在中心投影下不变性质的几何分支，不依赖长度与角度。",
+      "why": "它示范了“换一套前提，几何会变成什么样”，为 19 世纪几何学的多样化开路。",
+      "evolution": [
+        {
+          "chapter": "ch14",
+          "text": "德萨格、帕斯卡与拉伊尔奠定基础。"
+        },
+        {
+          "chapter": "ch35",
+          "text": "19 世纪射影几何复兴，并与度量几何重新统一。"
+        }
+      ],
+      "figures": [
+        "desargues",
+        "pascal",
+        "la-hire"
+      ]
+    },
+    {
+      "id": "continuity-of-forms",
+      "name": "图形的连续变换",
+      "en": "continuity of forms",
+      "firstChapter": "ch14",
+      "definition": "一个图形可以通过连续变形成为另一个，如圆锥曲线彼此互变。",
+      "why": "它把“分类”从静态的形状改为动态的变换关系，是代数几何与拓扑的先声。",
+      "evolution": [
+        {
+          "chapter": "ch14",
+          "text": "开普勒注意到圆锥曲线可连续互变，德萨格据此统一处理截线。"
+        }
+      ],
+      "figures": [
+        "kepler"
+      ]
+    },
+    {
+      "id": "analytic-geometry",
+      "name": "坐标几何（解析几何）",
+      "en": "analytic geometry",
+      "firstChapter": "ch15",
+      "definition": "用坐标把点与数对应，用方程表示曲线与曲面，从而用代数研究几何。",
+      "why": "它使几何问题可以计算，也使代数获得几何解释，是近代数学的基本语言。",
+      "evolution": [
+        {
+          "chapter": "ch15",
+          "text": "费马与笛卡儿各自建立，路径不同。"
+        },
+        {
+          "chapter": "ch23",
+          "text": "18 世纪扩展到极坐标、高次曲线与空间曲面。"
+        }
+      ],
+      "figures": [
+        "fermat",
+        "descartes"
+      ]
+    },
+    {
+      "id": "equation-of-curve",
+      "name": "曲线的方程",
+      "en": "equation of a curve",
+      "firstChapter": "ch15",
+      "definition": "满足方程 f(x, y)=0 的点集构成一条曲线；方程的次数对应曲线的阶。",
+      "why": "它把“曲线的性质”转成“方程的代数性质”，是坐标几何的核心想法。",
+      "evolution": [
+        {
+          "chapter": "ch23",
+          "text": "18 世纪按次数系统研究高次平面曲线，牛顿列出三次曲线。"
+        }
+      ],
+      "figures": [
+        "descartes",
+        "newton"
+      ]
+    },
+    {
+      "id": "coordinates",
+      "name": "坐标系",
+      "en": "coordinate system",
+      "firstChapter": "ch15",
+      "definition": "用一组数确定点的位置的参照系，如直角坐标与极坐标。",
+      "why": "坐标系把空间变成可计算的，但选择不同的坐标系会改变方程的形式。",
+      "evolution": [
+        {
+          "chapter": "ch15",
+          "text": "笛卡儿与费马使用斜交或直角坐标。"
+        },
+        {
+          "chapter": "ch23",
+          "text": "赫尔曼与欧拉使极坐标普遍可用。"
+        }
+      ],
+      "figures": [
+        "descartes",
+        "euler"
+      ]
+    },
+    {
+      "id": "dimensional-equation",
+      "name": "含三个未知数的方程",
+      "en": "equation in three unknowns",
+      "firstChapter": "ch15",
+      "definition": "含三个变量的方程在空间中表示一个曲面，而非曲线。",
+      "why": "它把坐标几何从平面推到空间，是三维解析几何的起点。",
+      "evolution": [
+        {
+          "chapter": "ch23",
+          "text": "18 世纪系统研究二次曲面与旋转曲面。"
+        }
+      ],
+      "figures": [
+        "fermat",
+        "clairaut"
+      ]
+    },
+    {
+      "id": "mathematical-science",
+      "name": "科学的数学化",
+      "en": "mathematization of science",
+      "firstChapter": "ch16",
+      "definition": "把自然现象表述为可测量的量之间的关系，并用数学推演得出结论。",
+      "why": "它是近代科学的方法论核心：不是给现象套公式，而是先选定可测量的量。",
+      "evolution": [
+        {
+          "chapter": "ch16",
+          "text": "笛卡儿与伽利略确立纲领与程序。"
+        },
+        {
+          "chapter": "ch26",
+          "text": "18 世纪数学工作被物理问题直接驱动。"
+        }
+      ],
+      "figures": [
+        "galileo",
+        "descartes"
+      ]
+    },
+    {
+      "id": "function-concept",
+      "name": "函数概念",
+      "en": "function concept",
+      "firstChapter": "ch16",
+      "definition": "一个量随另一个量变化的关系；欧拉 1755 年给出“依赖即函数”的说法。",
+      "why": "它是微积分的对象：没有函数，就无从谈变化率与积分。",
+      "evolution": [
+        {
+          "chapter": "ch19",
+          "text": "18 世纪引入记号 f(x)，并区分代数函数与超越函数。"
+        },
+        {
+          "chapter": "ch22",
+          "text": "欧拉讨论“不连续”函数，为函数概念的细化埋下问题。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "leibniz"
+      ]
+    },
+    {
+      "id": "experiment-method",
+      "name": "实验检验",
+      "en": "experimental method",
+      "firstChapter": "ch16",
+      "definition": "用可控实验检验数学推演，使结论可被测量反驳或确认。",
+      "why": "它把数学从“自明前提的演绎”变成可修正的知识，是伽利略胜过笛卡儿之处。",
+      "evolution": [
+        {
+          "chapter": "ch16",
+          "text": "伽利略以斜面与摆的实验确立程序。"
+        }
+      ],
+      "figures": [
+        "galileo"
+      ]
+    },
+    {
+      "id": "calculus",
+      "name": "微积分",
+      "en": "calculus",
+      "firstChapter": "ch17",
+      "definition": "以微分与积分处理变化率与累积量的方法体系，二者互为逆运算。",
+      "why": "它是继欧几里得几何之后最大的创造，使连续变化第一次可以被计算。",
+      "evolution": [
+        {
+          "chapter": "ch17",
+          "text": "牛顿与莱布尼茨独立完成。"
+        },
+        {
+          "chapter": "ch19",
+          "text": "18 世纪扩展积分技巧与多元函数。"
+        },
+        {
+          "chapter": "ch40",
+          "text": "19 世纪用极限理论补上严密性。"
+        }
+      ],
+      "figures": [
+        "newton",
+        "leibniz"
+      ]
+    },
+    {
+      "id": "derivative",
+      "name": "导数",
+      "en": "derivative",
+      "firstChapter": "ch17",
+      "definition": "函数在某点的瞬时变化率，几何上即切线斜率。",
+      "why": "它把“速度”与“切线”统一为同一概念，是微积分的基本工具。",
+      "evolution": [
+        {
+          "chapter": "ch17",
+          "text": "牛顿称之为流数，莱布尼茨写作 dy/dx。"
+        }
+      ],
+      "figures": [
+        "newton",
+        "leibniz"
+      ]
+    },
+    {
+      "id": "integral",
+      "name": "积分",
+      "en": "integral",
+      "firstChapter": "ch17",
+      "definition": "把无穷多微小部分累加求面积、体积或总量的运算。",
+      "why": "它使曲边图形与连续累积第一次可以被精确计算。",
+      "evolution": [
+        {
+          "chapter": "ch17",
+          "text": "由求积问题发展而来，与微分互逆。"
+        },
+        {
+          "chapter": "ch19",
+          "text": "18 世纪发展出部分分式、椭圆积分等技巧。"
+        }
+      ],
+      "figures": [
+        "newton",
+        "leibniz",
+        "euler"
+      ]
+    },
+    {
+      "id": "fundamental-theorem",
+      "name": "微积分基本定理",
+      "en": "fundamental theorem of calculus",
+      "firstChapter": "ch17",
+      "definition": "求导与积分互为逆运算：累积函数的导数等于被积函数。",
+      "why": "它把两类问题合成一门学科，是微积分成立的关键。",
+      "evolution": [
+        {
+          "chapter": "ch17",
+          "text": "牛顿与莱布尼茨各自看出互逆关系，并据此建立算法。"
+        }
+      ],
+      "figures": [
+        "newton",
+        "leibniz"
+      ]
+    },
+    {
+      "id": "infinitesimal",
+      "name": "无穷小",
+      "en": "infinitesimal",
+      "firstChapter": "ch17",
+      "definition": "非零而又小于任何给定正量的量；17、18 世纪微积分的基本对象。",
+      "why": "它使计算可行，却带来逻辑困难：既当作 0 又当作非 0。",
+      "evolution": [
+        {
+          "chapter": "ch17",
+          "text": "贝克莱等人批评其逻辑地位不明。"
+        },
+        {
+          "chapter": "ch40",
+          "text": "19 世纪用极限取代无穷小，争论才平息。"
+        }
+      ],
+      "figures": [
+        "newton",
+        "leibniz"
+      ]
+    },
+    {
+      "id": "fluxion",
+      "name": "流数",
+      "en": "fluxion",
+      "firstChapter": "ch17",
+      "definition": "牛顿对变化率的称呼：流动的量（fluent）的变化率即流数。",
+      "why": "它把微积分建立在运动学直觉上，与莱布尼茨的微分路线形成对照。",
+      "evolution": [
+        {
+          "chapter": "ch17",
+          "text": "英国数学长期沿用流数记号，导致与欧陆分析脱节。"
+        }
+      ],
+      "figures": [
+        "newton"
+      ]
+    },
+    {
+      "id": "scientific-academies",
+      "name": "科学院与期刊",
+      "en": "academies and journals",
+      "firstChapter": "ch18",
+      "definition": "17 世纪后期建立的学术机构与刊物，成为发表与评审新工作的正式渠道。",
+      "why": "它把数学从私人通信与手稿变成公共可查的知识，改变了发现的传播方式。",
+      "evolution": [
+        {
+          "chapter": "ch26",
+          "text": "18 世纪的数学主要由科学院而非大学支持。"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "gamma-function",
+      "name": "Γ 函数",
+      "en": "gamma function",
+      "firstChapter": "ch19",
+      "definition": "由插值问题与积分产生的特殊函数，把阶乘推广到非整数。",
+      "why": "它是第一批“由积分定义的新函数”，显示分析可以创造对象而非只处理已知函数。",
+      "evolution": [
+        {
+          "chapter": "ch19",
+          "text": "欧拉 1729 年给出，勒让德命名并采用 Γ 记号。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "legendre"
+      ]
+    },
+    {
+      "id": "partial-derivative",
+      "name": "偏导数",
+      "en": "partial derivative",
+      "firstChapter": "ch19",
+      "definition": "多元函数对其中一个变量求导、其余变量视为常数的导数。",
+      "why": "它使多变量变化可以被分析，是偏微分方程与位势理论的前提。",
+      "evolution": [
+        {
+          "chapter": "ch22",
+          "text": "偏导数成为流体力学与位势方程的基本语言。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "clairaut"
+      ]
+    },
+    {
+      "id": "elliptic-integral",
+      "name": "椭圆积分",
+      "en": "elliptic integral",
+      "firstChapter": "ch19",
+      "definition": "一类不能用初等函数表达的积分，如求椭圆弧长时出现的积分。",
+      "why": "它逼出“特殊函数”这一新对象，也说明初等函数并不足以覆盖所有积分。",
+      "evolution": [
+        {
+          "chapter": "ch19",
+          "text": "18 世纪系统研究，并引出 Γ 函数等新函数。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "legendre"
+      ]
+    },
+    {
+      "id": "power-series",
+      "name": "幂级数",
+      "en": "power series",
+      "firstChapter": "ch20",
+      "definition": "形如 a₀+a₁x+a₂x²+… 的无穷级数，可用于表示函数并逐项运算。",
+      "why": "它是 18 世纪处理超越函数的主要工具：先展开，再逐项微分或积分。",
+      "evolution": [
+        {
+          "chapter": "ch20",
+          "text": "牛顿、格雷戈里、莱布尼茨大量使用，欧拉把它推到高峰。"
+        }
+      ],
+      "figures": [
+        "newton",
+        "gregory",
+        "euler"
+      ]
+    },
+    {
+      "id": "convergence",
+      "name": "收敛与发散",
+      "en": "convergence and divergence",
+      "firstChapter": "ch20",
+      "definition": "级数的部分和是否趋于有限值；18 世纪多以形式运算为主，未系统处理。",
+      "why": "它后来成为分析严格化的入口：级数能否逐项运算，取决于收敛性。",
+      "evolution": [
+        {
+          "chapter": "ch20",
+          "text": "莱布尼茨注意到交错级数的收敛判别。"
+        },
+        {
+          "chapter": "ch40",
+          "text": "19 世纪建立系统的收敛判别法与一致收敛概念。"
+        }
+      ],
+      "figures": [
+        "leibniz"
+      ]
+    },
+    {
+      "id": "trigonometric-series",
+      "name": "三角级数",
+      "en": "trigonometric series",
+      "firstChapter": "ch20",
+      "definition": "用正弦与余弦的无穷和表示函数，常用于插值与周期现象。",
+      "why": "它是傅里叶级数的前身，也暴露出“函数能否这样表示”的深层问题。",
+      "evolution": [
+        {
+          "chapter": "ch20",
+          "text": "欧拉 1747 年起用三角级数处理行星扰动与插值。"
+        }
+      ],
+      "figures": [
+        "euler"
+      ]
+    },
+    {
+      "id": "interpolation",
+      "name": "插值",
+      "en": "interpolation",
+      "firstChapter": "ch20",
+      "definition": "由已知点上的函数值推算中间点的值，有限差分法是其中一种系统方法。",
+      "why": "航海与天文表的精度需求推动了它，也带来“误差如何估计”的问题。",
+      "evolution": [
+        {
+          "chapter": "ch20",
+          "text": "格雷戈里与牛顿给出有限差分的插值公式。"
+        }
+      ],
+      "figures": [
+        "gregory",
+        "newton"
+      ]
+    },
+    {
+      "id": "differential-equation",
+      "name": "微分方程",
+      "en": "differential equation",
+      "firstChapter": "ch21",
+      "definition": "含未知函数及其导数的方程；解是函数而非数。",
+      "why": "它把物理规律写成数学形式，是分析时代最重要的建模工具。",
+      "evolution": [
+        {
+          "chapter": "ch21",
+          "text": "18 世纪从物理问题中生长出来，发展出多种解法。"
+        },
+        {
+          "chapter": "ch22",
+          "text": "推广到多变量，形成偏微分方程。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "bernoulli-james",
+        "laplace"
+      ]
+    },
+    {
+      "id": "singular-solution",
+      "name": "奇解",
+      "en": "singular solution",
+      "firstChapter": "ch21",
+      "definition": "不能由通解取特定常数得到的解，通常是解族的包络。",
+      "why": "它说明“通解”并不包含全部解，动摇了 18 世纪对通解的信任。",
+      "evolution": [
+        {
+          "chapter": "ch21",
+          "text": "克莱罗与欧拉给出从方程本身求奇解的方法。"
+        }
+      ],
+      "figures": [
+        "clairaut",
+        "euler",
+        "laplace"
+      ]
+    },
+    {
+      "id": "series-solution",
+      "name": "级数解",
+      "en": "series solution",
+      "firstChapter": "ch21",
+      "definition": "把微分方程的解设为幂级数，用待定系数法逐项确定。",
+      "why": "它是无法用初等函数积分时的通用退路，也是 19 世纪解析理论的基础。",
+      "evolution": [
+        {
+          "chapter": "ch21",
+          "text": "欧拉 1750 年后系统使用级数法解方程。"
+        }
+      ],
+      "figures": [
+        "euler"
+      ]
+    },
+    {
+      "id": "partial-differential-equation",
+      "name": "偏微分方程",
+      "en": "partial differential equation",
+      "firstChapter": "ch22",
+      "definition": "含多元函数及其偏导数的方程，用于描述场与连续介质的运动。",
+      "why": "它是数学物理的核心工具，把弦、流体、引力统一在同一类方程下。",
+      "evolution": [
+        {
+          "chapter": "ch22",
+          "text": "波动方程、位势方程与流体方程在 18 世纪相继出现。"
+        },
+        {
+          "chapter": "ch28",
+          "text": "19 世纪发展为系统的数学物理方程理论。"
+        }
+      ],
+      "figures": [
+        "d-alembert",
+        "euler",
+        "monge"
+      ]
+    },
+    {
+      "id": "wave-equation",
+      "name": "波动方程",
+      "en": "wave equation",
+      "firstChapter": "ch22",
+      "definition": "描述弦或介质振动传播的二阶偏微分方程，含对时间与空间的二阶导数。",
+      "why": "它是第一个被深入研究并引发“通解与特解之争”的偏微分方程。",
+      "evolution": [
+        {
+          "chapter": "ch22",
+          "text": "达朗贝尔 1746 年给出，欧拉推广到变密度弦。"
+        }
+      ],
+      "figures": [
+        "d-alembert",
+        "euler"
+      ]
+    },
+    {
+      "id": "potential-theory",
+      "name": "位势理论",
+      "en": "potential theory",
+      "firstChapter": "ch22",
+      "definition": "用势函数刻画引力与静电作用，满足拉普拉斯方程。",
+      "why": "它把天体力学与流体力学统一在同一数学结构中，是数学物理的典范。",
+      "evolution": [
+        {
+          "chapter": "ch22",
+          "text": "欧拉 1752 年引入势函数，拉普拉斯后来给出方程形式。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "laplace"
+      ]
+    },
+    {
+      "id": "differential-geometry",
+      "name": "微分几何",
+      "en": "differential geometry",
+      "firstChapter": "ch23",
+      "definition": "用微积分研究曲线与曲面逐点变化的性质，如曲率与测地线。",
+      "why": "它把几何从整体形状推进到局部结构，是后来黎曼几何的前身。",
+      "evolution": [
+        {
+          "chapter": "ch23",
+          "text": "惠更斯、克莱罗、欧拉与蒙日奠定基础。"
+        },
+        {
+          "chapter": "ch37",
+          "text": "高斯与黎曼把它推广到任意维度的弯曲空间。"
+        }
+      ],
+      "figures": [
+        "huygens",
+        "clairaut",
+        "euler"
+      ]
+    },
+    {
+      "id": "curvature",
+      "name": "曲率",
+      "en": "curvature",
+      "firstChapter": "ch23",
+      "definition": "曲线偏离直线的程度，等于曲率半径的倒数；曲面则有两个主曲率。",
+      "why": "它是描述“弯曲”的定量方式，使几何性质可以被计算与比较。",
+      "evolution": [
+        {
+          "chapter": "ch23",
+          "text": "惠更斯以渐伸线研究曲率，欧拉建立曲面曲率理论。"
+        }
+      ],
+      "figures": [
+        "huygens",
+        "euler"
+      ]
+    },
+    {
+      "id": "geodesic",
+      "name": "测地线",
+      "en": "geodesic",
+      "firstChapter": "ch23",
+      "definition": "曲面上两点间的最短路径，其密切平面在每点与曲面正交。",
+      "why": "它把“直线”的概念推广到曲面，是微分几何与广义相对论的入口。",
+      "evolution": [
+        {
+          "chapter": "ch23",
+          "text": "约翰·伯努利提出，欧拉 1728 年给出微分方程。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "bernoulli-james"
+      ]
+    },
+    {
+      "id": "calculus-of-variations",
+      "name": "变分法",
+      "en": "calculus of variations",
+      "firstChapter": "ch24",
+      "definition": "求使某个积分取极大或极小的曲线（函数）的方法。",
+      "why": "它把“求极值”从数推广到函数，是理论力学的数学框架。",
+      "evolution": [
+        {
+          "chapter": "ch24",
+          "text": "最速降线问题引发，欧拉与拉格朗日建立一般方法。"
+        },
+        {
+          "chapter": "ch30",
+          "text": "19 世纪发展为变分原理与边值问题的系统理论。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "lagrange",
+        "bernoulli-james"
+      ]
+    },
+    {
+      "id": "euler-equation",
+      "name": "欧拉方程（变分法）",
+      "en": "Euler–Lagrange equation",
+      "firstChapter": "ch24",
+      "definition": "使积分取极值的函数必须满足的二阶微分方程，是变分法的必要条件。",
+      "why": "它把变分问题化为解微分方程，使方法可以系统执行。",
+      "evolution": [
+        {
+          "chapter": "ch24",
+          "text": "欧拉 1736 年给出，拉格朗日以纯分析形式重写。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "lagrange"
+      ]
+    },
+    {
+      "id": "least-action",
+      "name": "最小作用原理",
+      "en": "principle of least action",
+      "firstChapter": "ch24",
+      "definition": "物理系统的实际运动使某个作用量取极值，是力学的一条变分原理。",
+      "why": "它用一个原理概括全部力学，是分析力学的核心。",
+      "evolution": [
+        {
+          "chapter": "ch24",
+          "text": "莫佩尔蒂提出，拉格朗日写成分析形式。"
+        }
+      ],
+      "figures": [
+        "maupertuis",
+        "lagrange",
+        "euler"
+      ]
+    },
+    {
+      "id": "determinant",
+      "name": "行列式",
+      "en": "determinant",
+      "firstChapter": "ch25",
+      "definition": "由方阵元素按规则算出的数，用于判断线性方程组是否有唯一解。",
+      "why": "它把“方程组可解性”变成一个可计算的量，是线性代数的起点。",
+      "evolution": [
+        {
+          "chapter": "ch25",
+          "text": "莱布尼茨开创，克莱姆、范德蒙德与拉普拉斯推进。"
+        }
+      ],
+      "figures": [
+        "leibniz",
+        "cramer",
+        "vandermonde"
+      ]
+    },
+    {
+      "id": "algebraic-number",
+      "name": "代数数",
+      "en": "algebraic number",
+      "firstChapter": "ch25",
+      "definition": "某个有理系数多项式方程的根，包括所有有理数与部分无理数。",
+      "why": "它把数按“能否由方程定义”分类，是数论与代数交界处的关键概念。",
+      "evolution": [
+        {
+          "chapter": "ch25",
+          "text": "欧拉与勒让德区分代数数与超越数。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "legendre"
+      ]
+    },
+    {
+      "id": "transcendental-number",
+      "name": "超越数",
+      "en": "transcendental number",
+      "firstChapter": "ch25",
+      "definition": "不是任何有理系数多项式方程的根的数。",
+      "why": "它把“数”的范围再扩一层，也解释了化圆为方为何不可能。",
+      "evolution": [
+        {
+          "chapter": "ch25",
+          "text": "18 世纪尚不知具体例子，只猜测 π 可能是超越数。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "legendre"
+      ]
+    },
+    {
+      "id": "analysis-discipline",
+      "name": "分析（学科）",
+      "en": "analysis",
+      "firstChapter": "ch26",
+      "definition": "以微积分为基础、处理函数与极限的分支总称，包括级数、微分方程、变分法等。",
+      "why": "它成为 18 世纪数学的主体，也把“严密性”问题推到前台。",
+      "evolution": [
+        {
+          "chapter": "ch26",
+          "text": "18 世纪把它扩展到前所未有的规模。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "lagrange",
+        "laplace"
+      ]
+    },
+    {
+      "id": "rigor-crisis",
+      "name": "严密性危机",
+      "en": "crisis of rigor",
+      "firstChapter": "ch26",
+      "definition": "18 世纪分析大量使用形式运算，收敛性、无穷小与解的存在性缺乏论证。",
+      "why": "它解释了为什么 18 世纪成果丰硕却被 19 世纪视为“基础不牢”。",
+      "evolution": [
+        {
+          "chapter": "ch40",
+          "text": "19 世纪以极限、连续性与一致收敛重建分析的基础。"
+        }
+      ],
+      "figures": [
+        "d-alembert",
+        "lagrange"
+      ]
+    },
+    {
+      "id": "complex-function",
+      "name": "复变函数",
+      "en": "complex function",
+      "firstChapter": "ch27",
+      "definition": "定义域与值域都在复数范围内的函数，可在复平面上用几何方式研究。",
+      "why": "复可导要求全方位成立，因而性质比实函数强得多。",
+      "evolution": [
+        {
+          "chapter": "ch27",
+          "text": "柯西、魏尔斯特拉斯与黎曼三条路线共同建立函数论。"
+        }
+      ],
+      "figures": [
+        "cauchy",
+        "riemann"
+      ]
+    },
+    {
+      "id": "analytic-function",
+      "name": "解析函数",
+      "en": "analytic function",
+      "firstChapter": "ch27",
+      "definition": "在区域内处处可导（等价于可展开为幂级数）的复函数。",
+      "why": "它一旦可导就无穷次可导，这种“刚性”是复分析的核心。",
+      "evolution": [
+        {
+          "chapter": "ch27",
+          "text": "魏尔斯特拉斯以幂级数定义解析性，追求完全严密。"
+        }
+      ],
+      "figures": [
+        "weierstrass"
+      ]
+    },
+    {
+      "id": "riemann-surface",
+      "name": "黎曼面",
+      "en": "Riemann surface",
+      "firstChapter": "ch27",
+      "definition": "把多值函数的定义域铺成多层曲面，使其上函数单值。",
+      "why": "它把 √z、log z 这类多值对象变成可研究的单值对象。",
+      "evolution": [
+        {
+          "chapter": "ch27",
+          "text": "黎曼用以处理阿贝尔积分与多值函数。"
+        }
+      ],
+      "figures": [
+        "riemann"
+      ]
+    },
+    {
+      "id": "conformal-mapping",
+      "name": "保形映射",
+      "en": "conformal mapping",
+      "firstChapter": "ch27",
+      "definition": "保持角度不变的映射；解析函数在导数非零处即给出保形映射。",
+      "why": "它把复分析与几何、流体力学、地图绘制连接起来。",
+      "evolution": [
+        {
+          "chapter": "ch27",
+          "text": "高斯 1825 年解决一般问题，黎曼推广到黎曼面。"
+        }
+      ],
+      "figures": [
+        "riemann",
+        "gauss"
+      ]
+    },
+    {
+      "id": "heat-equation",
+      "name": "热方程",
+      "en": "heat equation",
+      "firstChapter": "ch28",
+      "definition": "描述温度随时间扩散的偏微分方程，含对时间的导数与对空间的二阶导数。",
+      "why": "它是傅里叶级数的直接来源，也是抛物型方程的典型。",
+      "evolution": [
+        {
+          "chapter": "ch28",
+          "text": "傅里叶用三角级数求解，催生傅里叶级数理论。"
+        }
+      ],
+      "figures": [
+        "fourier"
+      ]
+    },
+    {
+      "id": "fourier-series",
+      "name": "傅里叶级数",
+      "en": "Fourier series",
+      "firstChapter": "ch28",
+      "definition": "用正弦与余弦的无穷和表示函数，系数由积分给出。",
+      "why": "它主张任意函数都能这样展开，迫使函数概念与收敛理论更新。",
+      "evolution": [
+        {
+          "chapter": "ch28",
+          "text": "傅里叶研究热传导时提出；收敛条件长期未决。"
+        }
+      ],
+      "figures": [
+        "fourier"
+      ]
+    },
+    {
+      "id": "greens-theorem",
+      "name": "格林定理",
+      "en": "Green's theorem",
+      "firstChapter": "ch28",
+      "definition": "把区域内的积分与边界上的积分联系起来的恒等式。",
+      "why": "它使边界值可以决定内部解，是位势理论与边值问题的基础。",
+      "evolution": [
+        {
+          "chapter": "ch28",
+          "text": "格林引入，后推广到多种方程。"
+        }
+      ],
+      "figures": [
+        "green"
+      ]
+    },
+    {
+      "id": "existence-theorem",
+      "name": "存在性定理",
+      "en": "existence theorem",
+      "firstChapter": "ch28",
+      "definition": "在给不出显式解时，证明满足条件的解确实存在的定理。",
+      "why": "它保证问题提法合理，支撑近似与数值方法。",
+      "evolution": [
+        {
+          "chapter": "ch28",
+          "text": "19 世纪在偏微分方程与常微分方程中分别建立。"
+        }
+      ],
+      "figures": [
+        "cauchy"
+      ]
+    },
+    {
+      "id": "sturm-liouville",
+      "name": "斯图姆—刘维尔理论",
+      "en": "Sturm–Liouville theory",
+      "firstChapter": "ch29",
+      "definition": "带边界条件的二阶线性方程的特征值理论；特征函数正交。",
+      "why": "它为傅里叶展开提供基础，是数学物理的通用框架。",
+      "evolution": [
+        {
+          "chapter": "ch29",
+          "text": "斯图姆与刘维尔建立；帕塞瓦尔等式随之出现。"
+        }
+      ],
+      "figures": [
+        "sturm",
+        "liouville"
+      ]
+    },
+    {
+      "id": "eigenvalue",
+      "name": "特征值",
+      "en": "eigenvalue",
+      "firstChapter": "ch29",
+      "definition": "使带边界条件的方程存在非零解的参数值。",
+      "why": "物理上对应允许的振动频率，数学上是算子谱的雏形。",
+      "evolution": [
+        {
+          "chapter": "ch29",
+          "text": "斯图姆—刘维尔理论给出存在性与正交性。"
+        }
+      ],
+      "figures": [
+        "sturm",
+        "liouville"
+      ]
+    },
+    {
+      "id": "special-function",
+      "name": "特殊函数",
+      "en": "special function",
+      "firstChapter": "ch29",
+      "definition": "由积分、级数或微分方程定义、不能用初等函数表示的函数。",
+      "why": "它们补上了初等函数覆盖不到的部分，是数学物理的基本工具。",
+      "evolution": [
+        {
+          "chapter": "ch29",
+          "text": "贝塞尔、勒让德、超几何等函数在分离变量中产生。"
+        }
+      ],
+      "figures": [
+        "bessel",
+        "legendre"
+      ]
+    },
+    {
+      "id": "qualitative-theory",
+      "name": "定性理论",
+      "en": "qualitative theory",
+      "firstChapter": "ch29",
+      "definition": "不求显式解，而研究解的稳定性、周期性与整体行为。",
+      "why": "非线性方程多无显式解，定性分析成为唯一可行路径。",
+      "evolution": [
+        {
+          "chapter": "ch29",
+          "text": "庞加莱为研究行星运动方程开创。"
+        },
+        {
+          "chapter": "ch50",
+          "text": "与拓扑结合，发展出动力系统理论。"
+        }
+      ],
+      "figures": [
+        "poincare"
+      ]
+    },
+    {
+      "id": "jacobi-condition",
+      "name": "雅可比条件",
+      "en": "Jacobi condition",
+      "firstChapter": "ch30",
+      "definition": "判断变分问题中极值曲线是否为极小的一条充分条件。",
+      "why": "它补上了欧拉方程只是必要条件的缺口。",
+      "evolution": [
+        {
+          "chapter": "ch30",
+          "text": "雅可比 1837 年引入共轭点，强化勒让德条件。"
+        }
+      ],
+      "figures": [
+        "jacobi"
+      ]
+    },
+    {
+      "id": "conjugate-point",
+      "name": "共轭点",
+      "en": "conjugate point",
+      "firstChapter": "ch30",
+      "definition": "沿极值曲线，邻近曲线开始与之相交的临界点。",
+      "why": "越过共轭点，极小性可能失效，故它是判定的关键。",
+      "evolution": [
+        {
+          "chapter": "ch30",
+          "text": "雅可比用以刻画极小性的失效。"
+        }
+      ],
+      "figures": [
+        "jacobi"
+      ]
+    },
+    {
+      "id": "group",
+      "name": "群",
+      "en": "group",
+      "firstChapter": "ch31",
+      "definition": "带一种满足封闭、结合、单位元与逆元四条公理的运算的集合。",
+      "why": "它把“对称”变成可计算的对象，是 20 世纪数学的骨架。",
+      "evolution": [
+        {
+          "chapter": "ch31",
+          "text": "置换群在方程论中出现，后被抽象化。"
+        },
+        {
+          "chapter": "ch49",
+          "text": "抽象群论成为独立分支。"
+        }
+      ],
+      "figures": [
+        "galois",
+        "noether-emmy"
+      ]
+    },
+    {
+      "id": "field",
+      "name": "域",
+      "en": "field",
+      "firstChapter": "ch31",
+      "definition": "能做加、减、乘、除（除数非零）的交换代数结构。",
+      "why": "它记录“允许使用哪些数”，扩域对应添加根或根式。",
+      "evolution": [
+        {
+          "chapter": "ch31",
+          "text": "伽罗瓦用以刻画方程的可解性。"
+        },
+        {
+          "chapter": "ch49",
+          "text": "戴德金与克罗内克从代数数论给出另一条来源。"
+        }
+      ],
+      "figures": [
+        "galois",
+        "dedekind"
+      ]
+    },
+    {
+      "id": "galois-theory",
+      "name": "伽罗瓦理论",
+      "en": "Galois theory",
+      "firstChapter": "ch31",
+      "definition": "用方程的置换群与域的扩张对应，判定方程能否用根式解。",
+      "why": "它把“求公式”变成“看结构”，是代数学的转折点。",
+      "evolution": [
+        {
+          "chapter": "ch31",
+          "text": "伽罗瓦建立群与域的对应；刘维尔 1846 年整理发表。"
+        }
+      ],
+      "figures": [
+        "galois"
+      ]
+    },
+    {
+      "id": "solvability-by-radicals",
+      "name": "根式可解",
+      "en": "solvability by radicals",
+      "firstChapter": "ch31",
+      "definition": "方程的根能由系数经有限次四则运算与开方表示。",
+      "why": "它是“能不能写出求根公式”的精确表述。",
+      "evolution": [
+        {
+          "chapter": "ch31",
+          "text": "阿贝尔证明一般五次以上不可解；伽罗瓦给出判据。"
+        }
+      ],
+      "figures": [
+        "abel",
+        "galois"
+      ]
+    },
+    {
+      "id": "quaternion",
+      "name": "四元数",
+      "en": "quaternion",
+      "firstChapter": "ch32",
+      "definition": "形如 a+bi+cj+dk 的数系，乘法不满足交换律。",
+      "why": "它第一次表明数系可以不遵守实数的全部规则。",
+      "evolution": [
+        {
+          "chapter": "ch32",
+          "text": "哈密顿 1843 年发现；后派生出向量分析。"
+        }
+      ],
+      "figures": [
+        "hamilton"
+      ]
+    },
+    {
+      "id": "vector",
+      "name": "向量",
+      "en": "vector",
+      "firstChapter": "ch32",
+      "definition": "具有大小与方向、可按分量相加与数乘的量。",
+      "why": "它直接对应力、速度与场，是物理与几何的通用语言。",
+      "evolution": [
+        {
+          "chapter": "ch32",
+          "text": "从四元数中独立，麦克斯韦等人推动。"
+        }
+      ],
+      "figures": [
+        "maxwell",
+        "grassmann"
+      ]
+    },
+    {
+      "id": "hypercomplex",
+      "name": "超复数",
+      "en": "hypercomplex numbers",
+      "firstChapter": "ch32",
+      "definition": "复数之外的各种有限维数系，如四元数、矩阵代数、克利福德代数。",
+      "why": "它们展示“代数可以有很多种”，为抽象代数铺路。",
+      "evolution": [
+        {
+          "chapter": "ch32",
+          "text": "19 世纪后期大量构造，成为线性结合代数的研究对象。"
+        }
+      ],
+      "figures": [
+        "hamilton",
+        "clifford"
+      ]
+    },
+    {
+      "id": "matrix",
+      "name": "矩阵",
+      "en": "matrix",
+      "firstChapter": "ch33",
+      "definition": "按行与列排列的数表，可相加、相乘并求逆。",
+      "why": "它表示线性变换，使方程组、二次型与变换统一起来。",
+      "evolution": [
+        {
+          "chapter": "ch33",
+          "text": "从行列式中独立，凯莱建立矩阵运算。"
+        }
+      ],
+      "figures": [
+        "cayley",
+        "sylvester"
+      ]
+    },
+    {
+      "id": "quadratic-form",
+      "name": "二次型",
+      "en": "quadratic form",
+      "firstChapter": "ch33",
+      "definition": "各项均为二次的多元多项式，可用坐标变换化为平方和。",
+      "why": "它的惯性（正负项个数）是不变量，可用于分类二次曲面。",
+      "evolution": [
+        {
+          "chapter": "ch33",
+          "text": "柯西、雅可比与西尔维斯特研究其化简与惯性。"
+        }
+      ],
+      "figures": [
+        "cauchy",
+        "sylvester"
+      ]
+    },
+    {
+      "id": "congruence",
+      "name": "同余",
+      "en": "congruence",
+      "firstChapter": "ch34",
+      "definition": "两数除以同一模所得余数相同，记作 a≡b (mod n)。",
+      "why": "它使余数可以像等式一样运算，是数论的基本语言。",
+      "evolution": [
+        {
+          "chapter": "ch34",
+          "text": "高斯在《算术探讨》中引入记号并系统使用。"
+        }
+      ],
+      "figures": [
+        "gauss"
+      ]
+    },
+    {
+      "id": "ideal",
+      "name": "理想",
+      "en": "ideal",
+      "firstChapter": "ch34",
+      "definition": "环中一类对加法与乘法封闭的子集，可用来恢复唯一分解。",
+      "why": "它解决了代数数域中唯一因子分解失效的问题。",
+      "evolution": [
+        {
+          "chapter": "ch34",
+          "text": "库默尔引入理想数，戴德金改造为理想。"
+        }
+      ],
+      "figures": [
+        "dedekind",
+        "kummer"
+      ]
+    },
+    {
+      "id": "zeta-function",
+      "name": "ζ 函数",
+      "en": "zeta function",
+      "firstChapter": "ch34",
+      "definition": "ζ(s)=∑n^(−s)，其欧拉乘积把素数与级数联系起来。",
+      "why": "它是解析数论的核心工具，用于研究素数分布。",
+      "evolution": [
+        {
+          "chapter": "ch34",
+          "text": "欧拉用于素数发散性；黎曼推广到复数域。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "riemann"
+      ]
+    },
+    {
+      "id": "algebraic-number-theory",
+      "name": "代数数论",
+      "en": "algebraic number theory",
+      "firstChapter": "ch34",
+      "definition": "用代数数域、理想与赋值研究整数问题的分支。",
+      "why": "它把“整数”推广到更广的数域，同时重建唯一分解。",
+      "evolution": [
+        {
+          "chapter": "ch34",
+          "text": "高斯、库默尔、戴德金与狄利克雷共同奠基。"
+        }
+      ],
+      "figures": [
+        "dedekind",
+        "kummer",
+        "dirichlet"
+      ]
+    },
+    {
+      "id": "homogeneous-coordinates",
+      "name": "齐次坐标",
+      "en": "homogeneous coordinates",
+      "firstChapter": "ch35",
+      "definition": "用比例 (x:y:z) 表示点，使无穷远点也进入坐标体系。",
+      "why": "它把射影变换变成线性变换，是射影几何代数化的关键。",
+      "evolution": [
+        {
+          "chapter": "ch35",
+          "text": "默比乌斯与普吕克各自提出。"
+        }
+      ],
+      "figures": [
+        "mobius",
+        "plucker"
+      ]
+    },
+    {
+      "id": "projective-revival",
+      "name": "射影几何的复兴",
+      "en": "revival of projective geometry",
+      "firstChapter": "ch35",
+      "definition": "19 世纪重新发现并系统化德萨格、帕斯卡的射影方法。",
+      "why": "它使几何按“变换与不变量”重新组织，通向埃尔朗根纲领。",
+      "evolution": [
+        {
+          "chapter": "ch35",
+          "text": "蒙日学派与德萨格著作的重现推动复兴。"
+        }
+      ],
+      "figures": [
+        "poncelet",
+        "steiner"
+      ]
+    },
+    {
+      "id": "algebraic-curve",
+      "name": "代数曲线",
+      "en": "algebraic curve",
+      "firstChapter": "ch35",
+      "definition": "由多项式方程 f(x,y)=0 定义的曲线，按次数分类。",
+      "why": "它是代数几何的基本对象，交点与奇点问题由此展开。",
+      "evolution": [
+        {
+          "chapter": "ch35",
+          "text": "普吕克研究三次与四次曲线。"
+        },
+        {
+          "chapter": "ch39",
+          "text": "转向双有理分类与不变量研究。"
+        }
+      ],
+      "figures": [
+        "plucker"
+      ]
+    },
+    {
+      "id": "parallel-postulate",
+      "name": "平行公设",
+      "en": "parallel postulate",
+      "firstChapter": "ch36",
+      "definition": "欧几里得第五公设：过直线外一点只能作一条平行线。",
+      "why": "它形式复杂、不似自明，成为两千年试证的对象。",
+      "evolution": [
+        {
+          "chapter": "ch36",
+          "text": "被证明独立于其余公理，非欧几何由此可能。"
+        }
+      ],
+      "figures": [
+        "gauss",
+        "lobachevsky"
+      ]
+    },
+    {
+      "id": "non-euclidean-geometry",
+      "name": "非欧几何",
+      "en": "non-Euclidean geometry",
+      "firstChapter": "ch36",
+      "definition": "否定平行公设后得到的自洽几何体系。",
+      "why": "它使公理从“真理”变成“可选择的出发点”。",
+      "evolution": [
+        {
+          "chapter": "ch36",
+          "text": "高斯、罗巴切夫斯基与波尔约独立建立。"
+        },
+        {
+          "chapter": "ch38",
+          "text": "模型出现后相容性得到说明。"
+        }
+      ],
+      "figures": [
+        "lobachevsky",
+        "bolyai"
+      ]
+    },
+    {
+      "id": "hyperbolic-geometry",
+      "name": "双曲几何",
+      "en": "hyperbolic geometry",
+      "firstChapter": "ch36",
+      "definition": "过直线外一点有无数条平行线、三角形内角和小于 180° 的几何。",
+      "why": "它是非欧几何中最先建立的一种，有伪球面模型。",
+      "evolution": [
+        {
+          "chapter": "ch36",
+          "text": "罗巴切夫斯基与波尔约建立；克莱因称之为双曲几何。"
+        }
+      ],
+      "figures": [
+        "lobachevsky",
+        "bolyai"
+      ]
+    },
+    {
+      "id": "intrinsic-geometry",
+      "name": "内蕴几何",
+      "en": "intrinsic geometry",
+      "firstChapter": "ch37",
+      "definition": "只依赖曲面自身的度量、不依赖外部空间位置的几何性质。",
+      "why": "它使“弯曲”可以在曲面内部被测量，是黎曼几何的前提。",
+      "evolution": [
+        {
+          "chapter": "ch37",
+          "text": "高斯证明高斯曲率是内蕴量。"
+        }
+      ],
+      "figures": [
+        "gauss"
+      ]
+    },
+    {
+      "id": "metric-tensor",
+      "name": "度量张量",
+      "en": "metric tensor",
+      "firstChapter": "ch37",
+      "definition": "决定 ds²=g_ij dx^i dx^j 的一组函数，给出长度与角度。",
+      "why": "它把几何信息压缩成一组分量，是黎曼几何的核心对象。",
+      "evolution": [
+        {
+          "chapter": "ch37",
+          "text": "黎曼把它推广到 n 维。"
+        },
+        {
+          "chapter": "ch48",
+          "text": "成为广义相对论描述时空的工具。"
+        }
+      ],
+      "figures": [
+        "riemann"
+      ]
+    },
+    {
+      "id": "riemannian-geometry",
+      "name": "黎曼几何",
+      "en": "Riemannian geometry",
+      "firstChapter": "ch37",
+      "definition": "以度量张量为基础、允许曲率逐点变化的任意维几何。",
+      "why": "它把非欧几何收为常曲率特例，并为相对论提供语言。",
+      "evolution": [
+        {
+          "chapter": "ch37",
+          "text": "黎曼 1854 年提出；贝尔特拉米等人补全。"
+        },
+        {
+          "chapter": "ch48",
+          "text": "在广义相对论中获得物理应用。"
+        }
+      ],
+      "figures": [
+        "riemann",
+        "beltrami"
+      ]
+    },
+    {
+      "id": "erlangen-program",
+      "name": "埃尔朗根纲领",
+      "en": "Erlangen program",
+      "firstChapter": "ch38",
+      "definition": "克莱因 1872 年提出：每种几何由它的变换群刻画。",
+      "why": "它把欧氏、仿射、射影、非欧几何放进同一分类框架。",
+      "evolution": [
+        {
+          "chapter": "ch38",
+          "text": "克莱因以此统一度量几何与射影几何。"
+        }
+      ],
+      "figures": [
+        "klein"
+      ]
+    },
+    {
+      "id": "consistency",
+      "name": "相容性",
+      "en": "consistency",
+      "firstChapter": "ch38",
+      "definition": "一个公理系统不会推出矛盾。",
+      "why": "它是非欧几何成为合法数学分支的前提。",
+      "evolution": [
+        {
+          "chapter": "ch38",
+          "text": "通过模型归约到欧氏几何或算术的相容性。"
+        },
+        {
+          "chapter": "ch51",
+          "text": "哥德尔证明足够强的系统不能自证相容。"
+        }
+      ],
+      "figures": [
+        "beltrami",
+        "hilbert"
+      ]
+    },
+    {
+      "id": "model",
+      "name": "模型",
+      "en": "model",
+      "firstChapter": "ch38",
+      "definition": "把一套公理翻译成另一套已知对象的具体实现。",
+      "why": "模型是证明相容性的主要手段。",
+      "evolution": [
+        {
+          "chapter": "ch38",
+          "text": "球面与伪球面分别实现两种非欧几何。"
+        }
+      ],
+      "figures": [
+        "beltrami",
+        "klein"
+      ]
+    },
+    {
+      "id": "algebraic-invariant",
+      "name": "代数不变量",
+      "en": "algebraic invariant",
+      "firstChapter": "ch39",
+      "definition": "在坐标变换下保持形式或值不变的代数表达式。",
+      "why": "只有不变量才代表与坐标无关的几何性质。",
+      "evolution": [
+        {
+          "chapter": "ch39",
+          "text": "射影几何的代数化促成不变量理论。"
+        }
+      ],
+      "figures": [
+        "cayley",
+        "clebsch"
+      ]
+    },
+    {
+      "id": "birational-transformation",
+      "name": "双有理变换",
+      "en": "birational transformation",
+      "firstChapter": "ch39",
+      "definition": "由有理函数给出、且有有理逆的坐标变换，比线性变换更宽。",
+      "why": "它使更多曲线被视为同类，是代数几何的分类基础。",
+      "evolution": [
+        {
+          "chapter": "ch39",
+          "text": "19 世纪研究重点从射影转向双有理分类。"
+        }
+      ],
+      "figures": [
+        "clebsch"
+      ]
+    },
+    {
+      "id": "algebraic-geometry",
+      "name": "代数几何",
+      "en": "algebraic geometry",
+      "firstChapter": "ch39",
+      "definition": "用代数方法研究代数曲线与曲面的分支。",
+      "why": "它把几何分类问题转化为代数不变量问题。",
+      "evolution": [
+        {
+          "chapter": "ch39",
+          "text": "19 世纪方法多样、成果零散，20 世纪才系统化。"
+        }
+      ],
+      "figures": [
+        "clebsch",
+        "noether-max"
+      ]
+    },
+    {
+      "id": "limit",
+      "name": "极限",
+      "en": "limit",
+      "firstChapter": "ch40",
+      "definition": "用 ε-δ 表述的“任意接近”：对任意 ε 存在 δ 使误差小于 ε。",
+      "why": "它把“趋近”变成可检验的条件，是分析严格化的基石。",
+      "evolution": [
+        {
+          "chapter": "ch40",
+          "text": "柯西与魏尔斯特拉斯给出严格定义。"
+        }
+      ],
+      "figures": [
+        "cauchy",
+        "weierstrass"
+      ]
+    },
+    {
+      "id": "continuity",
+      "name": "连续",
+      "en": "continuity",
+      "firstChapter": "ch40",
+      "definition": "函数在某点的极限等于该点函数值。",
+      "why": "它使“变化不跳跃”可被精确定义，也是可导的必要条件。",
+      "evolution": [
+        {
+          "chapter": "ch40",
+          "text": "柯西给出定义；魏尔斯特拉斯用 ε-δ 强化。"
+        }
+      ],
+      "figures": [
+        "cauchy"
+      ]
+    },
+    {
+      "id": "uniform-convergence",
+      "name": "一致收敛",
+      "en": "uniform convergence",
+      "firstChapter": "ch40",
+      "definition": "函数列在整段上以同一速度收敛，与点的位置无关。",
+      "why": "它保证极限函数连续，并允许逐项积分。",
+      "evolution": [
+        {
+          "chapter": "ch40",
+          "text": "魏尔斯特拉斯等人用其澄清级数运算的合法性。"
+        }
+      ],
+      "figures": [
+        "weierstrass"
+      ]
+    },
+    {
+      "id": "real-number",
+      "name": "实数",
+      "en": "real number",
+      "firstChapter": "ch41",
+      "definition": "由有理数构造（戴德金分割或基本列）而成的完备数系。",
+      "why": "它是分析的基础；没有它，极限与连续性无处落脚。",
+      "evolution": [
+        {
+          "chapter": "ch41",
+          "text": "戴德金与康托尔分别给出构造。"
+        }
+      ],
+      "figures": [
+        "dedekind",
+        "cantor"
+      ]
+    },
+    {
+      "id": "cardinality",
+      "name": "基数",
+      "en": "cardinality",
+      "firstChapter": "ch41",
+      "definition": "集合“元素多少”的度量；以一一对应判断两个集合是否等势。",
+      "why": "它使无穷集合之间可以比较大小。",
+      "evolution": [
+        {
+          "chapter": "ch41",
+          "text": "康托尔证明实数不可数，建立基数理论。"
+        }
+      ],
+      "figures": [
+        "cantor"
+      ]
+    },
+    {
+      "id": "transfinite",
+      "name": "超限数",
+      "en": "transfinite numbers",
+      "firstChapter": "ch41",
+      "definition": "用于度量无穷集合的基数与序数，如 ℵ₀。",
+      "why": "它把“无穷”从形容词变成可比较的对象。",
+      "evolution": [
+        {
+          "chapter": "ch41",
+          "text": "康托尔 1879—1884 年系统建立。"
+        }
+      ],
+      "figures": [
+        "cantor"
+      ]
+    },
+    {
+      "id": "set-theory",
+      "name": "集合论",
+      "en": "set theory",
+      "firstChapter": "ch41",
+      "definition": "研究集合及其运算、基数与序数的理论。",
+      "why": "它成为数学的统一语言，也带来基础性悖论。",
+      "evolution": [
+        {
+          "chapter": "ch41",
+          "text": "康托尔创立；后由策梅洛公理化。"
+        },
+        {
+          "chapter": "ch51",
+          "text": "悖论促使公理化与基础研究。"
+        }
+      ],
+      "figures": [
+        "cantor",
+        "zermelo"
+      ]
+    },
+    {
+      "id": "axiomatics",
+      "name": "公理化方法",
+      "en": "axiomatics",
+      "firstChapter": "ch42",
+      "definition": "从少数不定义术语与公理出发，导出全部结论的方法。",
+      "why": "它使前提显式化，从而能检查独立性与相容性。",
+      "evolution": [
+        {
+          "chapter": "ch42",
+          "text": "帕施、皮亚诺与希尔伯特先后建立几何公理集。"
+        }
+      ],
+      "figures": [
+        "hilbert",
+        "peano"
+      ]
+    },
+    {
+      "id": "independence-of-axioms",
+      "name": "公理的独立性",
+      "en": "independence of axioms",
+      "firstChapter": "ch42",
+      "definition": "一条公理不能由其余公理推出。",
+      "why": "独立性使替换该公理成为可能，非欧几何由此成立。",
+      "evolution": [
+        {
+          "chapter": "ch42",
+          "text": "平行公设的独立性由模型方法确立。"
+        }
+      ],
+      "figures": [
+        "hilbert"
+      ]
+    },
+    {
+      "id": "axiomatic-movement",
+      "name": "公理化运动",
+      "en": "axiomatic movement",
+      "firstChapter": "ch43",
+      "definition": "19 世纪各分支重建公理基础、追求严密化的整体趋势。",
+      "why": "它把数学从“依赖直观”变成“依赖显式前提”。",
+      "evolution": [
+        {
+          "chapter": "ch43",
+          "text": "几何、算术、分析先后公理化。"
+        }
+      ],
+      "figures": [
+        "hilbert",
+        "peano"
+      ]
+    },
+    {
+      "id": "structure-concept",
+      "name": "结构（数学对象）",
+      "en": "mathematical structure",
+      "firstChapter": "ch43",
+      "definition": "由一组元素与一组运算规则构成的整体，如群、环、域、空间。",
+      "why": "数学研究从“具体对象”转向“结构与结构间的映射”。",
+      "evolution": [
+        {
+          "chapter": "ch43",
+          "text": "20 世纪结构主义成为数学的主流视角。"
+        }
+      ],
+      "figures": [
+        "noether-emmy"
+      ]
+    },
+    {
+      "id": "measure",
+      "name": "测度",
+      "en": "measure",
+      "firstChapter": "ch44",
+      "definition": "给点集指定“大小”的函数，满足非负与可加性。",
+      "why": "它使“不连续点集有多大”可被量化，从而定义新积分。",
+      "evolution": [
+        {
+          "chapter": "ch44",
+          "text": "波莱尔、若尔当与勒贝格逐步建立。"
+        }
+      ],
+      "figures": [
+        "lebesgue",
+        "borel"
+      ]
+    },
+    {
+      "id": "lebesgue-integral",
+      "name": "勒贝格积分",
+      "en": "Lebesgue integral",
+      "firstChapter": "ch44",
+      "definition": "按值域分割、用测度加权的积分，适用范围大于黎曼积分。",
+      "why": "它使大量极限与逐项积分定理变得简洁。",
+      "evolution": [
+        {
+          "chapter": "ch44",
+          "text": "勒贝格 1902 年建立。"
+        }
+      ],
+      "figures": [
+        "lebesgue"
+      ]
+    },
+    {
+      "id": "stieltjes-integral",
+      "name": "斯蒂尔切斯积分",
+      "en": "Stieltjes integral",
+      "firstChapter": "ch44",
+      "definition": "以一般函数代替 dx 的积分，用于表示函数序列的极限。",
+      "why": "它是积分概念的第一次系统扩充。",
+      "evolution": [
+        {
+          "chapter": "ch44",
+          "text": "斯蒂尔切斯 1894 年提出。"
+        }
+      ],
+      "figures": [
+        "stieltjes"
+      ]
+    },
+    {
+      "id": "integral-equation",
+      "name": "积分方程",
+      "en": "integral equation",
+      "firstChapter": "ch45",
+      "definition": "未知函数出现在积分号内的方程。",
+      "why": "许多物理问题可化为积分方程，且其结构与线性代数相似。",
+      "evolution": [
+        {
+          "chapter": "ch45",
+          "text": "沃尔泰拉建立一般理论；弗雷德霍姆与希尔伯特推进。"
+        }
+      ],
+      "figures": [
+        "volterra",
+        "fredholm"
+      ]
+    },
+    {
+      "id": "fredholm-theory",
+      "name": "弗雷德霍姆理论",
+      "en": "Fredholm theory",
+      "firstChapter": "ch45",
+      "definition": "积分限固定的第二类积分方程的解与特征值理论。",
+      "why": "它揭示积分方程与线性方程组的深刻平行。",
+      "evolution": [
+        {
+          "chapter": "ch45",
+          "text": "弗雷德霍姆提出择一定理，希尔伯特发展谱理论。"
+        }
+      ],
+      "figures": [
+        "fredholm",
+        "hilbert"
+      ]
+    },
+    {
+      "id": "functional-analysis",
+      "name": "泛函分析",
+      "en": "functional analysis",
+      "firstChapter": "ch46",
+      "definition": "研究函数空间及其上算子的分支。",
+      "why": "它把有限维线性代数推广到无穷维，是量子力学的语言。",
+      "evolution": [
+        {
+          "chapter": "ch46",
+          "text": "沃尔泰拉、希尔伯特、巴拿赫与冯·诺依曼逐步建立。"
+        }
+      ],
+      "figures": [
+        "banach",
+        "von-neumann"
+      ]
+    },
+    {
+      "id": "hilbert-space",
+      "name": "希尔伯特空间",
+      "en": "Hilbert space",
+      "firstChapter": "ch46",
+      "definition": "完备的内积空间，可定义正交、投影与正交展开。",
+      "why": "它把傅里叶展开抽象化，成为量子态空间的数学模型。",
+      "evolution": [
+        {
+          "chapter": "ch46",
+          "text": "由积分方程研究提炼，后公理化。"
+        }
+      ],
+      "figures": [
+        "hilbert",
+        "von-neumann"
+      ]
+    },
+    {
+      "id": "operator",
+      "name": "算子",
+      "en": "operator",
+      "firstChapter": "ch46",
+      "definition": "把函数映射为函数的变换，如微分、积分。",
+      "why": "算子把方程问题变成结构问题，谱理论由此展开。",
+      "evolution": [
+        {
+          "chapter": "ch46",
+          "text": "冯·诺依曼建立自伴算子的谱理论。"
+        }
+      ],
+      "figures": [
+        "von-neumann"
+      ]
+    },
+    {
+      "id": "asymptotic-series",
+      "name": "渐近级数",
+      "en": "asymptotic series",
+      "firstChapter": "ch47",
+      "definition": "可能发散，但截断到有限项可给出误差可控近似的级数。",
+      "why": "它让天文学与微分方程的计算得以进行。",
+      "evolution": [
+        {
+          "chapter": "ch47",
+          "text": "庞加莱与斯蒂尔切斯 1886 年独立定义。"
+        }
+      ],
+      "figures": [
+        "poincare"
+      ]
+    },
+    {
+      "id": "summability",
+      "name": "可和性",
+      "en": "summability",
+      "firstChapter": "ch47",
+      "definition": "用特定规则给发散级数指定一个“和”。",
+      "why": "它扩展了“求和”的概念，使发散级数也能参与运算。",
+      "evolution": [
+        {
+          "chapter": "ch47",
+          "text": "欧拉的直觉被切萨罗、博雷尔等人理论化。"
+        }
+      ],
+      "figures": [
+        "euler",
+        "borel"
+      ]
+    },
+    {
+      "id": "divergent-series",
+      "name": "发散级数",
+      "en": "divergent series",
+      "firstChapter": "ch47",
+      "definition": "部分和不趋于有限值的级数。",
+      "why": "它曾被驱逐，后因实用价值被重新接纳。",
+      "evolution": [
+        {
+          "chapter": "ch47",
+          "text": "19 世纪末以渐近展开与可和性理论重新纳入数学。"
+        }
+      ],
+      "figures": [
+        "poincare"
+      ]
+    },
+    {
+      "id": "tensor",
+      "name": "张量",
+      "en": "tensor",
+      "firstChapter": "ch48",
+      "definition": "按坐标变换规则变换的一组分量，代表不依赖坐标的几何量。",
+      "why": "它使几何与物理规律可以写成与坐标系无关的形式。",
+      "evolution": [
+        {
+          "chapter": "ch48",
+          "text": "里奇与列维-齐维塔建立张量分析。"
+        }
+      ],
+      "figures": [
+        "ricci",
+        "levi-civita"
+      ]
+    },
+    {
+      "id": "covariant-differentiation",
+      "name": "协变微分",
+      "en": "covariant differentiation",
+      "firstChapter": "ch48",
+      "definition": "用联络系数补偿坐标变化、使导数仍为张量的微分运算。",
+      "why": "它使弯曲空间中的“变化率”有了意义。",
+      "evolution": [
+        {
+          "chapter": "ch48",
+          "text": "克里斯托费尔、里奇与列维-齐维塔发展。"
+        }
+      ],
+      "figures": [
+        "christoffel",
+        "ricci"
+      ]
+    },
+    {
+      "id": "general-relativity",
+      "name": "广义相对论",
+      "en": "general relativity",
+      "firstChapter": "ch48",
+      "definition": "以时空度量的弯曲解释引力的物理理论。",
+      "why": "它使黎曼几何与张量分析成为物理的基本语言。",
+      "evolution": [
+        {
+          "chapter": "ch48",
+          "text": "爱因斯坦 1915 年建立，1916 年发表。"
+        }
+      ],
+      "figures": [
+        "einstein"
+      ]
+    },
+    {
+      "id": "abstract-group",
+      "name": "抽象群",
+      "en": "abstract group",
+      "firstChapter": "ch49",
+      "definition": "只由四条群公理刻画、不指涉具体元素性质的群。",
+      "why": "它使关于对称的定理可以一次适用于所有例子。",
+      "evolution": [
+        {
+          "chapter": "ch49",
+          "text": "从置换群抽象而来，20 世纪初系统化。"
+        }
+      ],
+      "figures": [
+        "noether-emmy",
+        "artin"
+      ]
+    },
+    {
+      "id": "ring",
+      "name": "环",
+      "en": "ring",
+      "firstChapter": "ch49",
+      "definition": "加法成交换群、乘法结合并对加法分配的代数结构。",
+      "why": "它容纳了整数、多项式与矩阵等对象，不要求除法。",
+      "evolution": [
+        {
+          "chapter": "ch49",
+          "text": "概念在代数数论中成形，抽象环论是 20 世纪产物。"
+        }
+      ],
+      "figures": [
+        "noether-emmy"
+      ]
+    },
+    {
+      "id": "lie-algebra",
+      "name": "李代数",
+      "en": "Lie algebra",
+      "firstChapter": "ch49",
+      "definition": "乘法（括号）不满足结合律、但满足雅可比恒等式的代数。",
+      "why": "它刻画连续对称群的无穷小结构，是量子力学的工具。",
+      "evolution": [
+        {
+          "chapter": "ch49",
+          "text": "作为非结合代数的典型被纳入抽象代数。"
+        }
+      ],
+      "figures": [
+        "noether-emmy"
+      ]
+    },
+    {
+      "id": "topology",
+      "name": "拓扑",
+      "en": "topology",
+      "firstChapter": "ch50",
+      "definition": "研究连续一一变换下不变性质的几何分支。",
+      "why": "它使几何摆脱度量，成为现代数学的通用框架。",
+      "evolution": [
+        {
+          "chapter": "ch50",
+          "text": "由位置分析发展，庞加莱奠定组合拓扑。"
+        }
+      ],
+      "figures": [
+        "poincare"
+      ]
+    },
+    {
+      "id": "betti-number",
+      "name": "贝蒂数",
+      "en": "Betti number",
+      "firstChapter": "ch50",
+      "definition": "刻画空间“有几个洞”的整数不变量。",
+      "why": "它是同胚不变量，但不足以完全分类空间。",
+      "evolution": [
+        {
+          "chapter": "ch50",
+          "text": "庞加莱引入，亚历山大证明其不变性。"
+        }
+      ],
+      "figures": [
+        "betti",
+        "alexander"
+      ]
+    },
+    {
+      "id": "fixed-point-theorem",
+      "name": "不动点定理",
+      "en": "fixed point theorem",
+      "firstChapter": "ch50",
+      "definition": "在一定条件下，连续映射必有不动点的定理。",
+      "why": "它把拓扑用于分析，证明方程解的存在性。",
+      "evolution": [
+        {
+          "chapter": "ch50",
+          "text": "布劳威尔以映射度证明。"
+        }
+      ],
+      "figures": [
+        "brouwer"
+      ]
+    },
+    {
+      "id": "paradox",
+      "name": "集合论悖论",
+      "en": "set-theoretic paradox",
+      "firstChapter": "ch51",
+      "definition": "朴素集合论中推出的矛盾，如罗素悖论。",
+      "why": "它说明不能无限制地用性质定义集合，促成公理化。",
+      "evolution": [
+        {
+          "chapter": "ch51",
+          "text": "策梅洛公理化集合论以避开已知悖论。"
+        }
+      ],
+      "figures": [
+        "russell",
+        "zermelo"
+      ]
+    },
+    {
+      "id": "formalism",
+      "name": "形式主义",
+      "en": "formalism",
+      "firstChapter": "ch51",
+      "definition": "把数学视为形式符号系统，用有穷方法证明其相容性。",
+      "why": "它是希尔伯特纲领的哲学基础，回应基础危机。",
+      "evolution": [
+        {
+          "chapter": "ch51",
+          "text": "哥德尔不完备定理否定其原初目标。"
+        }
+      ],
+      "figures": [
+        "hilbert",
+        "gentzen"
+      ]
+    },
+    {
+      "id": "intuitionism",
+      "name": "直觉主义",
+      "en": "intuitionism",
+      "firstChapter": "ch51",
+      "definition": "只承认可构造的数学对象，拒绝实无穷与无穷情形的排中律。",
+      "why": "它给出一种更严格的数学标准，代价是放弃部分经典结论。",
+      "evolution": [
+        {
+          "chapter": "ch51",
+          "text": "布劳威尔创立，与形式主义长期争论。"
+        }
+      ],
+      "figures": [
+        "brouwer"
+      ]
+    },
+    {
+      "id": "logicism",
+      "name": "逻辑主义",
+      "en": "logicism",
+      "firstChapter": "ch51",
+      "definition": "主张数学可以归约为逻辑的纲领。",
+      "why": "它试图为数学提供最坚实的基础，但需额外公理。",
+      "evolution": [
+        {
+          "chapter": "ch51",
+          "text": "弗雷格与罗素推进，未完全成功。"
+        }
+      ],
+      "figures": [
+        "russell"
+      ]
+    },
+    {
+      "id": "godel-incompleteness",
+      "name": "哥德尔不完备定理",
+      "en": "Gödel's incompleteness theorems",
+      "firstChapter": "ch51",
+      "definition": "足够强的相容形式系统中存在不可判定命题，且系统不能自证相容。",
+      "why": "它终结了“用有穷方法一劳永逸证明相容”的设想。",
+      "evolution": [
+        {
+          "chapter": "ch51",
+          "text": "哥德尔 1931 年证明；此后转向相对相容性研究。"
+        }
+      ],
+      "figures": [
+        "godel"
+      ]
+    }
+  ]
+}

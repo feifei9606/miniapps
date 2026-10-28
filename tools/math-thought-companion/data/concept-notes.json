@@ -1,0 +1,3695 @@
+{
+  "_doc": "概念注释层：modernNote=现代翻译注（≈ / ≠ / 承担的功能），trouble=常见卡点与回溯目标，edges=演化边性质（problem=旧框架内制造的困难，response=对困难的回应，inherit=沿用/细化）。与 book.json 的 concepts 通过 id 关联。",
+  "notes": {
+    "incommensurable": {
+      "modernNote": {
+        "similar": "≈ 今天的“无理数”：不能表为两个整数之比的量。",
+        "different": "≠ 无理数。希腊人不承认它是一个“数”，只承认它是两个几何量之间的一种关系；因此它不能参与四则运算，只能以“比”的身份进入证明。",
+        "function": "在《原本》第五篇里，它承担了今日实数系统的部分职能——让“比”可比大小、可推理——代价是把运算锁死在几何里。"
+      },
+      "trouble": {
+        "symptom": "读到“正方形对角线与边不可公度”只觉得是个小事实，不明白它为何能动摇整个学派。",
+        "backtrack": [
+          {
+            "concept": "pythagorean-theorem",
+            "why": "不可公度比是从勾股定理直接逼出来的：边长为 1 时对角线长为 √2，而 √2 写不成整数比。"
+          },
+          {
+            "chapter": "ch01",
+            "label": "巴比伦人的具体数值计算",
+            "why": "他们用近似值就够用，从不追问“这个长度究竟是什么样的量”，所以同一件事没有变成危机。"
+          }
+        ]
+      },
+      "edges": {
+        "ch04": {
+          "type": "response",
+          "gap": ""
+        },
+        "ch08": {
+          "type": "problem",
+          "gap": "拒绝把无理量当数，使代数一旦遇到无理根就只能退回几何。"
+        },
+        "ch09": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "zeno-paradox": {
+      "modernNote": {
+        "similar": "≈ 分析学里“无限过程的极限是否存在的问题”。",
+        "different": "≠ 极限论。芝诺不关心收敛到什么值，他质疑的是“无限可分”本身是否自洽；希腊人的对策不是求极限，而是绕开实无限。",
+        "function": "它逼出了“潜无限”这一妥协立场：只承认“可以任意继续”，不承认“完成了的无穷集合”。穷竭法就建在这个立场上。"
+      },
+      "trouble": {
+        "symptom": "觉得四个悖论只是文字游戏，看不出它对后来的数学有什么约束力。",
+        "backtrack": [
+          {
+            "concept": "method-of-exhaustion",
+            "why": "希腊人处理曲边图形的办法，正是为了绕开芝诺提出的无限分割。"
+          },
+          {
+            "concept": "incommensurable",
+            "why": "连续量无法用离散单位穷尽——这是芝诺与不可公度比共享的同一个困难。"
+          }
+        ]
+      },
+      "edges": {
+        "ch04": {
+          "type": "response",
+          "gap": ""
+        },
+        "ch05": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "proof-by-contradiction": {
+      "modernNote": {
+        "similar": "≈ 今天的“归谬法”：假定结论不成立，推出矛盾。",
+        "different": "≠ 构造性证明。它只告诉你“不可能不存在”，不给出对象本身；所以希腊人能用它证明 √2 不可公度，却仍然不肯承认 √2 是数。",
+        "function": "它是希腊人处理“不存在”与“不可公度”的唯一严格工具，使否定性结论第一次进入数学。"
+      },
+      "trouble": {
+        "symptom": "会用它做题，却说不出它在希腊数学里为何地位特殊。",
+        "backtrack": [
+          {
+            "concept": "incommensurable",
+            "why": "√2 不可公度的经典证明就是反证法；不理解这个证明，就理解不了“知道了它存在、却拒绝承认它是数”这种态度。"
+          }
+        ]
+      },
+      "edges": {
+        "ch04": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "geometric-algebra": {
+      "modernNote": {
+        "similar": "≈ 用面积拼补解二次方程：把 x²+ax=b 看成一个矩形补全。",
+        "different": "≠ 代数。它没有未知量符号，每一步都是具体的线段与正方形；所谓“解”是作出一条线段，而不是算出一个数。",
+        "function": "它是希腊人绕开无理数的替代方案——把运算翻译成作图。代价是三次以上无法处理，因为立体不能随意相乘。"
+      },
+      "trouble": {
+        "symptom": "把《原本》第二篇的“面积应用”当成普通几何定理，看不出它其实是在解方程。",
+        "backtrack": [
+          {
+            "concept": "incommensurable",
+            "why": "正因为比不能当数运算，希腊人才把代数问题改写成几何作图。"
+          },
+          {
+            "chapter": "ch02",
+            "label": "埃及人的长宽求面积",
+            "why": "几何代数法的直觉来自丈量经验：先有“面积=乘积”的类比，才有把式子几何化的可能。"
+          }
+        ]
+      },
+      "edges": {
+        "ch04": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch08": {
+          "type": "problem",
+          "gap": "代数被拴在几何上，一过三次就失去立足点。"
+        }
+      }
+    },
+    "three-classical-problems": {
+      "modernNote": {
+        "similar": "≈ 现代的问题“在给定公理与工具下，什么可构造、什么不可构造”。",
+        "different": "≠ 单纯的作图技巧题。它的现代意义是不可能性证明，而希腊人大多仍在找作法，只有少数人触及界限。",
+        "function": "它把“工具的限制”本身变成数学问题，并催生了圆锥曲线、割圆曲线等新对象。"
+      },
+      "trouble": {
+        "symptom": "觉得这只是三个古老的智力题，与后面的数学关系不大。",
+        "backtrack": [
+          {
+            "concept": "conic-sections",
+            "why": "倍立方与三等分角最终靠圆锥曲线解决，三类曲线因此正式进入数学。"
+          }
+        ]
+      },
+      "edges": {
+        "ch04": {
+          "type": "response",
+          "gap": ""
+        },
+        "ch12": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "deductive-method": {
+      "modernNote": {
+        "similar": "≈ 现代数学“从公理出发的形式证明”。",
+        "different": "≠ 现代形式化。希腊证明仍依赖图形直观（点在线上、介于两线之间），缺少顺序与连续公理；它是文字论证，不是符号演算。",
+        "function": "它把数学从“知道结果”变成“知道为什么”，并规定了此后两千年数学的写作形式。"
+      },
+      "trouble": {
+        "symptom": "能背“演绎”的定义，但说不清它与“举例验证”在哪一步分道。",
+        "backtrack": [
+          {
+            "concept": "axiom-postulate",
+            "why": "演绎必须先有前提；不理解公设是被选定的，就理解不了证明的起点从哪来。"
+          },
+          {
+            "concept": "proof-by-contradiction",
+            "why": "反证法是演绎体系里最反直觉的一环：它允许通过否定结论来确认结论。"
+          }
+        ]
+      },
+      "edges": {
+        "ch04": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch13": {
+          "type": "problem",
+          "gap": "几何有公理体系，代数到 1700 年还没有自己的逻辑基础。"
+        }
+      }
+    },
+    "axiom-postulate": {
+      "modernNote": {
+        "similar": "≈ 现代公理系统里的“初始命题”。",
+        "different": "≠ 现代公理。亚里士多德区分公理（一切科学共有）与公设（本学科特有），且希腊人认为公设“自明为真”；现代公理只要求“被设定”，不问真假。",
+        "function": "把前提与结论分离，才使“换掉前提会得到什么”成为可能——非欧几何的伏笔就在这里。"
+      },
+      "trouble": {
+        "symptom": "把第五公设当成“显然的真理”，不理解为什么有人要去证明它。",
+        "backtrack": [
+          {
+            "concept": "deductive-method",
+            "why": "公设的地位只有放在演绎体系里才有意义：它是链条的起点，不是链条上的结论。"
+          }
+        ]
+      },
+      "edges": {
+        "ch09": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "theory-of-proportion": {
+      "modernNote": {
+        "similar": "≈ 现代“两个实数相等”的定义，味道接近戴德金分割。",
+        "different": "≠ 实数理论。它不构造数，只用不等式关系刻画“两个比相等”；比的项仍然是几何量。",
+        "function": "它让不可公度量之比也能进入严格推理，是《原本》第五篇的全部意义，也是此后两千年处理无理数的唯一合法通道。"
+      },
+      "trouble": {
+        "symptom": "读第五篇的定义觉得绕，不明白为什么不能直接“交叉相乘”。",
+        "backtrack": [
+          {
+            "concept": "incommensurable",
+            "why": "交叉相乘只在可公度时有效；比例论正是为不可公度的情形准备的。"
+          },
+          {
+            "concept": "axiom-postulate",
+            "why": "它用“对任意 m、n 都成立”来定义相等，本质上是全称量化命题，需要公理化的语言才说得清。"
+          }
+        ]
+      },
+      "edges": {
+        "ch05": {
+          "type": "response",
+          "gap": ""
+        },
+        "ch13": {
+          "type": "problem",
+          "gap": "无理数的运算仍要靠它作逻辑依据，直到 19 世纪才被实数理论取代。"
+        }
+      }
+    },
+    "method-of-exhaustion": {
+      "modernNote": {
+        "similar": "≈ 今天的极限与积分：用越来越细的逼近求面积。",
+        "different": "≠ 极限。它不承认“无限逼近后的那个值”，而是用双重归谬证明“差小于任意给定小量”；没有极限符号，也没有“趋近”的概念。",
+        "function": "它把“求曲边图形”变成可严格证明的命题，是积分思想的前身，也是希腊人回避实无限的方案。"
+      },
+      "trouble": {
+        "symptom": "以为它就是在算极限，因此看不出它为什么写得那么绕。",
+        "backtrack": [
+          {
+            "concept": "zeno-paradox",
+            "why": "穷竭法的“不去穷尽”正是对芝诺的回应：一旦承认无限分割可以完成，悖论就回来了。"
+          }
+        ]
+      },
+      "edges": {
+        "ch05": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "conic-sections": {
+      "modernNote": {
+        "similar": "≈ 解析几何里的二次曲线。",
+        "different": "≠ 二次方程。阿波罗尼斯没有方程，他用截平面的角度与纯几何性质定义三类曲线；“椭圆”是一种截法，不是 x²/a²+y²/b²=1。",
+        "function": "它示范了“用一个生成方式统一一族对象”。这种思路后来被方程统一曲线取代，但先有几何版本。"
+      },
+      "trouble": {
+        "symptom": "知道三种曲线的方程，却读不懂阿波罗尼斯为何要按截平面分类。",
+        "backtrack": [
+          {
+            "concept": "three-classical-problems",
+            "why": "圆锥曲线最初就是解倍立方与三等分角的工具——先有用途，后有系统研究。"
+          },
+          {
+            "concept": "geometric-algebra",
+            "why": "没有代数符号，曲线的性质只能用线段比例陈述，这正是几何代数法的延伸。"
+          }
+        ]
+      },
+      "edges": {
+        "ch09": {
+          "type": "response",
+          "gap": ""
+        },
+        "ch12": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "euclid-number-theory": {
+      "modernNote": {
+        "similar": "≈ 初等数论：整除、素数、最大公因数。",
+        "different": "≠ 现代数论。欧几里得把数看成线段、把乘积看成矩形，论证借助几何直观；没有同余，也没有符号化的整除记号。",
+        "function": "它证明整数性质可以脱离度量独立讨论，是代数摆脱几何的最早伏笔。"
+      },
+      "trouble": {
+        "symptom": "以为第七至九篇只是“几何的应用”，其实那里的论证并不依赖几何。",
+        "backtrack": [
+          {
+            "concept": "deductive-method",
+            "why": "数论篇的价值不只在结论，更在于它同样采用演绎证明——算术第一次有了理论形态。"
+          }
+        ]
+      },
+      "edges": {
+        "ch13": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "pythagorean-theorem": {
+      "modernNote": {
+        "similar": "≈ 今天的 a²+b²=c²。",
+        "different": "≠ 一个代数公式。希腊人把它陈述为“以斜边为边的正方形等于两直角边上正方形之和”，是面积关系，不是等式变形。",
+        "function": "它是几何与算术的交汇点：正因为它能推出不可公度比，才把“万物皆数”的信念逼到墙角。"
+      },
+      "trouble": {
+        "symptom": "会用它算边长，却没意识到它是不可公度比的入口。",
+        "backtrack": [
+          {
+            "concept": "incommensurable",
+            "why": "边长为 1 时斜边为 √2——定理本身直接生产了这个反例。"
+          }
+        ]
+      },
+      "edges": {
+        "ch04": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "algebraic-symbolism": {
+      "modernNote": {
+        "similar": "≈ 现代代数记号：+ − × = 与字母变量。",
+        "different": "≠ 速记。符号的价值不在写得短，而在“可以对形式本身做运算”；16 世纪的符号仍混着文字缩写（p、m 表示加减），远未形式化。",
+        "function": "它让代数从“叙述解法”变成“操作形式”，是代数成为科学的前提。"
+      },
+      "trouble": {
+        "symptom": "把符号当成省事的缩写，因此读不出“为什么符号一出现方程论就发展”。",
+        "backtrack": [
+          {
+            "concept": "deductive-method",
+            "why": "符号使每一步变形都可检查，这正是演绎证明对代数的要求；没有符号，代数的“步骤”无从审视。"
+          },
+          {
+            "concept": "cubic-quartic",
+            "why": "三次方程解法能传播、能被质疑和改进，靠的正是符号写下的步骤。"
+          }
+        ]
+      },
+      "edges": {
+        "ch13": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "cubic-quartic": {
+      "modernNote": {
+        "similar": "≈ 求根公式与降次技巧。",
+        "different": "≠ 完整的代数。这些解法只处理特定类型（x³+mx=n 等），且必须保持系数为正；它们还没有意识到三次方程必有三个根。",
+        "function": "它第一次越过“二次即全部”的心理界限，也把负数与虚根硬塞进代数。"
+      },
+      "trouble": {
+        "symptom": "只记住卡丹公式，不理解当时为什么必须分类型讨论。",
+        "backtrack": [
+          {
+            "concept": "negative-numbers",
+            "why": "分类型的根源是不能自由使用负数：系数必须为正，所以 x³+mx=n 与 x³=n+mx 是两类方程。"
+          },
+          {
+            "concept": "algebraic-symbolism",
+            "why": "符号不成熟时，解法只能按类型写成文字步骤，无法统一。"
+          }
+        ]
+      },
+      "edges": {
+        "ch13": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "multiplicity-of-roots": {
+      "modernNote": {
+        "similar": "≈ 代数基本定理：n 次方程有 n 个复根（计重数）。",
+        "different": "≠ 定理。吉拉德只是断言，没有证明；而且当时“复数根算不算根”仍有争议。",
+        "function": "它把“解方程”变成“研究根的整体结构”，是代数从技巧转向理论的转折。"
+      },
+      "trouble": {
+        "symptom": "觉得“三次方程有三个根”是废话，不理解它当时意味着什么。",
+        "backtrack": [
+          {
+            "concept": "cubic-quartic",
+            "why": "正是解三次方程时冒出的“多余”根，迫使人们重新数根。"
+          }
+        ]
+      },
+      "edges": {
+        "ch13": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "binomial-theorem": {
+      "modernNote": {
+        "similar": "≈ (a+b)^n 的展开与组合数。",
+        "different": "≠ 组合数学。当时关心的是系数表的构造与递推，不是组合意义的解释；指数也只到正整数。",
+        "function": "它是代数运算与离散结构的交汇点，为后来的级数展开提供模板。"
+      },
+      "trouble": {
+        "symptom": "以为帕斯卡三角就是全部，不知道 13 世纪的阿拉伯人已经给出系数表。",
+        "backtrack": [
+          {
+            "concept": "algebraic-symbolism",
+            "why": "没有符号，展开式只能逐项写成文字，一般规律难以看出。"
+          }
+        ]
+      },
+      "edges": {
+        "ch13": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "fermat-theorem": {
+      "modernNote": {
+        "similar": "≈ 数论里的同余命题。",
+        "different": "≠ 已证明的结论（就大定理而言）。费马只写下断言，最后定理要到 1994 年才有证明；小定理他给了证明但未发表。",
+        "function": "它把数论从零散技巧变成有方向的研究领域，也示范了“断言—补证明”如何驱动数学发展。"
+      },
+      "trouble": {
+        "symptom": "把费马大定理当成一个孤立难题，看不出它与丢番图、与代数化的关系。",
+        "backtrack": [
+          {
+            "concept": "euclid-number-theory",
+            "why": "费马的出发点是丢番图《算术》，而丢番图的问题意识又上承欧几里得数论。"
+          },
+          {
+            "chapter": "ch13",
+            "label": "书页边缘的笔记",
+            "why": "他的结论多以断言形式流传，理解这一点才知道为何“补证明”成了后世任务。"
+          }
+        ]
+      },
+      "edges": {
+        "ch13": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "negative-numbers": {
+      "modernNote": {
+        "similar": "≈ 数轴上原点左侧的数。",
+        "different": "≠ 印度人的“欠款”记号。印度人把它当运算对象，但仍附在具体情境（欠/有）上；欧洲长期只承认它是“假根”或记号。",
+        "function": "承认负数是数系的第一次主动扩张，为代数解方程松绑。"
+      },
+      "trouble": {
+        "symptom": "觉得负数理所当然，无法理解欧洲数学家为何抗拒几百年。",
+        "backtrack": [
+          {
+            "concept": "algebraic-symbolism",
+            "why": "符号化之后，−3 才能脱离“欠 3 元”的情境独立出现。"
+          },
+          {
+            "concept": "cubic-quartic",
+            "why": "解三次方程时出现负根，迫使人们表态：它到底算不算解。"
+          }
+        ]
+      },
+      "edges": {
+        "ch13": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "sexagesimal": {
+      "modernNote": {
+        "similar": "≈ 一种以 60 为基的位值记数法。",
+        "different": "≠ 十进位制：它没有把零当作数，量级靠位置推断，晚期才出现占位记号。",
+        "function": "它让大数的乘除有了固定步骤，也让度、分、秒的 60 进制沿用至今。"
+      },
+      "trouble": {
+        "symptom": "把“60 进制”误当成“需要 60 个不同符号”。",
+        "backtrack": [
+          {
+            "concept": "positional-notation",
+            "why": "关键不在符号多少，而在位置决定量级；1 和 10 两个记号就够。"
+          }
+        ]
+      },
+      "edges": {
+        "ch05": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "positional-notation": {
+      "modernNote": {
+        "similar": "≈ 同一个数字在不同位置表示不同量级。",
+        "different": "≠ 完整的十进位制：巴比伦缺零，要等印度把零与 1–9 配齐才算完成。",
+        "function": "没有它，运算只能靠算盘或手指，无法写在纸上被检验与传授。"
+      },
+      "trouble": {
+        "symptom": "觉得位值制是自然而然的事。",
+        "backtrack": [
+          {
+            "concept": "indian-numerals",
+            "why": "零的占位作用才是位值制的完成态；没有零，空位始终是个麻烦。"
+          }
+        ]
+      },
+      "edges": {
+        "ch09": {
+          "type": "response",
+          "gap": ""
+        },
+        "ch10": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "babylonian-quadratic": {
+      "modernNote": {
+        "similar": "≈ 解“两数和与积已知”的方程组，等价于二次方程。",
+        "different": "≠ 代数公式：没有符号、没有一般解，每一步都针对具体数值。",
+        "function": "它是代数的最早雏形：未知量有了名字，解法可以照步骤执行。"
+      },
+      "trouble": {
+        "symptom": "读到“求一数使其与倒数之和为已知”，不知道这和二次方程有什么关系。",
+        "backtrack": [
+          {
+            "concept": "geometric-algebra",
+            "why": "同一个二次问题，希腊人改用面积拼补处理——对照两者能看清“算术步骤”与“几何作图”的分野。"
+          }
+        ]
+      },
+      "edges": {
+        "ch13": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "unit-fraction": {
+      "modernNote": {
+        "similar": "≈ 只允许 1/n 形式的分数。",
+        "different": "≠ 现代分数：没有通分规则，每次运算都要查表拆分。",
+        "function": "它便于实物分配，却使分数始终是一门技巧，而非一套理论。"
+      },
+      "trouble": {
+        "symptom": "觉得拆分表只是计算技巧，看不出它限制了整个算术。",
+        "backtrack": [
+          {
+            "concept": "greek-numerals",
+            "why": "希腊的分数记法同样别扭：没有统一记号，运算就无法脱离算板。"
+          }
+        ]
+      },
+      "edges": {
+        "ch06": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "egyptian-pi": {
+      "modernNote": {
+        "similar": "≈ 用面积法则或多边形逼近 π。",
+        "different": "≠ 精确常数：古代没有“π 是常数”的定义，数值是算法的副产品。",
+        "function": "它是“以算法逼近常数”的最早例证，也说明没有证明就难以系统改进。"
+      },
+      "trouble": {
+        "symptom": "以为 3.16 是“算出来的 π”。",
+        "backtrack": [
+          {
+            "concept": "method-of-exhaustion",
+            "why": "阿基米德用内外接多边形夹逼，才第一次给出可证明的上下界。"
+          }
+        ]
+      },
+      "edges": {
+        "ch05": {
+          "type": "response",
+          "gap": ""
+        },
+        "ch13": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "method-of-mechanics": {
+      "modernNote": {
+        "similar": "≈ 先用物理直觉猜答案，再严格证明。",
+        "different": "≠ 物理证明：杠杆平衡只是启发，不构成数学论证。",
+        "function": "它确立了“发现”与“证明”的分工，此后一直是数学实践中的常见方法。"
+      },
+      "trouble": {
+        "symptom": "以为阿基米德“用了物理，所以不严格”。",
+        "backtrack": [
+          {
+            "concept": "method-of-exhaustion",
+            "why": "严格性由穷竭法补上；力学方法只负责找到答案。"
+          }
+        ]
+      },
+      "edges": {
+        "ch07": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "trigonometry": {
+      "modernNote": {
+        "similar": "≈ 用角度与边长的关系解三角形。",
+        "different": "≠ 现代三角函数：希腊人算的是整条弦，没有 sin/cos，也没有函数概念。",
+        "function": "它是第一门为应用而生的数学分支，也是第一次把关系制成表。"
+      },
+      "trouble": {
+        "symptom": "拿现代正弦表去对希腊弦表，发现数值差一倍。",
+        "backtrack": [
+          {
+            "concept": "spherical-trig",
+            "why": "天文需要的是球面情形，平面弦表只是起点。"
+          }
+        ]
+      },
+      "edges": {
+        "ch09": {
+          "type": "response",
+          "gap": ""
+        },
+        "ch12": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "epicycle": {
+      "modernNote": {
+        "similar": "≈ 用圆运动的叠加拟合周期现象。",
+        "different": "≠ 轨道理论：它只描述视运动，不解释物理原因。",
+        "function": "它是古代最成功的“用数学拟合观测”，也是过度拟合的经典教训。"
+      },
+      "trouble": {
+        "symptom": "觉得本轮只是“古代人犯的错”。",
+        "backtrack": [
+          {
+            "concept": "heliocentrism",
+            "why": "哥白尼的优势正在于减少本轮——理解这一点，才知道本轮为何成了被替换的理由。"
+          }
+        ]
+      },
+      "edges": {
+        "ch12": {
+          "type": "problem",
+          "gap": "本轮越加越多，参数无法反驳，最终成为被替换的理由。"
+        }
+      }
+    },
+    "greek-numerals": {
+      "modernNote": {
+        "similar": "≈ 用字母代替数字符号。",
+        "different": "≠ 代数符号：字母表示的是固定的数（α 就是 1），不是可变未知量。",
+        "function": "它让记数可行，却让运算离开纸面，算法因此难以积累。"
+      },
+      "trouble": {
+        "symptom": "把希腊字母记数与韦达的字母代数混为一谈。",
+        "backtrack": [
+          {
+            "concept": "algebraic-symbolism",
+            "why": "真正的符号代数是 16 世纪的事，字母才第一次表示可运算的未知量。"
+          }
+        ]
+      },
+      "edges": {
+        "ch09": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "logistica": {
+      "modernNote": {
+        "similar": "≈ 应用计算与数论之间的分工。",
+        "different": "≠ 现代的应用/纯数学之分：希腊的区分带身份意味，计算被视为低等技艺。",
+        "function": "它决定了希腊数学重思辨、轻算法，直到尼科马修斯才改变。"
+      },
+      "trouble": {
+        "symptom": "不理解“轻视计算”怎么会拖慢数学。",
+        "backtrack": [
+          {
+            "concept": "greek-numerals",
+            "why": "没有好记号，计算只能在算板上做，结果不留痕，也无从改进。"
+          }
+        ]
+      },
+      "edges": {
+        "ch09": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "mathematical-design": {
+      "modernNote": {
+        "similar": "≈ 现代科学的前提：自然有规律，且可用数学描述。",
+        "different": "≠ 现代科学方法：希腊版本不含实验检验，还常把“圆最完美”这类偏好当前提。",
+        "function": "它把数学从技巧提升为理解世界的钥匙，此后一直是自然科学的前提。"
+      },
+      "trouble": {
+        "symptom": "觉得这只是哲学口号，与实际研究无关。",
+        "backtrack": [
+          {
+            "concept": "epicycle",
+            "why": "信念变成具体模型就是本轮体系：因为只接受圆运动，才需要不断叠加圆。"
+          }
+        ]
+      },
+      "edges": {
+        "ch10": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch12": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "astrology": {
+      "modernNote": {
+        "similar": "≈ 用天文数据做预测的尝试。",
+        "different": "≠ 天文学：它以不可检验的个人命运为目标，前提无法证伪。",
+        "function": "它推动了天文计算与三角表，也说明数学应用不保证前提可靠。"
+      },
+      "trouble": {
+        "symptom": "认为占星术与数学史无关。",
+        "backtrack": [
+          {
+            "concept": "trigonometry",
+            "why": "推算星位需要弦表与角度换算——需求直接养活了三角术。"
+          }
+        ]
+      },
+      "edges": {
+        "ch10": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "greek-limitations": {
+      "modernNote": {
+        "similar": "≈ 一套研究纲领的边界。",
+        "different": "≠ “希腊人水平低”：这些局限是他们主动选择的结果，与成就同源。",
+        "function": "理解局限才理解后来的突破：无理数、符号、无限三处缺口。"
+      },
+      "trouble": {
+        "symptom": "把局限读成互不相关的缺点清单。",
+        "backtrack": [
+          {
+            "concept": "incommensurable",
+            "why": "最致命的一条：拒绝把无理量当数，代数就被锁在几何里。"
+          },
+          {
+            "concept": "algebraic-symbolism",
+            "why": "第二条：没有符号，运算过程无法被审视与改进。"
+          }
+        ]
+      },
+      "edges": {
+        "ch09": {
+          "type": "response",
+          "gap": ""
+        },
+        "ch13": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "indian-numerals": {
+      "modernNote": {
+        "similar": "≈ 今天的 0–9 十进位记数。",
+        "different": "≠ 只是数字形状：关键是位值、零、笔算算法三件套。",
+        "function": "它让运算能在纸上按位执行，是此后一千年数学推进的物质前提。"
+      },
+      "trouble": {
+        "symptom": "以为零只是“表示没有”。",
+        "backtrack": [
+          {
+            "concept": "positional-notation",
+            "why": "零的真正作用是占位，使位值制在减法与除法中不失效。"
+          }
+        ]
+      },
+      "edges": {
+        "ch10": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "algebra-word": {
+      "modernNote": {
+        "similar": "≈ 一个学科名称的词源。",
+        "different": "≠ 学科本身：al-jabr 原义是“还原、移项”，指一类具体操作。",
+        "function": "词的旅行标出了知识路径：印度记数 → 阿拉伯方程 → 欧洲符号。"
+      },
+      "trouble": {
+        "symptom": "记不住 al-jabr 与花拉子米的关系。",
+        "backtrack": [
+          {
+            "chapter": "ch09",
+            "label": "5．阿拉伯的算术和代数",
+            "why": "花拉子米的解方程著作在 12 世纪译成拉丁文，书名即 algebra 的来源。"
+          }
+        ]
+      },
+      "edges": {
+        "ch13": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "spherical-trig": {
+      "modernNote": {
+        "similar": "≈ 球面三角形的边角关系公式。",
+        "different": "≠ 平面三角：球面上角度和大于 180°，公式结构完全不同。",
+        "function": "它是天文、航海与地理的计算基础，也是最早脱离平面几何的应用几何。"
+      },
+      "trouble": {
+        "symptom": "用平面三角的直觉去读球面公式，越读越乱。",
+        "backtrack": [
+          {
+            "concept": "trigonometry",
+            "why": "先有平面弦表与解三角形，才有球面上的推广。"
+          }
+        ]
+      },
+      "edges": {
+        "ch12": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "quadrivium": {
+      "modernNote": {
+        "similar": "≈ 中世纪的通识课程模块。",
+        "different": "≠ 现代数学课程：算术讲数的神秘性质，几何只学度量，天文服务于历法与占星。",
+        "function": "它让数学在教育中保住位置，尽管内容极为浅近。"
+      },
+      "trouble": {
+        "symptom": "觉得四艺只是课程表，与数学发展无关。",
+        "backtrack": [
+          {
+            "concept": "astrology",
+            "why": "数学进入课程的现实理由之一，就是它被认为可用于医学与占星。"
+          }
+        ]
+      },
+      "edges": {
+        "ch11": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "fractional-exponent": {
+      "modernNote": {
+        "similar": "≈ a^(m/n) 的记法与运算。",
+        "different": "≠ 现代指数函数：奥雷姆只有零散例子，没有一般定义，也没有指数律。",
+        "function": "它是把幂运算从整数推向有理数的第一步。"
+      },
+      "trouble": {
+        "symptom": "觉得 4^(3/2)=8 是显然的。",
+        "backtrack": [
+          {
+            "concept": "algebraic-symbolism",
+            "why": "没有符号，指数只能写成文字，一般规则无从表达。"
+          }
+        ]
+      },
+      "edges": {
+        "ch13": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "printing": {
+      "modernNote": {
+        "similar": "≈ 知识复制的工业化。",
+        "different": "≠ 只是“书变便宜了”：核心是复本一致，使公共检验成为可能。",
+        "function": "它把“抄写—讹误”的链条换成“校勘—排版—复本一致”。"
+      },
+      "trouble": {
+        "symptom": "低估印刷对数学的影响，觉得只是传播手段。",
+        "backtrack": [
+          {
+            "concept": "quadrivium",
+            "why": "对照手抄时代的传播条件，才知道“文本一致”有多重要。"
+          }
+        ]
+      },
+      "edges": {
+        "ch12": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "perspective": {
+      "modernNote": {
+        "similar": "≈ 中心投影：以视点把三维空间投影到平面。",
+        "different": "≠ 相似三角形：投影不保持长度与角度，只保持直线与共点。",
+        "function": "它把绘画变成可推导的几何问题，是射影几何的先声。"
+      },
+      "trouble": {
+        "symptom": "会画消失点，但说不出背后的数学。",
+        "backtrack": [
+          {
+            "concept": "conic-sections",
+            "why": "同属“用几何生成方式研究图形”的传统：先有生成方式，再谈性质。"
+          }
+        ]
+      },
+      "edges": {
+        "ch12": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "heliocentrism": {
+      "modernNote": {
+        "similar": "≈ 以太阳为中心的轨道模型。",
+        "different": "≠ 开普勒的椭圆轨道：哥白尼仍用圆运动，只是把中心换了。",
+        "function": "它的优势在统一与简洁，是“数学美学影响理论选择”的经典案例。"
+      },
+      "trouble": {
+        "symptom": "以为日心说胜在更准确。",
+        "backtrack": [
+          {
+            "concept": "epicycle",
+            "why": "对比两套体系的本轮数量，才看得出“简洁”为什么是硬优势。"
+          }
+        ]
+      },
+      "edges": {
+        "ch12": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "cross-ratio": {
+      "modernNote": {
+        "similar": "≈ 射影几何里的“坐标”：四点在直线上的相对位置。",
+        "different": "≠ 距离比：距离比随投影改变，交比不变；它是比例之比，多了一层结构。",
+        "function": "在射影几何里，它承担了“长度”在欧氏几何里的角色——可比较、可计算、可定坐标。"
+      },
+      "trouble": {
+        "symptom": "定义能背，但说不出为什么偏偏是“比之比”。",
+        "backtrack": [
+          {
+            "concept": "projection-invariance",
+            "why": "因为投影对每段长度的缩放不均匀，只有“比之比”把不均匀的缩放消掉。"
+          }
+        ]
+      },
+      "edges": {
+        "ch14": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "projection-invariance": {
+      "modernNote": {
+        "similar": "≈ 变换下的不变量，类似今天说的“对称性决定结构”。",
+        "different": "≠ 度量性质：长度、角度、面积都会变，只有共线与交比这类关系保留。",
+        "function": "它让“哪些性质是本质的”成为可判断的问题，而不依赖具体的作图与测量。"
+      },
+      "trouble": {
+        "symptom": "知道要“找不变量”，但不知道从哪儿找起。",
+        "backtrack": [
+          {
+            "concept": "cross-ratio",
+            "why": "交比是最基本的那个不变量；先掌握它，再谈其他。"
+          }
+        ]
+      },
+      "edges": {
+        "ch14": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "projective-geometry": {
+      "modernNote": {
+        "similar": "≈ 研究“投影变换下不变性质”的几何学。",
+        "different": "≠ 画法几何：它不关心怎么画得准，只关心哪些关系在变换后仍然成立。",
+        "function": "它示范了“换一套前提，几何会变成什么样”，为 19 世纪几何学的多样化开路。"
+      },
+      "trouble": {
+        "symptom": "把它当成“透视作图”的数学版。",
+        "backtrack": [
+          {
+            "concept": "projection-invariance",
+            "why": "核心是“不变量”，不是作图技巧。"
+          }
+        ]
+      },
+      "edges": {
+        "ch14": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch35": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "continuity-of-forms": {
+      "modernNote": {
+        "similar": "≈ 通过连续变形把对象归为一类，类似后来的同伦思想。",
+        "different": "≠ 拓扑等价：这里只要求连续变形，而且仍保留射影结构。",
+        "function": "它把分类从“静态形状”改成“动态变换关系”，是代数几何与拓扑的先声。"
+      },
+      "trouble": {
+        "symptom": "“圆锥曲线可以互变”听起来只是直观，为什么算数学？",
+        "backtrack": [
+          {
+            "concept": "conic-sections",
+            "why": "因为三类曲线本是同一个圆锥的不同截法，连续变形只是把这个事实显式化。"
+          }
+        ]
+      },
+      "edges": {
+        "ch14": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "analytic-geometry": {
+      "modernNote": {
+        "similar": "≈ 用坐标与方程研究几何。",
+        "different": "≠ 只是“画函数图像”：它还要求几何关系能翻译成代数运算，反向也成立。",
+        "function": "它让几何问题可以计算、代数结果可以作图，是近代数学的基本语言。"
+      },
+      "trouble": {
+        "symptom": "会用坐标解题，但说不出这一步为什么改变了数学。",
+        "backtrack": [
+          {
+            "concept": "equation-of-curve",
+            "why": "关键在于“方程即曲线”：对象被换成了可运算的式子。"
+          }
+        ]
+      },
+      "edges": {
+        "ch15": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch23": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "equation-of-curve": {
+      "modernNote": {
+        "similar": "≈ 曲线的隐式方程 f(x,y)=0。",
+        "different": "≠ 函数图像：当时没有函数概念，方程与曲线是平等对应的两个对象。",
+        "function": "它把“曲线的几何性质”转成“方程的代数性质”，次数、交点、对称性都由此可算。"
+      },
+      "trouble": {
+        "symptom": "觉得“方程表示曲线”是显然的。",
+        "backtrack": [
+          {
+            "concept": "coordinates",
+            "why": "先有点与数的对应，才谈得上方程与曲线的对应；这一步在当时并不显然。"
+          }
+        ]
+      },
+      "edges": {
+        "ch23": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "coordinates": {
+      "modernNote": {
+        "similar": "≈ 直角坐标、极坐标等参照系。",
+        "different": "≠ 唯一的坐标：同一曲线在不同坐标下方程不同，坐标是工具而非对象。",
+        "function": "它把空间变成可计算的，但也带来“选哪个坐标更方便”的方法问题。"
+      },
+      "trouble": {
+        "symptom": "以为坐标系只有笛卡儿那一种。",
+        "backtrack": [
+          {
+            "concept": "analytic-geometry",
+            "why": "坐标只是手段；费马与笛卡儿的写法都与今天的标准形式不同。"
+          }
+        ]
+      },
+      "edges": {
+        "ch15": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch23": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "dimensional-equation": {
+      "modernNote": {
+        "similar": "≈ 三元方程 F(x,y,z)=0 表示曲面。",
+        "different": "≠ 曲线方程：多一个变量，对象从曲线变成曲面，维度上升一级。",
+        "function": "它把坐标几何从平面推到空间，是三维解析几何与曲面理论的起点。"
+      },
+      "trouble": {
+        "symptom": "难以直观想象“一个方程是一个曲面”。",
+        "backtrack": [
+          {
+            "concept": "equation-of-curve",
+            "why": "平面里一个方程约束一条曲线；空间里一个方程只约束一个方向，剩下两个自由，于是得到面。"
+          }
+        ]
+      },
+      "edges": {
+        "ch23": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "mathematical-science": {
+      "modernNote": {
+        "similar": "≈ 现代科学方法：选定可测量的量，建立数学关系，再用实验检验。",
+        "different": "≠ 给现象套公式：关键是先决定“测量什么”，这一步决定理论能走多远。",
+        "function": "它是近代科学的方法论核心，也是数学得以持续获得问题的原因。"
+      },
+      "trouble": {
+        "symptom": "把它理解为“科学里用到了数学”。",
+        "backtrack": [
+          {
+            "concept": "experiment-method",
+            "why": "没有实验检验，数学化就只是形而上学断言；两者合起来才是近代科学。"
+          }
+        ]
+      },
+      "edges": {
+        "ch16": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch26": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "function-concept": {
+      "modernNote": {
+        "similar": "≈ 一个量随另一个量变化的关系，记作 f(x)。",
+        "different": "≠ 现代函数定义：18 世纪只要求“由表达式给出”，没有集合、定义域与对应的严格说法。",
+        "function": "它是微积分的对象：没有函数，就无从谈变化率与累积量。"
+      },
+      "trouble": {
+        "symptom": "觉得函数概念自古就有。",
+        "backtrack": [
+          {
+            "concept": "analytic-geometry",
+            "why": "先有“变量”与“方程”，才可能把“依赖关系”本身当作对象。"
+          }
+        ]
+      },
+      "edges": {
+        "ch19": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch22": {
+          "type": "problem",
+          "gap": "“任意函数”能否展开、能否作为初始形状，暴露出函数概念过于宽泛。"
+        }
+      }
+    },
+    "experiment-method": {
+      "modernNote": {
+        "similar": "≈ 可控实验加数学推演。",
+        "different": "≠ 单纯观察：它要求主动干预、控制变量，并让结论可被反驳。",
+        "function": "它把数学从“自明前提的演绎”变成可修正的知识。"
+      },
+      "trouble": {
+        "symptom": "以为伽利略的贡献只是“做了实验”。",
+        "backtrack": [
+          {
+            "concept": "mathematical-science",
+            "why": "他的贡献是把实验与数学表述绑定：先写出关系，再用实验检验。"
+          }
+        ]
+      },
+      "edges": {
+        "ch16": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "calculus": {
+      "modernNote": {
+        "similar": "≈ 微分与积分的方法体系。",
+        "different": "≠ 已完成的理论：17、18 世纪的微积分是算法，极限基础要到 19 世纪才建立。",
+        "function": "它使连续变化第一次可以被计算，是近代科学的基本工具。"
+      },
+      "trouble": {
+        "symptom": "以为微积分一诞生就是今天课本的样子。",
+        "backtrack": [
+          {
+            "concept": "infinitesimal",
+            "why": "早期微积分建立在无穷小上，而无穷小的逻辑地位一直说不清。"
+          }
+        ]
+      },
+      "edges": {
+        "ch17": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch19": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch40": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "derivative": {
+      "modernNote": {
+        "similar": "≈ 瞬时变化率、切线斜率。",
+        "different": "≠ 牛顿的流数：概念相同，但流数建立在运动直觉上，没有极限定义。",
+        "function": "它把“速度”与“切线”统一成同一件事，是微积分的基本工具。"
+      },
+      "trouble": {
+        "symptom": "会把导数算对，但说不清它与“瞬时速度”为何是一回事。",
+        "backtrack": [
+          {
+            "concept": "fundamental-theorem",
+            "why": "导数的意义要靠与积分互逆才完整：变化率与累积量是同一枚硬币的两面。"
+          }
+        ]
+      },
+      "edges": {
+        "ch17": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "integral": {
+      "modernNote": {
+        "similar": "≈ 定积分、原函数。",
+        "different": "≠ 面积：积分是累积运算，面积只是它在几何上的一个解释。",
+        "function": "它把“无穷多微小部分相加”变成可执行的算法。"
+      },
+      "trouble": {
+        "symptom": "把积分只当成求面积。",
+        "backtrack": [
+          {
+            "concept": "method-of-exhaustion",
+            "why": "对照穷竭法：同样是求曲边图形，但积分有算法，穷竭法只有逐个证明。"
+          }
+        ]
+      },
+      "edges": {
+        "ch17": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch19": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "fundamental-theorem": {
+      "modernNote": {
+        "similar": "≈ 微积分基本定理：求导与积分互逆。",
+        "different": "≠ 定义：它不是规定，而是需要证明的关系；牛顿与莱布尼茨是靠它把两类问题合成一门学科。",
+        "function": "它使微积分从“两类技巧”变成“一个体系”。"
+      },
+      "trouble": {
+        "symptom": "觉得互逆是显然的。",
+        "backtrack": [
+          {
+            "concept": "derivative",
+            "why": "要先理解“累积函数的变化率”，才能看出为什么它等于被积函数。"
+          }
+        ]
+      },
+      "edges": {
+        "ch17": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "infinitesimal": {
+      "modernNote": {
+        "similar": "≈ 极限过程中的“无穷小量”。",
+        "different": "≠ 现代无穷小（非标准分析）：当时的无穷小既被当作 0，又被当作非 0，逻辑上自相矛盾。",
+        "function": "它让计算可行，却把微积分置于持续的逻辑质疑之下。"
+      },
+      "trouble": {
+        "symptom": "不明白“无穷小是不是 0”为什么会成为大问题。",
+        "backtrack": [
+          {
+            "concept": "fundamental-theorem",
+            "why": "求导时要舍弃高阶无穷小，这一步若无依据，整个算法就像在变魔术。"
+          }
+        ]
+      },
+      "edges": {
+        "ch17": {
+          "type": "problem",
+          "gap": "无穷小的身份不明，使微积分从诞生起就遭到“不可靠”的指责。"
+        },
+        "ch40": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "fluxion": {
+      "modernNote": {
+        "similar": "≈ 导数。",
+        "different": "≠ 记号系统：牛顿用点记号，且以“流动的量”为基本对象，与莱布尼茨的微分路线不同。",
+        "function": "它把微积分建立在运动学直觉上，也导致英国数学长期与欧陆分析脱节。"
+      },
+      "trouble": {
+        "symptom": "被流数、瞬、初生量、终极比等术语绕晕。",
+        "backtrack": [
+          {
+            "concept": "derivative",
+            "why": "把“流数”直接读成导数，“瞬”读成微分增量，术语障碍就消失了。"
+          }
+        ]
+      },
+      "edges": {
+        "ch17": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "scientific-academies": {
+      "modernNote": {
+        "similar": "≈ 现代的研究机构与期刊制度。",
+        "different": "≠ 大学：18 世纪的研究主要由科学院资助，大学反而相对沉寂。",
+        "function": "它把数学从私人通信变成公共可查的知识，改变了发现的传播与归属方式。"
+      },
+      "trouble": {
+        "symptom": "觉得机构与期刊只是“背景”，与数学内容无关。",
+        "backtrack": [
+          {
+            "concept": "printing",
+            "why": "印刷解决了“文本一致”，期刊解决了“成果公开”；两者共同降低了接手的门槛。"
+          }
+        ]
+      },
+      "edges": {
+        "ch26": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "gamma-function": {
+      "modernNote": {
+        "similar": "≈ 把阶乘推广到实数的 Γ 函数。",
+        "different": "≠ 初等函数：它没有有限的代数表达式，只能由积分或极限定义。",
+        "function": "它证明分析可以“造出”新函数，而不只是处理已知函数。"
+      },
+      "trouble": {
+        "symptom": "不明白为什么需要一个新函数来表示阶乘。",
+        "backtrack": [
+          {
+            "concept": "interpolation",
+            "why": "插值问题要求“在整数之间补值”，这正是 Γ 函数的来源。"
+          }
+        ]
+      },
+      "edges": {
+        "ch19": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "partial-derivative": {
+      "modernNote": {
+        "similar": "≈ ∂f/∂x：固定其余变量，对一个变量求导。",
+        "different": "≠ 全导数：它只描述一个方向的变化，不能代表整体变化。",
+        "function": "它使多变量函数可以被分析，是偏微分方程与场论的语言。"
+      },
+      "trouble": {
+        "symptom": "不懂为什么要把其他变量“当常数”。",
+        "backtrack": [
+          {
+            "concept": "function-concept",
+            "why": "因为函数依赖多个变量，只能先固定其余变量，才能谈“对某一个变量的变化率”。"
+          }
+        ]
+      },
+      "edges": {
+        "ch22": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "elliptic-integral": {
+      "modernNote": {
+        "similar": "≈ 不能用初等函数表示的积分，如椭圆弧长积分。",
+        "different": "≠ 椭圆函数：18 世纪只把它当“积不出的积分”，其反函数的双周期性要到 19 世纪才被发现。",
+        "function": "它逼出“特殊函数”这一新对象，说明初等函数并不足够。"
+      },
+      "trouble": {
+        "symptom": "以为“积不出”说明数学家不够聪明。",
+        "backtrack": [
+          {
+            "concept": "integral",
+            "why": "积分存在不等于能用初等函数写出；这是函数类的限制，不是技巧问题。"
+          }
+        ]
+      },
+      "edges": {
+        "ch19": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "power-series": {
+      "modernNote": {
+        "similar": "≈ 泰勒级数、幂级数展开。",
+        "different": "≠ 函数本身：18 世纪常把级数当作函数的“另一种写法”，不追问收敛域。",
+        "function": "它是 18 世纪处理超越函数的主要工具：先展开，再逐项运算。"
+      },
+      "trouble": {
+        "symptom": "不知道级数与函数哪个更“基本”。",
+        "backtrack": [
+          {
+            "concept": "convergence",
+            "why": "只有在收敛的前提下，级数才等于函数；18 世纪恰恰缺这一条。"
+          }
+        ]
+      },
+      "edges": {
+        "ch20": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "convergence": {
+      "modernNote": {
+        "similar": "≈ 级数部分和趋于有限值。",
+        "different": "≠ 形式求和：形式运算可以对发散级数赋值，但那是另一回事。",
+        "function": "它决定了级数能否被当作函数、能否逐项微分与积分。"
+      },
+      "trouble": {
+        "symptom": "不理解为什么 18 世纪明知有问题还继续用级数。",
+        "backtrack": [
+          {
+            "concept": "power-series",
+            "why": "因为级数是当时唯一能处理超越函数的手段；不用它，很多问题根本无法推进。"
+          }
+        ]
+      },
+      "edges": {
+        "ch20": {
+          "type": "problem",
+          "gap": "收敛性被忽略，级数运算常给出矛盾结果。"
+        },
+        "ch40": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "trigonometric-series": {
+      "modernNote": {
+        "similar": "≈ 傅里叶级数。",
+        "different": "≠ 傅里叶的版本：18 世纪只用它做插值与天文计算，没有“任意函数都能展开”的主张。",
+        "function": "它把周期现象纳入分析，是傅里叶级数的前身。"
+      },
+      "trouble": {
+        "symptom": "把它与幂级数混为一谈。",
+        "backtrack": [
+          {
+            "concept": "power-series",
+            "why": "幂级数适合局部展开，三角级数适合周期现象；两者的适用对象不同。"
+          }
+        ]
+      },
+      "edges": {
+        "ch20": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "interpolation": {
+      "modernNote": {
+        "similar": "≈ 由离散点值估计中间值。",
+        "different": "≠ 拟合：插值要求经过已知点，不追求整体最优。",
+        "function": "它让天文表与航海表可用，也带来误差估计的问题。"
+      },
+      "trouble": {
+        "symptom": "觉得插值只是查表技巧。",
+        "backtrack": [
+          {
+            "concept": "convergence",
+            "why": "插值多项式的收敛性后来成为分析的核心问题之一。"
+          }
+        ]
+      },
+      "edges": {
+        "ch20": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "differential-equation": {
+      "modernNote": {
+        "similar": "≈ 含未知函数及其导数的方程。",
+        "different": "≠ 代数方程：解不是数而是函数，通常有无穷多个，需要初值或边界条件挑出特解。",
+        "function": "它把物理规律写成数学形式，是分析时代最重要的建模工具。"
+      },
+      "trouble": {
+        "symptom": "总想“解出一个数”，读不懂为什么答案是一族函数。",
+        "backtrack": [
+          {
+            "concept": "function-concept",
+            "why": "先接受“未知量可以是函数”，才读得懂通解里的任意常数。"
+          }
+        ]
+      },
+      "edges": {
+        "ch21": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch22": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "singular-solution": {
+      "modernNote": {
+        "similar": "≈ 解族的包络，不属于通解的任何特例。",
+        "different": "≠ 特解：特解由通解取常数得到，奇解不能。",
+        "function": "它动摇了“通解即全部”的信念，迫使人们研究方程的整体结构。"
+      },
+      "trouble": {
+        "symptom": "觉得“通解之外还有解”违反直觉。",
+        "backtrack": [
+          {
+            "concept": "differential-equation",
+            "why": "因为通解只覆盖一族曲线，而包络是另一条曲线，虽与每条都相切却不属于族内。"
+          }
+        ]
+      },
+      "edges": {
+        "ch21": {
+          "type": "problem",
+          "gap": "通解不包含奇解，说明“求出通解”并不等于解完方程。"
+        }
+      }
+    },
+    "series-solution": {
+      "modernNote": {
+        "similar": "≈ 用幂级数表示解，逐项确定系数。",
+        "different": "≠ 闭式解：它给出无穷和，收敛域与有效性需要另行讨论。",
+        "function": "它是无法用初等函数积分时的通用退路，也是 19 世纪解析理论的基础。"
+      },
+      "trouble": {
+        "symptom": "觉得级数解“不算真正的解”。",
+        "backtrack": [
+          {
+            "concept": "power-series",
+            "why": "在 18 世纪，级数就是函数的一种表达方式；能否写成有限形式并不是“是否解出”的标准。"
+          }
+        ]
+      },
+      "edges": {
+        "ch21": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "partial-differential-equation": {
+      "modernNote": {
+        "similar": "≈ 含偏导数的方程，描述场与连续介质。",
+        "different": "≠ 常微分方程：未知函数依赖多个变量，解是一个“场”，需要边界与初始条件。",
+        "function": "它把弦、流体、引力统一在同一类方程下，是数学物理的核心。"
+      },
+      "trouble": {
+        "symptom": "分不清“通解”与“满足条件的解”哪个更重要。",
+        "backtrack": [
+          {
+            "concept": "wave-equation",
+            "why": "以弦振动为例：通解写出所有可能的波，但具体一根弦的振动要靠初始形状与边界条件挑出。"
+          }
+        ]
+      },
+      "edges": {
+        "ch22": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch28": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "wave-equation": {
+      "modernNote": {
+        "similar": "≈ 波动方程 u_tt = c²u_xx。",
+        "different": "≠ 一般振动：它假定小振幅、均匀介质；变密度弦等情形需要改写方程。",
+        "function": "它是第一个被深入研究的偏微分方程，也是“通解与特解之争”的战场。"
+      },
+      "trouble": {
+        "symptom": "达朗贝尔解里的“任意函数”让人不安。",
+        "backtrack": [
+          {
+            "concept": "function-concept",
+            "why": "18 世纪的函数概念允许“任意画出的曲线”，这在当时就引发了对函数范围的争论。"
+          }
+        ]
+      },
+      "edges": {
+        "ch22": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "potential-theory": {
+      "modernNote": {
+        "similar": "≈ 用势函数描述引力与静电场。",
+        "different": "≠ 力的直接计算：它把力的叠加换成势的叠加，数学上更简单。",
+        "function": "它把天体力学、流体与静电统一在同一数学结构中。"
+      },
+      "trouble": {
+        "symptom": "不明白“势”到底解决什么问题。",
+        "backtrack": [
+          {
+            "concept": "partial-derivative",
+            "why": "力是势的梯度，即偏导数组合；没有偏导数语言，势的好处说不清。"
+          }
+        ]
+      },
+      "edges": {
+        "ch22": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "differential-geometry": {
+      "modernNote": {
+        "similar": "≈ 用微积分研究曲线曲面的局部性质。",
+        "different": "≠ 解析几何：解析几何用方程描述整体形状，微分几何关心每一点的弯曲与切触。",
+        "function": "它把几何从整体形状推进到局部结构，是黎曼几何的前身。"
+      },
+      "trouble": {
+        "symptom": "分不清“解析几何”与“微分几何”的界线。",
+        "backtrack": [
+          {
+            "concept": "curvature",
+            "why": "曲率是典型的分水岭：它只能逐点定义，无法由整体方程直接读出。"
+          }
+        ]
+      },
+      "edges": {
+        "ch23": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch37": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "curvature": {
+      "modernNote": {
+        "similar": "≈ 曲率半径的倒数。",
+        "different": "≠ 弯曲的直观感受：它是可计算的量，且曲面在不同方向上有不同的曲率。",
+        "function": "它使“弯曲”可以被比较与计算，是微分几何的基本量。"
+      },
+      "trouble": {
+        "symptom": "记住公式，但不知道曲率为什么是“半径的倒数”。",
+        "backtrack": [
+          {
+            "concept": "differential-geometry",
+            "why": "曲率描述的是“用多大的圆去贴合这一点最合适”，半径越小弯得越急。"
+          }
+        ]
+      },
+      "edges": {
+        "ch23": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "geodesic": {
+      "modernNote": {
+        "similar": "≈ 曲面上的最短路径。",
+        "different": "≠ 直线：它只在局部最短，绕地球的大圆航线可能比“直飞”更长。",
+        "function": "它把“直线”推广到曲面，是广义相对论中“自由落体走测地线”的来源。"
+      },
+      "trouble": {
+        "symptom": "觉得“最短路径”就是直线，没什么可研究的。",
+        "backtrack": [
+          {
+            "concept": "calculus-of-variations",
+            "why": "测地线是使弧长积分取极小的曲线，正是变分法的典型问题。"
+          }
+        ]
+      },
+      "edges": {
+        "ch23": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "calculus-of-variations": {
+      "modernNote": {
+        "similar": "≈ 求泛函极值的数学分支。",
+        "different": "≠ 普通求极值：未知量是函数，比较的是整条曲线，而非某个点。",
+        "function": "它把“极值”推广到函数，是理论力学与场论的基本工具。"
+      },
+      "trouble": {
+        "symptom": "不理解“求一条曲线”与“求一个数”在方法上差在哪。",
+        "backtrack": [
+          {
+            "concept": "euler-equation",
+            "why": "差别体现在结果上：普通极值给出一串数，变分法给出一个微分方程。"
+          }
+        ]
+      },
+      "edges": {
+        "ch24": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch30": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "euler-equation": {
+      "modernNote": {
+        "similar": "≈ 欧拉—拉格朗日方程。",
+        "different": "≠ 充分条件：它只是必要条件，满足它的曲线可能是极大、极小，也可能都不是。",
+        "function": "它把变分问题化为解微分方程，使方法可以系统执行。"
+      },
+      "trouble": {
+        "symptom": "把欧拉方程当成“答案公式”。",
+        "backtrack": [
+          {
+            "concept": "calculus-of-variations",
+            "why": "它只是把问题转成方程；解出方程后还要判断是极大还是极小。"
+          }
+        ]
+      },
+      "edges": {
+        "ch24": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "least-action": {
+      "modernNote": {
+        "similar": "≈ 分析力学中的作用量极值原理。",
+        "different": "≠ 一条力学定律：它是一个变分原理，能推出运动方程，但本身需要独立假设。",
+        "function": "它用一个原理概括整类运动，是分析力学的核心。"
+      },
+      "trouble": {
+        "symptom": "把“最小作用”当成物理事实，而不是数学原理。",
+        "backtrack": [
+          {
+            "concept": "calculus-of-variations",
+            "why": "它的数学内容是“某积分取极值”，物理意义要靠与运动方程的对应来说明。"
+          }
+        ]
+      },
+      "edges": {
+        "ch24": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "determinant": {
+      "modernNote": {
+        "similar": "≈ 方阵的行列式。",
+        "different": "≠ 矩阵：18 世纪只有行列式这个“数”，没有矩阵作为对象。",
+        "function": "它把线性方程组的可解性变成可计算的量，是线性代数的起点。"
+      },
+      "trouble": {
+        "symptom": "只会算行列式，不知道它为什么能判断可解性。",
+        "backtrack": [
+          {
+            "concept": "dimensional-equation",
+            "why": "从几何看：行列式为零意味着方程对应的“面”平行或重合，没有唯一交点。"
+          }
+        ]
+      },
+      "edges": {
+        "ch25": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "algebraic-number": {
+      "modernNote": {
+        "similar": "≈ 有理系数多项式方程的根。",
+        "different": "≠ 无理数：√2 是代数数，π 不是；分类标准是“能否被方程抓住”。",
+        "function": "它按“可定义性”给数分层，是数论与代数交界处的关键概念。"
+      },
+      "trouble": {
+        "symptom": "把代数数与“会算的数”混为一谈。",
+        "backtrack": [
+          {
+            "concept": "transcendental-number",
+            "why": "两者是一对：不是代数数就是超越数，必须成对理解。"
+          }
+        ]
+      },
+      "edges": {
+        "ch25": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "transcendental-number": {
+      "modernNote": {
+        "similar": "≈ 不是任何有理系数多项式方程根的数。",
+        "different": "≠ 无理数：无理数中多数是代数数（如 √2），超越数只是其中一部分。",
+        "function": "它把数域再扩一层，并为“化圆为方不可能”提供依据。"
+      },
+      "trouble": {
+        "symptom": "觉得“超越数”只是名称，没有实际意义。",
+        "backtrack": [
+          {
+            "concept": "algebraic-number",
+            "why": "先掌握代数数，才能理解超越数是它的补集；两者共同构成对“数”的完整分类。"
+          }
+        ]
+      },
+      "edges": {
+        "ch25": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "analysis-discipline": {
+      "modernNote": {
+        "similar": "≈ 以极限为基础的分析学。",
+        "different": "≠ 微积分：18 世纪的“分析”是微积分的扩展（级数、方程、变分法），尚无极限基础。",
+        "function": "它成为 18 世纪数学的主体，也把严密性问题推到前台。"
+      },
+      "trouble": {
+        "symptom": "把“分析”当成“微积分”的同义词。",
+        "backtrack": [
+          {
+            "concept": "rigor-crisis",
+            "why": "分析的扩张伴随着基础的缺失，这正是 19 世纪要解决的。"
+          }
+        ]
+      },
+      "edges": {
+        "ch26": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "rigor-crisis": {
+      "modernNote": {
+        "similar": "≈ 微积分基础危机。",
+        "different": "≠ 一次争论：它持续百余年，直到极限、实数与一致收敛建立才平息。",
+        "function": "它解释了为什么 18 世纪成果丰硕却被 19 世纪视为“基础不牢”。"
+      },
+      "trouble": {
+        "symptom": "觉得“不严密”只是小毛病。",
+        "backtrack": [
+          {
+            "concept": "infinitesimal",
+            "why": "核心困难就在无穷小：既当 0 又当非 0，若不解决，算法随时可能给出矛盾。"
+          }
+        ]
+      },
+      "edges": {
+        "ch40": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "complex-function": {
+      "modernNote": {
+        "similar": "≈ 定义在复平面上的函数。",
+        "different": "≠ 实函数的简单推广：可导要求从任意方向逼近都一致，条件强得多。",
+        "function": "它把几何与代数在复平面上对齐，是 19 世纪最丰饶的分支。"
+      },
+      "trouble": {
+        "symptom": "把复变函数当成“带 i 的实函数”。",
+        "backtrack": [
+          {
+            "concept": "analytic-function",
+            "why": "差别体现在可导性上：复可导一旦成立，就自动无穷次可导。"
+          }
+        ]
+      },
+      "edges": {
+        "ch27": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "analytic-function": {
+      "modernNote": {
+        "similar": "≈ 可以展开成幂级数、处处可导的复函数。",
+        "different": "≠ 实可导：实函数可导一次未必可导两次，解析函数却自动无穷可导。",
+        "function": "这种“刚性”让复分析能用局部信息决定整体行为。"
+      },
+      "trouble": {
+        "symptom": "不理解“可导一次就无穷次可导”为何成立。",
+        "backtrack": [
+          {
+            "concept": "complex-function",
+            "why": "因为复可导是对所有方向的要求，约束强到足以推出幂级数展开。"
+          }
+        ]
+      },
+      "edges": {
+        "ch27": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "riemann-surface": {
+      "modernNote": {
+        "similar": "≈ 把多值函数的定义域铺成多层曲面。",
+        "different": "≠ 普通的曲面：它是为函数单值化而“造”出来的，几何形状由函数决定。",
+        "function": "它把 √z、log z 变单值，使积分与拓扑可以研究。"
+      },
+      "trouble": {
+        "symptom": "不明白为什么需要“多层”的曲面。",
+        "backtrack": [
+          {
+            "concept": "complex-function",
+            "why": "因为绕原点一周后 √z 变号，单层平面装不下两个值。"
+          }
+        ]
+      },
+      "edges": {
+        "ch27": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "conformal-mapping": {
+      "modernNote": {
+        "similar": "≈ 保持角度不变的空间变换。",
+        "different": "≠ 相似变换：它不保持长度，只保角，因此形状会扭曲。",
+        "function": "它把复分析与流体、制图连接起来，是解析函数的几何面孔。"
+      },
+      "trouble": {
+        "symptom": "把保形映射理解为“不变形”。",
+        "backtrack": [
+          {
+            "concept": "analytic-function",
+            "why": "解析函数在导数非零处保角，但可以大幅改变大小与形状。"
+          }
+        ]
+      },
+      "edges": {
+        "ch27": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "heat-equation": {
+      "modernNote": {
+        "similar": "≈ 描述扩散过程的抛物型方程。",
+        "different": "≠ 波动方程：它对时间只有一阶导数，因此不可逆（有方向性）。",
+        "function": "它是傅里叶级数的来源，也是数学物理的样板方程。"
+      },
+      "trouble": {
+        "symptom": "分不清热方程与波动方程。",
+        "backtrack": [
+          {
+            "concept": "fourier-series",
+            "why": "热方程的解要用三角级数表示初始分布，波动方程则给出双向传播的通解。"
+          }
+        ]
+      },
+      "edges": {
+        "ch28": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "fourier-series": {
+      "modernNote": {
+        "similar": "≈ 用正弦余弦之和表示函数。",
+        "different": "≠ 幂级数：它适合周期现象，且在间断点附近有吉布斯现象。",
+        "function": "它主张任意函数都能这样展开，迫使函数与收敛理论更新。"
+      },
+      "trouble": {
+        "symptom": "以为傅里叶级数只是另一种展开。",
+        "backtrack": [
+          {
+            "concept": "heat-equation",
+            "why": "它的合法性来自热传导问题：边界条件天然适合三角函数。"
+          }
+        ]
+      },
+      "edges": {
+        "ch28": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "greens-theorem": {
+      "modernNote": {
+        "similar": "≈ 把区域积分化为边界积分。",
+        "different": "≠ 斯托克斯公式：它是平面（或散度）版本，但思想相同。",
+        "function": "它使边界值决定内部解，是位势理论的基石。"
+      },
+      "trouble": {
+        "symptom": "记不住格林定理与格林函数的关系。",
+        "backtrack": [
+          {
+            "concept": "existence-theorem",
+            "why": "格林函数是格林定理的应用工具，用于把边值问题转成积分方程。"
+          }
+        ]
+      },
+      "edges": {
+        "ch28": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "existence-theorem": {
+      "modernNote": {
+        "similar": "≈ 证明解存在而不给出解。",
+        "different": "≠ 构造性证明：它不提供计算途径，只保证问题有答案。",
+        "function": "它支撑数值与近似方法，并澄清问题提法是否合理。"
+      },
+      "trouble": {
+        "symptom": "觉得“证存在却不给解”没有价值。",
+        "backtrack": [
+          {
+            "concept": "greens-theorem",
+            "why": "有了存在性，才能放心用积分表示或数值逼近去找近似解。"
+          }
+        ]
+      },
+      "edges": {
+        "ch28": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "sturm-liouville": {
+      "modernNote": {
+        "similar": "≈ 带边界条件的二阶线性方程的特征值理论。",
+        "different": "≠ 一般的常微分方程：它专门研究“哪些参数使非零解存在”。",
+        "function": "它为傅里叶展开提供基础，是数学物理的通用框架。"
+      },
+      "trouble": {
+        "symptom": "特征值、特征函数、正交性三者关系不清。",
+        "backtrack": [
+          {
+            "concept": "eigenvalue",
+            "why": "特征值是允许的参数，特征函数是对应的解，正交性使它们可作展开的基。"
+          }
+        ]
+      },
+      "edges": {
+        "ch29": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "eigenvalue": {
+      "modernNote": {
+        "similar": "≈ 使方程有非零解的参数值，物理上即允许的频率。",
+        "different": "≠ 任意参数：绝大多数参数只给出零解。",
+        "function": "它把“弦能发哪些音”变成可计算的数学问题。"
+      },
+      "trouble": {
+        "symptom": "不理解为什么只有离散的某些值可行。",
+        "backtrack": [
+          {
+            "concept": "sturm-liouville",
+            "why": "边界条件像“两端固定”，只有特定波长能形成驻波。"
+          }
+        ]
+      },
+      "edges": {
+        "ch29": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "special-function": {
+      "modernNote": {
+        "similar": "≈ 贝塞尔、勒让德、Γ 等由方程或积分定义的函数。",
+        "different": "≠ 初等函数：它们不能用有限次四则与开方表示。",
+        "function": "它们补上初等函数覆盖不到的部分，是数学物理的基本工具。"
+      },
+      "trouble": {
+        "symptom": "把特殊函数当成“更复杂的公式”。",
+        "backtrack": [
+          {
+            "concept": "sturm-liouville",
+            "why": "它们多是特定边界条件下分离变量的产物，性质由方程决定。"
+          }
+        ]
+      },
+      "edges": {
+        "ch29": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "qualitative-theory": {
+      "modernNote": {
+        "similar": "≈ 不求解，而研究解的稳定性与长期行为。",
+        "different": "≠ 数值计算：它给出结构判断，不依赖具体轨线。",
+        "function": "它使无显式解的非线性系统也能被理解。"
+      },
+      "trouble": {
+        "symptom": "觉得“不解方程”不算解决问题。",
+        "backtrack": [
+          {
+            "concept": "special-function",
+            "why": "对照特殊函数：那是“解出来”，定性理论是“不解也能判断行为”。"
+          }
+        ]
+      },
+      "edges": {
+        "ch29": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch50": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "jacobi-condition": {
+      "modernNote": {
+        "similar": "≈ 变分法中判断极小的充分条件。",
+        "different": "≠ 欧拉方程：后者是必要条件，前者才能排除“驻点但非极小”。",
+        "function": "它补上了变分法缺失的判定环节。"
+      },
+      "trouble": {
+        "symptom": "以为满足欧拉方程就是极小。",
+        "backtrack": [
+          {
+            "concept": "conjugate-point",
+            "why": "若区间内出现共轭点，极小性可能失效。"
+          }
+        ]
+      },
+      "edges": {
+        "ch30": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "conjugate-point": {
+      "modernNote": {
+        "similar": "≈ 邻近曲线与极值曲线开始相交的临界点。",
+        "different": "≠ 普通交点：它是沿变分方向产生的“焦点”。",
+        "function": "它给出极小性失效的判据位置。"
+      },
+      "trouble": {
+        "symptom": "看不出共轭点与“是否最小”有什么必然联系。",
+        "backtrack": [
+          {
+            "concept": "jacobi-condition",
+            "why": "雅可比条件就是：在到达终点前不得出现共轭点。"
+          }
+        ]
+      },
+      "edges": {
+        "ch30": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "group": {
+      "modernNote": {
+        "similar": "≈ 描述对称的代数结构。",
+        "different": "≠ 数集：元素可以是置换、变换，运算也不必交换。",
+        "function": "它把“对称”变成可计算的对象，是 20 世纪数学的骨架。"
+      },
+      "trouble": {
+        "symptom": "抽象群只有四条公理，看不出能研究什么。",
+        "backtrack": [
+          {
+            "concept": "galois-theory",
+            "why": "用它判定方程可解性，是群论第一次解决实质问题。"
+          }
+        ]
+      },
+      "edges": {
+        "ch31": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch49": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "field": {
+      "modernNote": {
+        "similar": "≈ 能做四则运算的集合。",
+        "different": "≠ 环：域要求每个非零元都可除。",
+        "function": "它记录“允许使用哪些数”，扩域对应添加根式。"
+      },
+      "trouble": {
+        "symptom": "分不清域与环。",
+        "backtrack": [
+          {
+            "concept": "group",
+            "why": "先看加法群，再加上乘法与分配律；能否除法是域与环的分界。"
+          }
+        ]
+      },
+      "edges": {
+        "ch31": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch49": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "galois-theory": {
+      "modernNote": {
+        "similar": "≈ 用群与域的对应判定方程可解性。",
+        "different": "≠ 求根公式：它不给公式，而判定公式是否存在。",
+        "function": "它把代数学从“计算”转向“结构”。"
+      },
+      "trouble": {
+        "symptom": "“群可解”听起来像文字游戏。",
+        "backtrack": [
+          {
+            "concept": "solvability-by-radicals",
+            "why": "群可解对应“每一步只开一次方”，这正是根式解的代数形式。"
+          }
+        ]
+      },
+      "edges": {
+        "ch31": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "solvability-by-radicals": {
+      "modernNote": {
+        "similar": "≈ 根能由系数经四则与开方表示。",
+        "different": "≠ 有解：任何方程在复数域都有解，但未必能用根式写出。",
+        "function": "它精确化了“能不能写出求根公式”这一问题。"
+      },
+      "trouble": {
+        "symptom": "把“不可根式解”理解为“没有解”。",
+        "backtrack": [
+          {
+            "concept": "galois-theory",
+            "why": "五次方程仍有五个复根，只是无法用根式表达。"
+          }
+        ]
+      },
+      "edges": {
+        "ch31": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "quaternion": {
+      "modernNote": {
+        "similar": "≈ 四维的数系，可表示三维旋转。",
+        "different": "≠ 向量：它有四个分量，且乘法不交换。",
+        "function": "它第一次证明数系可以不遵守实数的全部规则。"
+      },
+      "trouble": {
+        "symptom": "不理解为什么非要有四个分量。",
+        "backtrack": [
+          {
+            "concept": "vector",
+            "why": "三个分量只能表示方向，第四个分量用于承载旋转的“角度”信息。"
+          }
+        ]
+      },
+      "edges": {
+        "ch32": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "vector": {
+      "modernNote": {
+        "similar": "≈ 有大小和方向的量。",
+        "different": "≠ 四元数：向量放弃了“乘法封闭”，只保留加法与数乘、点积与叉积。",
+        "function": "它直接对应力与场，是物理与几何的通用语言。"
+      },
+      "trouble": {
+        "symptom": "把向量当成“带方向的数”。",
+        "backtrack": [
+          {
+            "concept": "quaternion",
+            "why": "向量是从四元数中切出来的，只保留部分运算，因此不能像数一样随意相乘。"
+          }
+        ]
+      },
+      "edges": {
+        "ch32": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "hypercomplex": {
+      "modernNote": {
+        "similar": "≈ 复数之外的各种有限维数系。",
+        "different": "≠ 随意构造：要满足分配律等基本要求，才能成为可运算的代数。",
+        "function": "它们展示“代数可以有很多种”，为抽象代数铺路。"
+      },
+      "trouble": {
+        "symptom": "觉得超复数只是数学游戏。",
+        "backtrack": [
+          {
+            "concept": "matrix",
+            "why": "矩阵代数就是一个非交换的超复数系统，且被广泛使用。"
+          }
+        ]
+      },
+      "edges": {
+        "ch32": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "matrix": {
+      "modernNote": {
+        "similar": "≈ 表示线性变换的数表。",
+        "different": "≠ 行列式：行列式是它的一个函数值，矩阵本身可加、可乘、可求逆。",
+        "function": "它把方程组、二次型与变换统一成一种运算。"
+      },
+      "trouble": {
+        "symptom": "只会算行列式，不会用矩阵表示变换。",
+        "backtrack": [
+          {
+            "concept": "quadratic-form",
+            "why": "二次型用矩阵写就是 xᵀAx，惯性由矩阵的合同变换决定。"
+          }
+        ]
+      },
+      "edges": {
+        "ch33": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "quadratic-form": {
+      "modernNote": {
+        "similar": "≈ 二次齐次多项式，可用矩阵表示。",
+        "different": "≠ 二次方程：它没有等号，是一个可被变换的对象。",
+        "function": "它的惯性（正负项个数）是不变量，可用于分类二次曲面。"
+      },
+      "trouble": {
+        "symptom": "不清楚“化标准型”到底在做什么。",
+        "backtrack": [
+          {
+            "concept": "matrix",
+            "why": "化标准型就是找可逆矩阵 P，使 PᵀAP 成为对角形。"
+          }
+        ]
+      },
+      "edges": {
+        "ch33": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "congruence": {
+      "modernNote": {
+        "similar": "≈ 模 n 意义下的相等。",
+        "different": "≠ 相等：同余是等价关系，只在模 n 的意义下成立。",
+        "function": "它让余数可以像等式一样运算，是数论的基本语言。"
+      },
+      "trouble": {
+        "symptom": "把同余当成近似相等。",
+        "backtrack": [
+          {
+            "concept": "ideal",
+            "why": "同余类构成的环就是 ℤ/nℤ；理想是把这一思想推广到一般环。"
+          }
+        ]
+      },
+      "edges": {
+        "ch34": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "ideal": {
+      "modernNote": {
+        "similar": "≈ 环中可作“因子”的子集。",
+        "different": "≠ 子环：理想还要求吸收乘法（任意元乘理想元仍在理想内）。",
+        "function": "它恢复代数数域中的唯一分解，是代数数论的支柱。"
+      },
+      "trouble": {
+        "symptom": "不理解为什么需要“理想”而不直接用数分解。",
+        "backtrack": [
+          {
+            "concept": "congruence",
+            "why": "先用同余类理解“按模分组”，再看理想如何把分组变成可乘的对象。"
+          }
+        ]
+      },
+      "edges": {
+        "ch34": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "zeta-function": {
+      "modernNote": {
+        "similar": "≈ ζ(s)=∑n^(−s) 的解析函数。",
+        "different": "≠ 普通级数：它通过解析延拓定义到整个复平面（除 s=1）。",
+        "function": "它把素数分布转化为复分析问题，是解析数论的核心。"
+      },
+      "trouble": {
+        "symptom": "看不出 ζ 函数与素数有什么关系。",
+        "backtrack": [
+          {
+            "concept": "ideal",
+            "why": "两者都是“用结构研究整数”：一个用代数，一个用分析。"
+          }
+        ]
+      },
+      "edges": {
+        "ch34": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "algebraic-number-theory": {
+      "modernNote": {
+        "similar": "≈ 用代数数域与理想研究整数问题。",
+        "different": "≠ 初等数论：它允许在更大的数域中分解，问题更结构化。",
+        "function": "它把“整数”推广到更广的数域，同时重建唯一分解。"
+      },
+      "trouble": {
+        "symptom": "不明白为什么要跑到更大的数域里研究整数。",
+        "backtrack": [
+          {
+            "concept": "ideal",
+            "why": "因为在扩域里分解更细，能解决原域中无法分解的问题（如费马大定理的尝试）。"
+          }
+        ]
+      },
+      "edges": {
+        "ch34": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "homogeneous-coordinates": {
+      "modernNote": {
+        "similar": "≈ 用比例坐标表示点，含无穷远点。",
+        "different": "≠ 普通坐标：同一个点有无穷多种表示（差一个比例因子）。",
+        "function": "它使射影变换成为线性变换，是射影几何代数化的关键。"
+      },
+      "trouble": {
+        "symptom": "对“一个点对应无穷多组坐标”不适应。",
+        "backtrack": [
+          {
+            "concept": "projective-revival",
+            "why": "射影几何本来就只关心“比值”，齐次坐标正是把这一立场写进记法。"
+          }
+        ]
+      },
+      "edges": {
+        "ch35": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "projective-revival": {
+      "modernNote": {
+        "similar": "≈ 19 世纪重新发现并系统化射影方法。",
+        "different": "≠ 17 世纪的原始工作：这次有了齐次坐标与群论工具。",
+        "function": "它使几何按“变换与不变量”重新组织。"
+      },
+      "trouble": {
+        "symptom": "以为射影几何是德萨格时代就完成的。",
+        "backtrack": [
+          {
+            "concept": "homogeneous-coordinates",
+            "why": "德萨格的手稿 1845 年才被重视，代数化要等齐次坐标。"
+          }
+        ]
+      },
+      "edges": {
+        "ch35": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "algebraic-curve": {
+      "modernNote": {
+        "similar": "≈ 由多项式方程定义的曲线。",
+        "different": "≠ 任意曲线：它排除超越曲线（如正弦曲线）。",
+        "function": "它使曲线可以按次数与奇点分类。"
+      },
+      "trouble": {
+        "symptom": "不知道次数与形状有什么关系。",
+        "backtrack": [
+          {
+            "concept": "projective-revival",
+            "why": "射影观点下加点、线后，次数成为不变量的关键指标。"
+          }
+        ]
+      },
+      "edges": {
+        "ch35": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch39": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "parallel-postulate": {
+      "modernNote": {
+        "similar": "≈ 欧几里得第五公设。",
+        "different": "≠ 定理：它不能被其余公理推出，因此可以替换。",
+        "function": "它的独立性是非欧几何的逻辑前提。"
+      },
+      "trouble": {
+        "symptom": "不理解为什么两千年都没证出来。",
+        "backtrack": [
+          {
+            "concept": "non-euclidean-geometry",
+            "why": "因为它根本不可证；否定它反而得到自洽的几何。"
+          }
+        ]
+      },
+      "edges": {
+        "ch36": {
+          "type": "problem",
+          "gap": "试证两千年未果，成为几何原理的“家丑”。"
+        }
+      }
+    },
+    "non-euclidean-geometry": {
+      "modernNote": {
+        "similar": "≈ 否定平行公设后得到的自洽几何。",
+        "different": "≠ 欧氏几何的近似：它是另一套同样严格的体系。",
+        "function": "它使公理从“真理”变成“可选择的出发点”。"
+      },
+      "trouble": {
+        "symptom": "担心“换掉公理”会让数学失去可靠性。",
+        "backtrack": [
+          {
+            "concept": "consistency",
+            "why": "只要新体系有模型，它就是相容的；可靠性来自相容性，而非与直觉相符。"
+          }
+        ]
+      },
+      "edges": {
+        "ch36": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch38": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "hyperbolic-geometry": {
+      "modernNote": {
+        "similar": "≈ 过直线外一点有无数平行线的几何。",
+        "different": "≠ 球面几何：球面上没有平行线，双曲平面上有无数条。",
+        "function": "它是第一个被建立的非欧几何，有伪球面模型。"
+      },
+      "trouble": {
+        "symptom": "与球面几何的曲率符号搞混。",
+        "backtrack": [
+          {
+            "concept": "non-euclidean-geometry",
+            "why": "双曲对应负曲率（内角和小于 180°），球面对应正曲率（内角和大于 180°）。"
+          }
+        ]
+      },
+      "edges": {
+        "ch36": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "intrinsic-geometry": {
+      "modernNote": {
+        "similar": "≈ 只依赖曲面自身度量的几何。",
+        "different": "≠ 嵌入几何：它不关心曲面在空间中如何摆放。",
+        "function": "它使“弯曲”可以在曲面内部被测量。"
+      },
+      "trouble": {
+        "symptom": "觉得弯曲必须从外面看才知道。",
+        "backtrack": [
+          {
+            "concept": "metric-tensor",
+            "why": "曲面内的居民只需量长度与角度，就能算出曲率。"
+          }
+        ]
+      },
+      "edges": {
+        "ch37": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "metric-tensor": {
+      "modernNote": {
+        "similar": "≈ 决定 ds² 的那组函数 g_ij。",
+        "different": "≠ 一个固定的矩阵：它的分量随坐标变换而变，但几何不变。",
+        "function": "它把几何信息压缩成一组分量，是黎曼几何的核心。"
+      },
+      "trouble": {
+        "symptom": "把 g_ij 当成普通函数表。",
+        "backtrack": [
+          {
+            "concept": "intrinsic-geometry",
+            "why": "它的意义在于“给出长度”，换坐标只是换描述。"
+          }
+        ]
+      },
+      "edges": {
+        "ch37": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch48": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "riemannian-geometry": {
+      "modernNote": {
+        "similar": "≈ 以度量张量为基础的任意维几何。",
+        "different": "≠ 非欧几何：它允许曲率逐点变化，非欧只是常曲率特例。",
+        "function": "它为广义相对论提供语言，也统一了此前的各种几何。"
+      },
+      "trouble": {
+        "symptom": "把黎曼几何等同于非欧几何。",
+        "backtrack": [
+          {
+            "concept": "hyperbolic-geometry",
+            "why": "双曲几何是常负曲率的黎曼几何，只是一个特例。"
+          }
+        ]
+      },
+      "edges": {
+        "ch37": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch48": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    },
+    "erlangen-program": {
+      "modernNote": {
+        "similar": "≈ 用变换群给几何分类的纲领。",
+        "different": "≠ 一条定理：它是一个框架，不能证明具体几何结论。",
+        "function": "它把欧氏、仿射、射影、非欧几何放进同一张表。"
+      },
+      "trouble": {
+        "symptom": "看不出“变换群”与“几何内容”的对应。",
+        "backtrack": [
+          {
+            "concept": "group",
+            "why": "群给出允许的变换；几何的内容就是这些变换下的不变量。"
+          }
+        ]
+      },
+      "edges": {
+        "ch38": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "consistency": {
+      "modernNote": {
+        "similar": "≈ 一个公理系统不会推出矛盾。",
+        "different": "≠ 真理：相容只保证不矛盾，不保证与现实对应。",
+        "function": "它是非欧几何成为合法分支的前提。"
+      },
+      "trouble": {
+        "symptom": "以为相容性可以被直接证明。",
+        "backtrack": [
+          {
+            "concept": "model",
+            "why": "只能相对证明：用模型把相容性转移到另一套理论上。"
+          }
+        ]
+      },
+      "edges": {
+        "ch38": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch51": {
+          "type": "problem",
+          "gap": "哥德尔证明足够强的系统不能自证相容。"
+        }
+      }
+    },
+    "model": {
+      "modernNote": {
+        "similar": "≈ 把公理翻译成已知对象的具体实现。",
+        "different": "≠ 例子：模型要满足全部公理，而不只是部分。",
+        "function": "它是证明相容性的主要手段。"
+      },
+      "trouble": {
+        "symptom": "不知道模型长什么样。",
+        "backtrack": [
+          {
+            "concept": "hyperbolic-geometry",
+            "why": "伪球面就是双曲几何的模型：把测地线当“直线”，公理全部成立。"
+          }
+        ]
+      },
+      "edges": {
+        "ch38": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "algebraic-invariant": {
+      "modernNote": {
+        "similar": "≈ 坐标变换下不变的代数表达式。",
+        "different": "≠ 函数值：它不随坐标改变，因此代表图形本身。",
+        "function": "它把“几何性质”翻译成可计算的不变量。"
+      },
+      "trouble": {
+        "symptom": "不变量听起来抽象，不知道对应什么。",
+        "backtrack": [
+          {
+            "concept": "algebraic-geometry",
+            "why": "不变量就是代数几何要找的“与坐标无关的性质”。"
+          }
+        ]
+      },
+      "edges": {
+        "ch39": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "birational-transformation": {
+      "modernNote": {
+        "similar": "≈ 由有理函数给出且有有理逆的变换。",
+        "different": "≠ 射影变换：它更宽，允许分母出现，因而可能改变奇点结构。",
+        "function": "它给出比射影分类更粗的等价关系。"
+      },
+      "trouble": {
+        "symptom": "不知道“双有理”为什么比“射影”粗。",
+        "backtrack": [
+          {
+            "concept": "algebraic-invariant",
+            "why": "允许的变换越多，能互化的对象越多，等价类越大。"
+          }
+        ]
+      },
+      "edges": {
+        "ch39": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "algebraic-geometry": {
+      "modernNote": {
+        "similar": "≈ 用代数方法研究代数曲线与曲面。",
+        "different": "≠ 解析几何：它关心分类与不变量，而非具体作图。",
+        "function": "它把几何分类变成代数问题。"
+      },
+      "trouble": {
+        "symptom": "读不出这一章的主线。",
+        "backtrack": [
+          {
+            "concept": "birational-transformation",
+            "why": "主线是“按允许的变换分类”，双有理是 19 世纪的主导选择。"
+          }
+        ]
+      },
+      "edges": {
+        "ch39": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "limit": {
+      "modernNote": {
+        "similar": "≈ 用 ε-δ 定义的“趋近”。",
+        "different": "≠ 无穷小：它不使用“无限小量”，只谈任意给定误差。",
+        "function": "它把分析从直观中解放出来。"
+      },
+      "trouble": {
+        "symptom": "觉得 ε-δ 只是把简单事说复杂。",
+        "backtrack": [
+          {
+            "concept": "continuity",
+            "why": "没有它，连续性、可导性都无法严格定义，级数运算也无依据。"
+          }
+        ]
+      },
+      "edges": {
+        "ch40": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "continuity": {
+      "modernNote": {
+        "similar": "≈ 函数值随自变量连续变化。",
+        "different": "≠ 可导：连续函数可能处处不可导。",
+        "function": "它区分了“不跳跃”与“光滑”两件事。"
+      },
+      "trouble": {
+        "symptom": "以为连续就一定有切线。",
+        "backtrack": [
+          {
+            "concept": "uniform-convergence",
+            "why": "魏尔斯特拉斯的反例正是连续但处处不可导，说明直观不可靠。"
+          }
+        ]
+      },
+      "edges": {
+        "ch40": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "uniform-convergence": {
+      "modernNote": {
+        "similar": "≈ 收敛速度与点无关的一致收敛。",
+        "different": "≠ 逐点收敛：后者不足以保证极限函数连续。",
+        "function": "它决定级数能否逐项积分与求导。"
+      },
+      "trouble": {
+        "symptom": "看不出两种收敛的实质差别。",
+        "backtrack": [
+          {
+            "concept": "limit",
+            "why": "逐点收敛时每个点有自己的 δ；一致收敛要求同一个 δ 适用于整段。"
+          }
+        ]
+      },
+      "edges": {
+        "ch40": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "real-number": {
+      "modernNote": {
+        "similar": "≈ 完备的有序数域。",
+        "different": "≠ 有理数：它补上了所有“空隙”，使极限封闭。",
+        "function": "它是分析的基础，没有它极限无处落脚。"
+      },
+      "trouble": {
+        "symptom": "觉得实数理所当然。",
+        "backtrack": [
+          {
+            "concept": "limit",
+            "why": "若数系有空隙，柯西列可能没有极限，极限理论就塌了。"
+          }
+        ]
+      },
+      "edges": {
+        "ch41": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "cardinality": {
+      "modernNote": {
+        "similar": "≈ 集合元素多少的度量，用一一对应比较。",
+        "different": "≠ 有限计数：无穷集合可以与真子集等势。",
+        "function": "它使无穷之间可以比较大小。"
+      },
+      "trouble": {
+        "symptom": "难以接受“部分等于整体”。",
+        "backtrack": [
+          {
+            "concept": "transfinite",
+            "why": "这正是无穷集合的定义性特征；接受它才有无穷的等级。"
+          }
+        ]
+      },
+      "edges": {
+        "ch41": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "transfinite": {
+      "modernNote": {
+        "similar": "≈ 度量无穷集合的基数与序数。",
+        "different": "≠ 任意大的有限数：它是新的对象，有自己的算术。",
+        "function": "它把“无穷”从形容词变成可比较的量。"
+      },
+      "trouble": {
+        "symptom": "把超限数当成“很大的数”。",
+        "backtrack": [
+          {
+            "concept": "cardinality",
+            "why": "它不是大小上的“很大”，而是“不能与自然数一一对应”。"
+          }
+        ]
+      },
+      "edges": {
+        "ch41": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "set-theory": {
+      "modernNote": {
+        "similar": "≈ 研究集合、基数与序数的理论。",
+        "different": "≠ 朴素集合论：现代版本是公理化的，限制集合的构造。",
+        "function": "它成为数学的统一语言，也带来基础问题。"
+      },
+      "trouble": {
+        "symptom": "觉得集合论与具体数学无关。",
+        "backtrack": [
+          {
+            "concept": "paradox",
+            "why": "悖论说明语言本身需要约束，这就是基础研究的起点。"
+          }
+        ]
+      },
+      "edges": {
+        "ch41": {
+          "type": "inherit",
+          "gap": ""
+        },
+        "ch51": {
+          "type": "problem",
+          "gap": "朴素集合论暴露悖论，必须公理化。"
+        }
+      }
+    },
+    "axiomatics": {
+      "modernNote": {
+        "similar": "≈ 从公理出发建立理论的方法。",
+        "different": "≠ 形式化：它不要求符号化到可机械检验。",
+        "function": "它使前提显式化，从而可检查独立性。"
+      },
+      "trouble": {
+        "symptom": "觉得公理化只是“把话说得更绕”。",
+        "backtrack": [
+          {
+            "concept": "independence-of-axioms",
+            "why": "只有前提写清，才能判断哪条可替换——非欧几何就是这样出现的。"
+          }
+        ]
+      },
+      "edges": {
+        "ch42": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "independence-of-axioms": {
+      "modernNote": {
+        "similar": "≈ 一条公理不能由其余公理推出。",
+        "different": "≠ 相容性：独立与相容是两个不同的问题。",
+        "function": "独立性使替换公理成为可能。"
+      },
+      "trouble": {
+        "symptom": "把独立与相容混为一谈。",
+        "backtrack": [
+          {
+            "concept": "consistency",
+            "why": "相容是“不矛盾”，独立是“推不出”；非欧几何两者都需要。"
+          }
+        ]
+      },
+      "edges": {
+        "ch42": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "axiomatic-movement": {
+      "modernNote": {
+        "similar": "≈ 19 世纪各分支重建公理基础的趋势。",
+        "different": "≠ 单一学派：它是跨分支的共同实践。",
+        "function": "它把数学从依赖直观变成依赖显式前提。"
+      },
+      "trouble": {
+        "symptom": "以为公理化只是数学家的洁癖。",
+        "backtrack": [
+          {
+            "concept": "axiomatics",
+            "why": "它直接导致了非欧几何的合法化与集合论的建立。"
+          }
+        ]
+      },
+      "edges": {
+        "ch43": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "structure-concept": {
+      "modernNote": {
+        "similar": "≈ 由元素与运算规则构成的整体。",
+        "different": "≠ 具体对象：同一个结构可以有完全不同的实现。",
+        "function": "它使数学研究从“对象”转向“结构间的映射”。"
+      },
+      "trouble": {
+        "symptom": "觉得“结构”是空话。",
+        "backtrack": [
+          {
+            "concept": "axiomatic-movement",
+            "why": "公理化正是在描述结构：公理说的就是结构，而非具体元素。"
+          }
+        ]
+      },
+      "edges": {
+        "ch43": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "measure": {
+      "modernNote": {
+        "similar": "≈ 给点集指定“大小”的函数。",
+        "different": "≠ 长度：它适用于任意可测集，包括极不规则的集合。",
+        "function": "它使“不连续点集有多大”可被量化。"
+      },
+      "trouble": {
+        "symptom": "不理解为什么不能直接说“长度”。",
+        "backtrack": [
+          {
+            "concept": "lebesgue-integral",
+            "why": "对复杂集合，区间长度无法直接相加，必须用测度的可加性定义。"
+          }
+        ]
+      },
+      "edges": {
+        "ch44": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "lebesgue-integral": {
+      "modernNote": {
+        "similar": "≈ 按值域分割、用测度加权的积分。",
+        "different": "≠ 黎曼积分：它对更多函数可积，且极限定理更简洁。",
+        "function": "它使分析能在更宽的函数类上进行。"
+      },
+      "trouble": {
+        "symptom": "看不懂“按值域分割”与“按定义域分割”的差别。",
+        "backtrack": [
+          {
+            "concept": "measure",
+            "why": "按值域分后，要问“每个值对应的原像集合有多大”，这正是测度。"
+          }
+        ]
+      },
+      "edges": {
+        "ch44": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "stieltjes-integral": {
+      "modernNote": {
+        "similar": "≈ 用函数代替 dx 的积分。",
+        "different": "≠ 黎曼积分：它允许“权重”由一般函数给出，可处理离散与连续混合的情形。",
+        "function": "它是积分概念第一次系统扩充。"
+      },
+      "trouble": {
+        "symptom": "不知道为什么需要这种积分。",
+        "backtrack": [
+          {
+            "concept": "lebesgue-integral",
+            "why": "它后来被并入勒贝格—斯蒂尔切斯积分，成为更一般理论的一部分。"
+          }
+        ]
+      },
+      "edges": {
+        "ch44": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "integral-equation": {
+      "modernNote": {
+        "similar": "≈ 未知函数在积分号内的方程。",
+        "different": "≠ 微分方程：它不出现导数，结构更接近线性代数。",
+        "function": "它把物理问题转化为可迭代求解的形式。"
+      },
+      "trouble": {
+        "symptom": "分不清积分方程与微分方程。",
+        "backtrack": [
+          {
+            "concept": "fredholm-theory",
+            "why": "积分方程能借用矩阵的特征值理论，这是它与微分方程最大的不同。"
+          }
+        ]
+      },
+      "edges": {
+        "ch45": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "fredholm-theory": {
+      "modernNote": {
+        "similar": "≈ 积分限固定的第二类积分方程的解理论。",
+        "different": "≠ 沃尔泰拉型：后者上限可变，更像演化方程。",
+        "function": "它揭示积分方程与线性方程组的平行结构。"
+      },
+      "trouble": {
+        "symptom": "两类方程的区别总记混。",
+        "backtrack": [
+          {
+            "concept": "integral-equation",
+            "why": "看积分限：固定为弗雷德霍姆型，可变上限为沃尔泰拉型。"
+          }
+        ]
+      },
+      "edges": {
+        "ch45": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "functional-analysis": {
+      "modernNote": {
+        "similar": "≈ 研究函数空间与算子的分支。",
+        "different": "≠ 实变/复变：对象从单个函数变成函数空间。",
+        "function": "它把线性代数推广到无穷维，是量子力学的语言。"
+      },
+      "trouble": {
+        "symptom": "不知道“函数空间”有什么用。",
+        "backtrack": [
+          {
+            "concept": "hilbert-space",
+            "why": "有了空间结构，才能谈正交、投影与谱分解。"
+          }
+        ]
+      },
+      "edges": {
+        "ch46": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "hilbert-space": {
+      "modernNote": {
+        "similar": "≈ 完备的内积空间。",
+        "different": "≠ 欧氏空间：它通常是无穷维的，但保留内积与正交。",
+        "function": "它把傅里叶展开抽象化，成为量子态空间。"
+      },
+      "trouble": {
+        "symptom": "不理解“无穷维”带来什么差别。",
+        "backtrack": [
+          {
+            "concept": "operator",
+            "why": "无穷维中算子未必有特征向量，谱理论因此比矩阵复杂。"
+          }
+        ]
+      },
+      "edges": {
+        "ch46": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "operator": {
+      "modernNote": {
+        "similar": "≈ 把函数映射为函数的变换。",
+        "different": "≠ 函数：函数的自变量是数，算子的自变量是函数。",
+        "function": "它把方程问题变成结构问题，谱理论由此展开。"
+      },
+      "trouble": {
+        "symptom": "把算子与函数混为一谈。",
+        "backtrack": [
+          {
+            "concept": "functional-analysis",
+            "why": "泛函分析研究的正是算子及其谱，而非单个函数的值。"
+          }
+        ]
+      },
+      "edges": {
+        "ch46": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "asymptotic-series": {
+      "modernNote": {
+        "similar": "≈ 可能发散但截断后精度可控的展开。",
+        "different": "≠ 收敛级数：它不求和到无穷，只取有限项。",
+        "function": "它让天文学与微分方程的计算得以进行。"
+      },
+      "trouble": {
+        "symptom": "不理解发散怎么还能有用。",
+        "backtrack": [
+          {
+            "concept": "summability",
+            "why": "可和性给出“和”的替代定义；渐近性给出“截断误差”的控制。"
+          }
+        ]
+      },
+      "edges": {
+        "ch47": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "summability": {
+      "modernNote": {
+        "similar": "≈ 给发散级数指定合理的和。",
+        "different": "≠ 收敛：它另立规则，不要求部分和趋近。",
+        "function": "它扩展了“求和”，使发散级数可参与运算。"
+      },
+      "trouble": {
+        "symptom": "觉得“给发散级数定和”是自欺。",
+        "backtrack": [
+          {
+            "concept": "asymptotic-series",
+            "why": "只要规则一致、与收敛情形相容，它就是严格的理论。"
+          }
+        ]
+      },
+      "edges": {
+        "ch47": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "divergent-series": {
+      "modernNote": {
+        "similar": "≈ 部分和不收敛的级数。",
+        "different": "≠ 无用的级数：它可能是某函数的渐近展开。",
+        "function": "它曾被驱逐，后因实用价值被重新接纳。"
+      },
+      "trouble": {
+        "symptom": "以为发散就等于错误。",
+        "backtrack": [
+          {
+            "concept": "asymptotic-series",
+            "why": "发散只说明不能求和到无穷，不说明前几项没有信息。"
+          }
+        ]
+      },
+      "edges": {
+        "ch47": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "tensor": {
+      "modernNote": {
+        "similar": "≈ 按坐标变换规则变换的一组分量。",
+        "different": "≠ 向量组：它可以是高阶的，描述更复杂的几何量。",
+        "function": "它使物理规律可以写成与坐标无关的形式。"
+      },
+      "trouble": {
+        "symptom": "被上下指标与求和约定绕晕。",
+        "backtrack": [
+          {
+            "concept": "covariant-differentiation",
+            "why": "指标的意义在微分时才显现：协变导数需要联络系数。"
+          }
+        ]
+      },
+      "edges": {
+        "ch48": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "covariant-differentiation": {
+      "modernNote": {
+        "similar": "≈ 补偿坐标变化的导数。",
+        "different": "≠ 偏导数：后者一般不再是张量。",
+        "function": "它使弯曲空间中的变化率有意义。"
+      },
+      "trouble": {
+        "symptom": "不懂“为什么偏导数不够”。",
+        "backtrack": [
+          {
+            "concept": "tensor",
+            "why": "因为偏导数不按张量规则变换，加上联络项后才恢复张量性。"
+          }
+        ]
+      },
+      "edges": {
+        "ch48": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "general-relativity": {
+      "modernNote": {
+        "similar": "≈ 用时空弯曲解释引力的理论。",
+        "different": "≠ 牛顿引力：它没有“引力”，只有沿测地线的自由运动。",
+        "function": "它使黎曼几何成为物理的基本语言。"
+      },
+      "trouble": {
+        "symptom": "不理解“引力消失”是什么意思。",
+        "backtrack": [
+          {
+            "concept": "metric-tensor",
+            "why": "引力效应被编码进度量；物体只是沿测地线运动。"
+          }
+        ]
+      },
+      "edges": {
+        "ch48": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "abstract-group": {
+      "modernNote": {
+        "similar": "≈ 只由四条公理刻画的群。",
+        "different": "≠ 置换群：元素不再限于置换，可以是任何对象。",
+        "function": "它使关于对称的定理一次适用于所有例子。"
+      },
+      "trouble": {
+        "symptom": "觉得抽象掉具体元素后什么也不剩。",
+        "backtrack": [
+          {
+            "concept": "group",
+            "why": "剩下的是运算结构；结构相同，定理就通用。"
+          }
+        ]
+      },
+      "edges": {
+        "ch49": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "ring": {
+      "modernNote": {
+        "similar": "≈ 有加法与乘法、但不保证除法的代数结构。",
+        "different": "≠ 域：环不要求每个非零元可逆。",
+        "function": "它容纳整数、多项式与矩阵，是代数数论的家。"
+      },
+      "trouble": {
+        "symptom": "分不清环与域。",
+        "backtrack": [
+          {
+            "concept": "field",
+            "why": "域是环加上“非零元可除”；整数是环但不是域。"
+          }
+        ]
+      },
+      "edges": {
+        "ch49": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "lie-algebra": {
+      "modernNote": {
+        "similar": "≈ 乘法不结合但满足雅可比恒等式的代数。",
+        "different": "≠ 结合代数：它放弃结合律，换取对连续对称的刻画。",
+        "function": "它描述李群的无穷小结构，是量子力学的工具。"
+      },
+      "trouble": {
+        "symptom": "不理解“乘法不结合”怎么还能用。",
+        "backtrack": [
+          {
+            "concept": "abstract-group",
+            "why": "结构不靠结合律支撑，而靠雅可比恒等式；它对应变换的交换子。"
+          }
+        ]
+      },
+      "edges": {
+        "ch49": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "topology": {
+      "modernNote": {
+        "similar": "≈ 研究连续变形下不变性质的几何。",
+        "different": "≠ 欧氏几何：它不谈长度与角度。",
+        "function": "它使几何摆脱度量，成为现代数学的通用框架。"
+      },
+      "trouble": {
+        "symptom": "觉得“橡皮几何”只是趣味。",
+        "backtrack": [
+          {
+            "concept": "betti-number",
+            "why": "贝蒂数等不变量在分析、代数与物理中都有实际用途。"
+          }
+        ]
+      },
+      "edges": {
+        "ch50": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "betti-number": {
+      "modernNote": {
+        "similar": "≈ 数“有几个洞”的整数不变量。",
+        "different": "≠ 完全分类：贝蒂数相同不一定同胚。",
+        "function": "它给出可计算的不变量，但需要更强工具补足。"
+      },
+      "trouble": {
+        "symptom": "以为数清洞就能分类空间。",
+        "backtrack": [
+          {
+            "concept": "topology",
+            "why": "贝蒂数只是必要条件；同伦群、上同调环才能区分更多空间。"
+          }
+        ]
+      },
+      "edges": {
+        "ch50": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "fixed-point-theorem": {
+      "modernNote": {
+        "similar": "≈ 一定条件下连续映射必有不动点。",
+        "different": "≠ 构造性结论：它不告诉你不懂点在哪。",
+        "function": "它把拓扑用于证明方程解的存在性。"
+      },
+      "trouble": {
+        "symptom": "不知道这定理能干什么。",
+        "backtrack": [
+          {
+            "concept": "betti-number",
+            "why": "它由拓扑不变量推出，是拓扑与分析之间的桥梁。"
+          }
+        ]
+      },
+      "edges": {
+        "ch50": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "paradox": {
+      "modernNote": {
+        "similar": "≈ 朴素集合论中推出的矛盾。",
+        "different": "≠ 悖论式修辞：它是严格的推导结果，说明前提有问题。",
+        "function": "它迫使集合论公理化，开启基础研究。"
+      },
+      "trouble": {
+        "symptom": "觉得悖论只是语言游戏。",
+        "backtrack": [
+          {
+            "concept": "set-theory",
+            "why": "它只用到“集合”与“属于”，因此问题出在集合的概念本身。"
+          }
+        ]
+      },
+      "edges": {
+        "ch51": {
+          "type": "problem",
+          "gap": "朴素集合论允许任意性质定义集合，导致矛盾。"
+        }
+      }
+    },
+    "formalism": {
+      "modernNote": {
+        "similar": "≈ 把数学视为形式符号系统。",
+        "different": "≠ 形式化本身：它是一种哲学纲领，主张用有穷方法证明相容。",
+        "function": "它回应基础危机，但被哥德尔定理限制。"
+      },
+      "trouble": {
+        "symptom": "把形式主义理解为“只玩符号”。",
+        "backtrack": [
+          {
+            "concept": "godel-incompleteness",
+            "why": "希尔伯特纲领要证明相容，哥德尔证明这做不到。"
+          }
+        ]
+      },
+      "edges": {
+        "ch51": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "intuitionism": {
+      "modernNote": {
+        "similar": "≈ 只承认可构造对象的数学观。",
+        "different": "≠ 构造主义（一般）：直觉主义还拒绝无穷情形的排中律。",
+        "function": "它给出更严格的标准，代价是放弃部分经典结论。"
+      },
+      "trouble": {
+        "symptom": "不理解为什么拒绝排中律。",
+        "backtrack": [
+          {
+            "concept": "formalism",
+            "why": "对照形式主义：一个要求可构造，一个只要求不矛盾。"
+          }
+        ]
+      },
+      "edges": {
+        "ch51": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "logicism": {
+      "modernNote": {
+        "similar": "≈ 主张数学可归约为逻辑。",
+        "different": "≠ 直觉主义：它不限制排中律，而试图从逻辑推出数学。",
+        "function": "它试图给数学最坚实的基础，但需额外公理。"
+      },
+      "trouble": {
+        "symptom": "不知道逻辑主义为什么失败。",
+        "backtrack": [
+          {
+            "concept": "paradox",
+            "why": "罗素悖论击中了弗雷格的系统；修补后又需无穷与选择公理。"
+          }
+        ]
+      },
+      "edges": {
+        "ch51": {
+          "type": "inherit",
+          "gap": ""
+        }
+      }
+    },
+    "godel-incompleteness": {
+      "modernNote": {
+        "similar": "≈ 足够强的相容系统不能自证相容，且有不可判定命题。",
+        "different": "≠ “数学有矛盾”：系统仍可能相容，只是不能自证。",
+        "function": "它终结了希尔伯特纲领的原初目标。"
+      },
+      "trouble": {
+        "symptom": "以为这定理否定了数学的可靠性。",
+        "backtrack": [
+          {
+            "concept": "formalism",
+            "why": "它否定的是“用有穷方法一劳永逸证明相容”的计划，不是数学本身。"
+          }
+        ]
+      },
+      "edges": {
+        "ch51": {
+          "type": "response",
+          "gap": ""
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "test:calc": "node --input-type=module -e \"import('./tools/prepayment-calculator/calc.js').then(m=>console.log('calc.js 加载成功:', Object.keys(m)))\""
+    "test:calc": "node --input-type=module -e \"import('./tools/prepayment-calculator/calc.js').then(m=>console.log('calc.js 加载成功:', Object.keys(m)))\"",
+    "test:content": "python3 scripts/check_content.py"
   },
   "license": "MIT"
 }

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="《古今数学思想》第一册伴读手册：章节导读、概念卡片、思考题自测与阅读进度，纯前端、数据存本地。">
+  <meta name="theme-color" content="#F6F1E6">
+  <title>古今数学思想 · 伴读手册</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F6F1E6'/%3E%3Ccircle cx='32' cy='32' r='21' fill='none' stroke='%23A8763E' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23A8763E' stroke-width='.8' stroke-dasharray='2 2'/%3E%3Ctext x='32' y='42' font-size='24' text-anchor='middle' fill='%239B3A2E' font-family='serif'%3E%E6%95%B0%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <header class="site-bar">
+    <div class="site-bar-inner">
+      <a class="back-link" href="../../index.html" aria-label="返回工具集">
+        <span aria-hidden="true">←</span><span class="back-link-text">工具集</span>
+      </a>
+
+      <div class="bar-title">
+        <span class="bar-title-main">古今数学思想</span>
+        <span class="bar-title-sep" aria-hidden="true">·</span>
+        <span class="bar-title-sub">伴读手册</span>
+      </div>
+
+      <nav class="bar-nav" aria-label="主要导航">
+        <a href="#/home" data-nav="home">总览</a>
+        <a href="#/timeline" data-nav="timeline">时间轴</a>
+        <a href="#/concepts" data-nav="concepts">概念</a>
+        <a href="#/me" data-nav="me">我的</a>
+      </nav>
+
+      <button class="drawer-btn" id="drawerBtn" type="button" aria-expanded="false" aria-controls="sidebar">
+        目录
+      </button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="章节目录">
+      <div class="sidebar-head">
+        <span class="sidebar-title">全书</span>
+        <span class="sidebar-progress" id="sidebarProgress">0 / 13</span>
+      </div>
+      <ol class="chapter-list" id="chapterList"></ol>
+      <div class="sidebar-foot">
+        <a href="#/me">阅读进度与笔记 →</a>
+      </div>
+    </aside>
+
+    <main id="app" class="app" tabindex="-1">
+      <div class="loading" id="bootLoading">
+        <div class="loading-seal" aria-hidden="true">数</div>
+        <p>正在打开书页…</p>
+      </div>
+    </main>
+  </div>
+
+  <nav class="tabbar" aria-label="快速导航">
+    <a href="#/home" data-nav="home">
+      <span class="tab-glyph" aria-hidden="true">◎</span>
+      <span>总览</span>
+    </a>
+    <a href="#/chapters" data-nav="chapters">
+      <span class="tab-glyph" aria-hidden="true">☰</span>
+      <span>章节</span>
+    </a>
+    <a href="#/concepts" data-nav="concepts">
+      <span class="tab-glyph" aria-hidden="true">❖</span>
+      <span>概念</span>
+    </a>
+    <a href="#/me" data-nav="me">
+      <span class="tab-glyph" aria-hidden="true">✎</span>
+      <span>我的</span>
+    </a>
+  </nav>
+
+  <footer class="site-foot">
+    <div class="foot-rule" aria-hidden="true"></div>
+    <p>
+      伴读笔记 · 不含原书正文 · 数据保存在本机浏览器
+      <br>
+      <span class="foot-muted">参考文献：莫里斯·克莱因《古今数学思想》第一册（第 1–13 章）</span>
+    </p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="drawer-veil" id="drawerVeil" hidden></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

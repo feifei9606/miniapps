@@ -11,3 +11,11 @@ Thumbs.db
 
 # local assistant workspace
 .codebuddy/
+
+# 原书与内容生产产物：不入库，也不进 Pages artifact
+ref/
+/tmp/
+
+# python
+__pycache__/
+*.pyc
