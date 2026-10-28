@@ -161,6 +161,20 @@ function setupDrawer() {
   sidebarEl.addEventListener('click', (event) => {
     if (event.target.closest('a')) closeDrawer();
   });
+
+  // 抽屉盖住顶栏后，“目录”按钮不可点，需要一个明确的关闭入口
+  const sidebarClose = document.getElementById('sidebarClose');
+  if (sidebarClose) sidebarClose.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && document.body.classList.contains('drawer-open')) closeDrawer();
+  });
+
+  // 横屏/放大窗口后抽屉已无意义，自动收掉，避免遮罩残留
+  const narrow = window.matchMedia('(max-width: 980px)');
+  const onChange = (event) => { if (!event.matches) closeDrawer(); };
+  if (narrow.addEventListener) narrow.addEventListener('change', onChange);
+  else narrow.addListener(onChange);
 }
 
 async function boot() {

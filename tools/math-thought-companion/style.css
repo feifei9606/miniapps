@@ -237,6 +237,24 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; color: var(--ink);
   font-size: 12px;
 }
 
+/* 抽屉关闭按钮：仅小屏显示，见响应式段落 */
+.sidebar-close {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+}
+.sidebar-close:hover { color: var(--vermilion); border-color: rgba(155, 58, 46, .35); }
+
 .app { min-width: 0; max-width: 720px; }
 
 /* 视图进入动画 */
@@ -1520,7 +1538,8 @@ body.sheet-open { overflow: hidden; }
     width: 282px;
     max-height: none;
     z-index: 38;
-    padding: calc(var(--header-h) + 16px) 12px 20px;
+    /* 抽屉已盖住顶栏，不必再为 header 留白 */
+    padding: 18px 12px calc(20px + env(safe-area-inset-bottom));
     background: var(--surface);
     border-right: 1px solid var(--line);
     border-radius: 0 16px 16px 0;
@@ -1529,6 +1548,19 @@ body.sheet-open { overflow: hidden; }
     box-shadow: 8px 0 30px rgba(43, 38, 32, .12);
   }
   body.drawer-open .sidebar { transform: none; }
+
+  /* .layout 自带 z-index:1 会形成堆叠上下文，把抽屉困在遮罩(z 35)之下。
+     打开抽屉时整体抬到顶栏(40)/底栏(42)之上，遮罩随之上浮但仍在侧栏之下。 */
+  body.drawer-open .layout { z-index: 45; }
+
+  .sidebar-close {
+    display: inline-flex;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+  }
+  /* 给关闭按钮让出位置，避免与进度数字重叠 */
+  .sidebar-head { padding-right: 40px; }
   .drawer-btn { display: inline-block; }
   .bar-nav { display: none; }
 

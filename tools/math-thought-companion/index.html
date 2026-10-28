@@ -39,6 +39,7 @@
 
   <div class="layout">
     <aside class="sidebar" id="sidebar" aria-label="章节目录">
+      <button class="sidebar-close" id="sidebarClose" type="button" aria-label="关闭目录">×</button>
       <div class="sidebar-head">
         <span class="sidebar-title">全书</span>
         <span class="sidebar-progress" id="sidebarProgress">0 / 13</span>
@@ -55,6 +56,9 @@
         <p>正在打开书页…</p>
       </div>
     </main>
+
+    <!-- 遮罩必须与 .sidebar 同处 .layout 的堆叠上下文内，否则会盖在抽屉上 -->
+    <div class="drawer-veil" id="drawerVeil" hidden></div>
   </div>
 
   <nav class="tabbar" aria-label="快速导航">
@@ -86,7 +90,6 @@
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <div class="drawer-veil" id="drawerVeil" hidden></div>
 
   <script type="module" src="app.js"></script>
 </body>
