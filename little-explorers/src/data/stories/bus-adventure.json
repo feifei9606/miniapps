@@ -1,38 +1,42 @@
 {
   "id": "bus-adventure",
-  "title": "小巴士嘟嘟去接朋友",
-  "shortTitle": "小巴士嘟嘟",
-  "subtitle": "接上好朋友，一起去公园！",
-  "hook": "嘟嘟，嘟嘟——我们出发啦！",
+  "title": "嘟嘟巴士的奇妙旅行",
+  "shortTitle": "嘟嘟的奇妙旅行",
+  "subtitle": "今天开什么车？去哪里玩？由你来决定！",
+  "hook": "开巴士还是消防车？去森林还是海边？每次都有新发现。",
   "category": [
     "transportation",
-    "friendship"
+    "friendship",
+    "adventure"
   ],
   "learning": [
-    "数数 1–3",
-    "认识颜色",
+    "选择",
+    "颜色",
+    "数数",
     "帮助他人",
-    "红灯停绿灯行"
+    "自然"
   ],
   "ageRange": [
     2,
-    4
+    5
   ],
-  "ageLabel": "2–4 岁",
-  "ageEmoji": "🍼",
-  "duration": 5,
+  "ageLabel": "2-5岁",
+  "ageEmoji": "🌱",
+  "duration": 7,
   "difficulty": 1,
   "language": [
     "zh-CN"
   ],
   "tags": [
-    "公交车",
-    "好朋友",
-    "颜色",
-    "数数"
+    "巴士",
+    "消防车",
+    "森林",
+    "海边",
+    "朋友",
+    "选择"
   ],
   "music": {
-    "theme": "bus",
+    "theme": "morning",
     "volume": 0.18
   },
   "cover": {
@@ -42,39 +46,47 @@
       "#FFD8B4"
     ]
   },
-  "welcome": "点一点画面里的太阳、嘟嘟和车轮，看看会发生什么～",
+  "welcome": "点一点画面，和嘟嘟一起玩吧！",
+  "vars": {
+    "vehicle": null,
+    "route": null,
+    "ending": null
+  },
   "scenes": [
     {
-      "id": "scene-01",
-      "art": "morning",
-      "title": "早上好，嘟嘟",
+      "id": "wake-up",
+      "type": "story",
+      "art": "wake-up",
+      "title": "早上好，嘟嘟！",
       "narration": [
-        "早上好！太阳公公伸了个懒腰。",
-        "小巴士嘟嘟醒啦。",
-        "嘟嘟眨眨眼睛，亮起了车灯。",
-        "嘟嘟，嘟嘟——我们出发啦！"
+        "早上好！太阳公公起床啦。",
+        "小巴士嘟嘟也醒啦！",
+        "嘟嘟伸伸手……嘟嘟伸伸脚……",
+        "今天去哪儿玩呢？"
       ],
       "interactions": [
         {
           "id": "sun",
           "label": "太阳公公",
-          "speech": "太阳公公笑啦！",
+          "speech": "太阳公公笑起来啦！",
           "bubble": "太阳公公笑啦！",
           "sfx": "chime",
+          "flag": "sun_smile",
           "at": {
-            "x": 17,
+            "x": 15,
             "y": 18
           }
         },
         {
           "id": "bus",
           "label": "小巴士嘟嘟",
-          "speech": "嘟嘟亮起车灯，嘟嘟——",
+          "speech": "嘟嘟，嘟嘟！",
           "bubble": "嘟嘟，嘟嘟！",
           "sfx": "horn",
+          "flag": "bus_awake",
           "at": {
-            "x": 53,
-            "y": 43
+            "x": 38,
+            "y": 60
           }
         },
         {
@@ -82,381 +94,230 @@
           "label": "车轮",
           "speech": "车轮转呀转！",
           "bubble": "车轮转呀转！",
-          "sfx": "boing",
+          "sfx": "wheel",
           "at": {
-            "x": 48,
-            "y": 70
-          }
-        }
-      ],
-      "next": "scene-02"
-    },
-    {
-      "id": "scene-02",
-      "art": "rabbit-stop",
-      "title": "去接小兔子",
-      "narration": [
-        "嘟嘟开呀开，开到小兔子家门口。",
-        "小兔子挥挥手：“我要去公园！”",
-        "嘟嘟打开车门：“请上车吧！”",
-        "一只小兔子，上车啦！"
-      ],
-      "interactions": [
-        {
-          "id": "rabbit",
-          "label": "小兔子",
-          "speech": "小兔子跳上车啦！",
-          "bubble": "小兔子跳上车啦！",
-          "sfx": "boing",
-          "flag": "rabbit_boarded",
-          "at": {
-            "x": 68,
-            "y": 44
+            "x": 28,
+            "y": 72
           }
         },
         {
-          "id": "flower",
-          "label": "小花",
-          "speech": "小花摇一摇，真香呀。",
-          "bubble": "小花摇一摇，真香呀！",
+          "id": "cloud",
+          "label": "云朵",
+          "speech": "云朵飘走啦！",
+          "bubble": "云朵飘呀飘～",
           "sfx": "pop",
           "at": {
-            "x": 86,
-            "y": 66
-          }
-        },
-        {
-          "id": "door",
-          "label": "车门",
-          "speech": "车门打开啦。",
-          "bubble": "车门打开啦！",
-          "sfx": "click",
-          "at": {
-            "x": 30,
-            "y": 48
+            "x": 25,
+            "y": 21
           }
         }
       ],
-      "next": "scene-03"
+      "next": "vehicle-choice"
     },
     {
-      "id": "scene-03",
-      "art": "bear-hide",
-      "title": "小熊在哪里？",
+      "id": "vehicle-choice",
+      "type": "choice",
+      "art": "wake-up",
+      "title": "今天开什么车呢？",
+      "prompt": "嘟嘟今天要开什么车呢？",
       "narration": [
-        "嘟嘟，嘟嘟，继续开。",
-        "咦？小熊在哪里呀？",
-        "找一找，大树后面，是谁在探头？",
-        "找到啦！小熊也要去公园。",
-        "两个好朋友，上车啦！"
+        "嘟嘟想了想……",
+        "今天是开公交车呢？",
+        "还是开消防车呢？"
       ],
-      "gate": {
-        "flag": "bear_found",
-        "hint": "小熊躲在树后面，露出了一只小耳朵哦～",
-        "hintAfter": 14,
-        "releaseAfter": 45
-      },
-      "interactions": [
+      "choices": [
         {
-          "id": "tree",
-          "label": "大树",
-          "speech": "树叶沙沙沙。",
-          "bubble": "树叶沙沙沙～",
-          "sfx": "whoosh",
-          "at": {
-            "x": 56,
-            "y": 24
-          }
+          "id": "bus",
+          "label": "公交巴士",
+          "emoji": "🚌",
+          "hint": "接好朋友",
+          "art": "bus",
+          "set": {
+            "vehicle": "bus"
+          },
+          "speech": "嘟嘟变成了公交巴士！要去接好朋友啦！",
+          "sfx": "horn",
+          "next": "fork"
         },
         {
-          "id": "flower",
-          "label": "小花",
-          "speech": "花开啦！",
-          "bubble": "花开啦！",
-          "sfx": "sparkle",
-          "at": {
-            "x": 20,
-            "y": 64
-          }
-        },
-        {
-          "id": "rock",
-          "label": "小石头",
-          "speech": "咦，小虫子探出了头。",
-          "bubble": "咦，小虫子探出头！",
-          "sfx": "pop",
-          "at": {
-            "x": 38,
-            "y": 76
-          }
-        },
-        {
-          "id": "bear",
-          "label": "小熊",
-          "speech": "找到啦！小熊上车啦！",
-          "bubble": "找到啦！小熊上车啦！",
-          "sfx": "chime",
-          "flag": "bear_found",
-          "at": {
-            "x": 68,
-            "y": 44
-          }
+          "id": "firetruck",
+          "label": "消防车",
+          "emoji": "🚒",
+          "hint": "帮助好朋友",
+          "art": "firetruck",
+          "set": {
+            "vehicle": "firetruck"
+          },
+          "speech": "嘟嘟变成了消防车！今天要去帮助朋友！",
+          "sfx": "siren",
+          "next": "fork"
         }
-      ],
-      "next": "scene-04"
+      ]
     },
     {
-      "id": "scene-04",
-      "art": "traffic-light",
-      "title": "红灯停，绿灯行",
+      "id": "fork",
+      "type": "story",
+      "art": "fork",
+      "title": "前面有两条路",
       "narration": [
-        "前面是红绿灯。",
-        "红灯亮啦，嘟嘟停下来。",
-        "绿灯亮啦，嘟嘟慢慢走。",
-        "嘟嘟，嘟嘟——我们继续出发！"
+        "嘟嘟开呀开……",
+        "前面有两条路！",
+        "一条通向绿绿的森林。",
+        "一条通向蓝蓝的大海。"
       ],
       "interactions": [
         {
-          "id": "red",
-          "label": "红灯",
-          "speech": "红灯亮啦，停一停。",
-          "bubble": "红灯亮啦，停一停。",
-          "sfx": "click",
-          "flag": "seen_red",
+          "id": "bus",
+          "label": "嘟嘟",
+          "speech": "嘟嘟，嘟嘟！",
+          "bubble": "嘟嘟，嘟嘟！",
+          "sfx": "horn",
           "at": {
-            "x": 24,
-            "y": 30
-          }
-        },
-        {
-          "id": "yellow",
-          "label": "黄灯",
-          "speech": "黄灯亮啦，慢一点。",
-          "bubble": "黄灯亮啦，慢一点。",
-          "sfx": "pop",
-          "flag": "seen_yellow",
-          "at": {
-            "x": 24,
-            "y": 41
-          }
-        },
-        {
-          "id": "green",
-          "label": "绿灯",
-          "speech": "绿灯亮啦，走一走！",
-          "bubble": "绿灯亮啦，走一走！",
-          "sfx": "chime",
-          "flag": "seen_green",
-          "at": {
-            "x": 24,
-            "y": 52
-          }
-        },
-        {
-          "id": "bird",
-          "label": "小鸟",
-          "speech": "小鸟飞过啦。",
-          "bubble": "小鸟飞过啦～",
-          "sfx": "whoosh",
-          "at": {
-            "x": 80,
-            "y": 20
-          }
-        }
-      ],
-      "next": "scene-05"
-    },
-    {
-      "id": "scene-05",
-      "art": "rainy-duck",
-      "title": "小鸭子和雨滴",
-      "narration": [
-        "滴答，滴答，下雨啦。",
-        "小鸭子躲在雨伞下面。",
-        "嘟嘟停下来：“小鸭子，快上车吧！”",
-        "一只兔子，一只小熊，一只小鸭子。",
-        "一、二、三！三个好朋友，一起去公园！"
-      ],
-      "interactions": [
-        {
-          "id": "umbrella",
-          "label": "雨伞",
-          "speech": "雨伞打开啦，小鸭子不怕雨。",
-          "bubble": "雨伞打开啦！",
-          "sfx": "whoosh",
-          "flag": "umbrella_open",
-          "at": {
-            "x": 26,
-            "y": 48
-          }
-        },
-        {
-          "id": "duck",
-          "label": "小鸭子",
-          "speech": "嘎嘎，我上车啦！",
-          "bubble": "嘎嘎，我上车啦！",
-          "sfx": "quack",
-          "flag": "duck_boarded",
-          "at": {
-            "x": 34,
+            "x": 50,
             "y": 62
           }
         },
         {
-          "id": "rain",
-          "label": "雨滴",
-          "speech": "滴答，滴答。",
-          "bubble": "滴答，滴答。",
-          "sfx": "raindrop",
+          "id": "wheel",
+          "label": "车轮",
+          "speech": "车轮转呀转！",
+          "bubble": "车轮转呀转！",
+          "sfx": "wheel",
           "at": {
-            "x": 78,
-            "y": 14
+            "x": 44,
+            "y": 72
           }
         },
         {
-          "id": "count-rabbit",
-          "label": "小兔子",
-          "speech": "一只小兔子！",
-          "bubble": "一只小兔子！",
-          "sfx": "pop",
-          "flag": "count_rabbit",
+          "id": "bird-forest",
+          "label": "森林里的小鸟",
+          "speech": "啾啾！森林在这边！",
+          "bubble": "啾啾！",
+          "sfx": "bird",
           "at": {
-            "x": 47,
-            "y": 40
+            "x": 17,
+            "y": 47
           }
         },
         {
-          "id": "count-bear",
-          "label": "小熊",
-          "speech": "一只小熊！",
-          "bubble": "一只小熊！",
+          "id": "crab-beach",
+          "label": "海边的小螃蟹",
+          "speech": "咔哒咔哒！大海在这边！",
+          "bubble": "咔哒咔哒！",
           "sfx": "pop",
-          "flag": "count_bear",
           "at": {
-            "x": 57,
-            "y": 40
-          }
-        },
-        {
-          "id": "count-duck",
-          "label": "小鸭子",
-          "speech": "一只小鸭子！",
-          "bubble": "一只小鸭子！",
-          "sfx": "pop",
-          "flag": "count_duck",
-          "at": {
-            "x": 67,
-            "y": 40
+            "x": 88,
+            "y": 71
           }
         }
       ],
-      "next": "scene-06"
+      "next": "route-choice"
     },
     {
-      "id": "scene-06",
-      "art": "rainbow",
-      "title": "彩虹出现啦！",
+      "id": "route-choice",
+      "type": "choice",
+      "art": "fork",
+      "title": "去森林还是海边？",
+      "prompt": "嘟嘟要走哪一条路呢？",
       "narration": [
-        "雨停啦！",
-        "天空出现了一道彩虹。",
-        "红色、黄色、蓝色……",
-        "哇，彩虹真漂亮！",
-        "嘟嘟开心地哼起了歌。"
+        "嘟嘟，你要走哪一条路呢？",
+        "森林里有小鸟，海边有小螃蟹。"
       ],
-      "interactions": [
+      "choices": [
         {
-          "id": "rainbow-red",
-          "label": "红色",
-          "speech": "红色！",
-          "bubble": "红色！",
-          "sfx": "chime",
-          "flag": "color_red",
-          "at": {
-            "x": 28,
-            "y": 28
-          }
+          "id": "forest",
+          "label": "森林小路",
+          "emoji": "🌲",
+          "hint": "听小鸟唱歌",
+          "art": "forest",
+          "set": {
+            "route": "forest"
+          },
+          "speech": "嘟嘟开进了绿绿的森林！",
+          "sfx": "bird",
+          "next": "forest-1"
         },
         {
-          "id": "rainbow-yellow",
-          "label": "黄色",
-          "speech": "黄色！",
-          "bubble": "黄色！",
-          "sfx": "chime",
-          "flag": "color_yellow",
-          "at": {
-            "x": 50,
-            "y": 22
-          }
-        },
-        {
-          "id": "rainbow-blue",
-          "label": "蓝色",
-          "speech": "蓝色！",
-          "bubble": "蓝色！",
-          "sfx": "chime",
-          "flag": "color_blue",
-          "at": {
-            "x": 72,
-            "y": 28
-          }
-        },
-        {
-          "id": "sun",
-          "label": "太阳公公",
-          "speech": "太阳公公眨眨眼。",
-          "bubble": "太阳公公眨眨眼。",
-          "sfx": "sparkle",
-          "at": {
-            "x": 12,
-            "y": 15
-          }
+          "id": "beach",
+          "label": "海边公路",
+          "emoji": "🌊",
+          "hint": "听海浪拍沙滩",
+          "art": "beach",
+          "set": {
+            "route": "beach"
+          },
+          "speech": "嘟嘟开到了蓝蓝的大海边！",
+          "sfx": "wave",
+          "next": "beach-1"
         }
-      ],
-      "next": "scene-07"
+      ]
     },
     {
-      "id": "scene-07",
-      "art": "park",
-      "title": "公园到了！",
+      "id": "forest-1",
+      "type": "story",
+      "art": "forest-1",
+      "title": "森林里的声音",
       "narration": [
-        "嘟嘟，嘟嘟——公园到啦！",
-        "小兔子跳下车，小熊拍拍手，小鸭子摇摇尾巴。",
-        "大家一起玩呀！",
-        "谢谢嘟嘟！",
-        "嘟嘟说：“不客气，我们是好朋友！”"
+        "嘟嘟开进了森林。",
+        "啾啾！啾啾！谁在唱歌呀？",
+        "是小鸟！小鸟在树上唱歌呢。"
       ],
       "interactions": [
         {
-          "id": "rabbit",
-          "label": "小兔子",
-          "speech": "小兔子跳得真高！",
-          "bubble": "小兔子跳得真高！",
-          "sfx": "boing",
+          "id": "bird",
+          "label": "小鸟",
+          "speech": "啾啾！你好呀！",
+          "bubble": "啾啾！",
+          "sfx": "bird",
+          "flag": "bird_met",
           "at": {
-            "x": 38,
-            "y": 54
+            "x": 15,
+            "y": 51
           }
         },
         {
-          "id": "bear",
-          "label": "小熊",
-          "speech": "小熊拍拍手！",
-          "bubble": "小熊拍拍手！",
-          "sfx": "clap",
+          "id": "tree",
+          "label": "大树",
+          "speech": "树叶沙沙沙。",
+          "bubble": "沙沙沙～",
+          "sfx": "leaf",
           "at": {
-            "x": 55,
-            "y": 54
+            "x": 56,
+            "y": 70
           }
         },
         {
-          "id": "duck",
-          "label": "小鸭子",
-          "speech": "小鸭子转圈圈！",
-          "bubble": "小鸭子转圈圈！",
-          "sfx": "quack",
+          "id": "mushroom",
+          "label": "蘑菇",
+          "speech": "蘑菇轻轻摇一摇。",
+          "bubble": "摇呀摇～",
+          "sfx": "pop",
           "at": {
-            "x": 73,
-            "y": 56
+            "x": 41,
+            "y": 83
+          }
+        },
+        {
+          "id": "squirrel",
+          "label": "小松鼠",
+          "speech": "你好呀，嘟嘟！",
+          "bubble": "你好呀！",
+          "sfx": "pop",
+          "flag": "squirrel_met",
+          "at": {
+            "x": 66,
+            "y": 71
+          }
+        },
+        {
+          "id": "flower",
+          "label": "小花",
+          "speech": "花儿开啦！",
+          "bubble": "花儿开啦！",
+          "sfx": "chime",
+          "at": {
+            "x": 27,
+            "y": 81
           }
         },
         {
@@ -466,58 +327,734 @@
           "bubble": "嘟嘟，嘟嘟！",
           "sfx": "horn",
           "at": {
-            "x": 16,
-            "y": 38
+            "x": 88,
+            "y": 61
           }
         }
       ],
-      "next": "scene-08"
+      "next": "forest-2"
     },
     {
-      "id": "scene-08",
-      "art": "goodnight",
-      "title": "晚安，嘟嘟",
+      "id": "forest-2",
+      "type": "story",
+      "art": "forest-2",
+      "title": "小兔子找不到家",
       "narration": [
-        "太阳要回家啦。",
-        "嘟嘟也要回家休息啦。",
-        "今天，嘟嘟帮助了三个好朋友。",
-        "晚安，小兔子。晚安，小熊。晚安，小鸭子。",
-        "晚安，嘟嘟！"
+        "嘟嘟发现一只小兔子。",
+        "小兔子有一点点着急。",
+        "“我找不到回家的路啦……”",
+        "嘟嘟说：“别担心，我们一起找！”"
       ],
       "interactions": [
         {
-          "id": "sun",
-          "label": "太阳公公",
-          "speech": "太阳公公回家啦。",
-          "bubble": "太阳公公回家啦。",
-          "sfx": "night",
-          "flag": "sun_set",
+          "id": "rabbit",
+          "label": "小兔子",
+          "speech": "小兔子的家在哪里呀？",
+          "bubble": "我家在哪里呀？",
+          "sfx": "pop",
           "at": {
-            "x": 82,
-            "y": 30
+            "x": 54,
+            "y": 64
           }
         },
         {
+          "id": "tree",
+          "label": "大树",
+          "speech": "树上有一只小鸟！",
+          "bubble": "树上有小鸟！",
+          "sfx": "bird",
+          "at": {
+            "x": 42,
+            "y": 73
+          }
+        },
+        {
+          "id": "rock",
+          "label": "大石头",
+          "speech": "石头后面有小蘑菇！",
+          "bubble": "有小蘑菇！",
+          "sfx": "pop",
+          "at": {
+            "x": 22,
+            "y": 83
+          }
+        },
+        {
+          "id": "flower",
+          "label": "小花",
+          "speech": "小花摇一摇。",
+          "bubble": "摇呀摇～",
+          "sfx": "chime",
+          "at": {
+            "x": 12,
+            "y": 80
+          }
+        },
+        {
+          "id": "rabbit-home",
+          "label": "小木屋",
+          "speech": "找到啦！这是小兔子的家！",
+          "bubble": "找到啦！是小兔子的家！",
+          "sfx": "chime",
+          "flag": "rabbit_home",
+          "at": {
+            "x": 76,
+            "y": 66
+          }
+        },
+        {
+          "id": "bus",
+          "label": "嘟嘟",
+          "speech": "嘟嘟，嘟嘟！",
+          "bubble": "嘟嘟，嘟嘟！",
+          "sfx": "horn",
+          "at": {
+            "x": 36,
+            "y": 62
+          }
+        }
+      ],
+      "gate": {
+        "flag": "rabbit_home",
+        "hint": "先帮小兔子找到家吧～",
+        "hintAfter": 9000,
+        "releaseAfter": 45000
+      },
+      "next": "forest-3"
+    },
+    {
+      "id": "forest-3",
+      "type": "story",
+      "art": "forest-3",
+      "title": "树上的小松果",
+      "narration": [
+        "嘟嘟继续往前开。",
+        "哇！前面有一棵好大的树！",
+        "树枝上挂着一颗小松果。",
+        "小松鼠够不到松果。"
+      ],
+      "interactions": [
+        {
+          "id": "pinecone",
+          "label": "小松果",
+          "speech": "松果掉下来啦！谢谢你，嘟嘟！",
+          "bubble": "松果掉下来啦！",
+          "sfx": "pop",
+          "flag": "pinecone_down",
+          "at": {
+            "x": 63,
+            "y": 46
+          }
+        },
+        {
+          "id": "squirrel",
+          "label": "小松鼠",
+          "speech": "我够不到呀……",
+          "bubble": "够不到呀……",
+          "sfx": "pop",
+          "at": {
+            "x": 56,
+            "y": 73
+          }
+        },
+        {
+          "id": "branch",
+          "label": "树枝",
+          "speech": "树枝轻轻动。",
+          "bubble": "轻轻动～",
+          "sfx": "leaf",
+          "at": {
+            "x": 64,
+            "y": 48
+          }
+        },
+        {
+          "id": "bus",
+          "label": "嘟嘟",
+          "speech": "嘟嘟，嘟嘟！",
+          "bubble": "嘟嘟，嘟嘟！",
+          "sfx": "horn",
+          "at": {
+            "x": 23,
+            "y": 63
+          }
+        }
+      ],
+      "gate": {
+        "flag": "pinecone_down",
+        "hint": "帮小松鼠把松果摇下来吧～",
+        "hintAfter": 9000,
+        "releaseAfter": 45000
+      },
+      "next": "park"
+    },
+    {
+      "id": "beach-1",
+      "type": "story",
+      "art": "beach-1",
+      "title": "海浪来啦",
+      "narration": [
+        "嘟嘟开呀开，到海边啦！",
+        "哗啦啦……海浪拍打着沙滩。",
+        "蓝蓝的大海真漂亮！"
+      ],
+      "interactions": [
+        {
+          "id": "wave",
+          "label": "海浪",
+          "speech": "哗啦啦——",
+          "bubble": "哗啦啦～",
+          "sfx": "wave",
+          "flag": "wave_heard",
+          "at": {
+            "x": 75,
+            "y": 73
+          }
+        },
+        {
+          "id": "crab",
+          "label": "小螃蟹",
+          "speech": "咔哒咔哒，横着走！",
+          "bubble": "咔哒咔哒！",
+          "sfx": "pop",
+          "flag": "crab_met",
+          "at": {
+            "x": 52,
+            "y": 81
+          }
+        },
+        {
+          "id": "shell",
+          "label": "小贝壳",
+          "speech": "贝壳亮晶晶！",
+          "bubble": "亮晶晶！",
+          "sfx": "chime",
+          "at": {
+            "x": 69,
+            "y": 83
+          }
+        },
+        {
+          "id": "bucket",
+          "label": "小桶",
+          "speech": "小桶里可以装贝壳哦。",
+          "bubble": "装贝壳的小桶～",
+          "sfx": "pop",
+          "at": {
+            "x": 84,
+            "y": 85
+          }
+        },
+        {
+          "id": "sun",
+          "label": "太阳公公",
+          "speech": "太阳公公笑啦！",
+          "bubble": "太阳公公笑啦！",
+          "sfx": "chime",
+          "at": {
+            "x": 13,
+            "y": 16
+          }
+        },
+        {
+          "id": "bus",
+          "label": "嘟嘟",
+          "speech": "嘟嘟，嘟嘟！",
+          "bubble": "嘟嘟，嘟嘟！",
+          "sfx": "horn",
+          "at": {
+            "x": 24,
+            "y": 65
+          }
+        }
+      ],
+      "next": "beach-2"
+    },
+    {
+      "id": "beach-2",
+      "type": "story",
+      "art": "beach-2",
+      "title": "小海龟找妈妈",
+      "narration": [
+        "嘟嘟看到一只小海龟。",
+        "小海龟说：“我想找妈妈！”",
+        "嘟嘟说：“我们一起去找吧！”"
+      ],
+      "interactions": [
+        {
+          "id": "turtle",
+          "label": "小海龟",
+          "speech": "妈妈在哪里呀？",
+          "bubble": "妈妈在哪里呀？",
+          "sfx": "pop",
+          "at": {
+            "x": 36,
+            "y": 78
+          }
+        },
+        {
+          "id": "rock-way",
+          "label": "石头那边",
+          "speech": "石头那边没有呀。",
+          "bubble": "那边没有呀～",
+          "sfx": "pop",
+          "at": {
+            "x": 64,
+            "y": 84
+          }
+        },
+        {
+          "id": "seaweed",
+          "label": "海草",
+          "speech": "海草摇呀摇。",
+          "bubble": "摇呀摇～",
+          "sfx": "wave",
+          "at": {
+            "x": 48,
+            "y": 80
+          }
+        },
+        {
+          "id": "sea-way",
+          "label": "大海妈妈方向",
+          "speech": "妈妈在海那边！",
+          "bubble": "妈妈在海那边！",
+          "sfx": "chime",
+          "flag": "turtle_mom",
+          "at": {
+            "x": 62,
+            "y": 74
+          }
+        },
+        {
+          "id": "bus",
+          "label": "嘟嘟",
+          "speech": "嘟嘟，嘟嘟！",
+          "bubble": "嘟嘟，嘟嘟！",
+          "sfx": "horn",
+          "at": {
+            "x": 17,
+            "y": 66
+          }
+        }
+      ],
+      "gate": {
+        "flag": "turtle_mom",
+        "hint": "帮小海龟找找妈妈吧～",
+        "hintAfter": 9000,
+        "releaseAfter": 45000
+      },
+      "next": "beach-3"
+    },
+    {
+      "id": "beach-3",
+      "type": "story",
+      "art": "beach-3",
+      "title": "把小贝壳放回小桶",
+      "narration": [
+        "沙滩上有一个小桶。",
+        "可是小桶倒啦！",
+        "贝壳散落在沙滩上。",
+        "嘟嘟和小海龟一起，把贝壳放回小桶吧！"
+      ],
+      "interactions": [
+        {
+          "id": "shell-a",
+          "label": "贝壳一",
+          "speech": "一颗贝壳！",
+          "bubble": "一颗贝壳！",
+          "sfx": "pop",
+          "flag": "shell_a",
+          "at": {
+            "x": 38,
+            "y": 82
+          }
+        },
+        {
+          "id": "shell-b",
+          "label": "贝壳二",
+          "speech": "两颗贝壳！",
+          "bubble": "两颗贝壳！",
+          "sfx": "pop",
+          "flag": "shell_b",
+          "at": {
+            "x": 47,
+            "y": 88
+          }
+        },
+        {
+          "id": "shell-c",
+          "label": "贝壳三",
+          "speech": "三颗贝壳！太棒啦！",
+          "bubble": "三颗贝壳！",
+          "sfx": "chime",
+          "flag": "shell_c",
+          "at": {
+            "x": 29,
+            "y": 90
+          }
+        },
+        {
+          "id": "bucket",
+          "label": "小桶",
+          "speech": "小桶在等着装贝壳呢。",
+          "bubble": "装贝壳的小桶～",
+          "sfx": "pop",
+          "at": {
+            "x": 76,
+            "y": 76
+          }
+        },
+        {
+          "id": "turtle",
+          "label": "小海龟",
+          "speech": "谢谢你，嘟嘟！",
+          "bubble": "谢谢你！",
+          "sfx": "pop",
+          "at": {
+            "x": 56,
+            "y": 76
+          }
+        },
+        {
+          "id": "bus",
+          "label": "嘟嘟",
+          "speech": "嘟嘟，嘟嘟！",
+          "bubble": "嘟嘟，嘟嘟！",
+          "sfx": "horn",
+          "at": {
+            "x": 15,
+            "y": 66
+          }
+        }
+      ],
+      "gate": {
+        "flag": [
+          "shell_a",
+          "shell_b",
+          "shell_c"
+        ],
+        "hint": "把三颗贝壳都捡起来吧～",
+        "hintAfter": 9000,
+        "releaseAfter": 60000
+      },
+      "next": "park"
+    },
+    {
+      "id": "park",
+      "type": "story",
+      "art": "park",
+      "title": "公园到啦！",
+      "narration": [
+        "嘟嘟开呀开，终于到公园啦！",
+        {
+          "when": {
+            "route": "forest"
+          },
+          "text": "小兔子、小松鼠，都来啦！"
+        },
+        {
+          "when": {
+            "route": "beach"
+          },
+          "text": "小海龟、小螃蟹，也来啦！"
+        },
+        "大家一起开心地玩！",
+        {
+          "when": {
+            "vehicle": "firetruck"
+          },
+          "text": "大家说：“嘟嘟，你真棒！”"
+        },
+        {
+          "when": {
+            "vehicle": "bus"
+          },
+          "text": "嘟嘟今天接到了好多朋友！"
+        }
+      ],
+      "interactions": [
+        {
+          "id": "rabbit",
+          "label": "小兔子",
+          "speech": "跳呀跳！",
+          "bubble": "跳呀跳！",
+          "sfx": "boing",
+          "at": {
+            "x": 36,
+            "y": 66
+          }
+        },
+        {
+          "id": "squirrel",
+          "label": "小松鼠",
+          "speech": "转呀转！",
+          "bubble": "转呀转！",
+          "sfx": "pop",
+          "at": {
+            "x": 47,
+            "y": 68
+          }
+        },
+        {
+          "id": "turtle",
+          "label": "小海龟",
+          "speech": "慢慢走呀走！",
+          "bubble": "慢慢走呀走！",
+          "sfx": "pop",
+          "at": {
+            "x": 47,
+            "y": 68
+          }
+        },
+        {
+          "id": "duck",
+          "label": "小鸭子",
+          "speech": "嘎嘎嘎！",
+          "bubble": "嘎嘎嘎！",
+          "sfx": "quack",
+          "at": {
+            "x": 76,
+            "y": 67
+          }
+        },
+        {
+          "id": "bus",
+          "label": "嘟嘟",
+          "speech": "嘟嘟，嘟嘟！",
+          "bubble": "嘟嘟，嘟嘟！",
+          "sfx": "horn",
+          "at": {
+            "x": 18,
+            "y": 62
+          }
+        }
+      ],
+      "next": "ending-choice"
+    },
+    {
+      "id": "ending-choice",
+      "type": "choice",
+      "art": "park",
+      "title": "大家一起玩什么呢？",
+      "prompt": "在公园里，大家一起玩什么呢？",
+      "narration": [
+        "到公园啦！",
+        "大家一起玩什么呢？"
+      ],
+      "choices": [
+        {
+          "id": "picnic",
+          "label": "一起野餐",
+          "emoji": "🍎",
+          "hint": "分享水果",
+          "art": "picnic",
+          "set": {
+            "ending": "picnic"
+          },
+          "speech": "大家一起野餐，分享水果，真快乐！",
+          "sfx": "chime",
+          "next": "picnic-ending"
+        },
+        {
+          "id": "dance",
+          "label": "唱歌跳舞",
+          "emoji": "🎵",
+          "hint": "一起转圈圈",
+          "art": "dance",
+          "set": {
+            "ending": "dance"
+          },
+          "speech": "大家一起唱歌跳舞，好开心！",
+          "sfx": "chime",
+          "next": "dance-ending"
+        }
+      ]
+    },
+    {
+      "id": "picnic-ending",
+      "type": "story",
+      "art": "picnic",
+      "title": "快乐野餐",
+      "narration": [
+        "小兔子拿出了苹果。",
+        "小松鼠拿出了松果。",
+        "小鸭子拿出了小饼干。",
+        "大家一起分享！"
+      ],
+      "interactions": [
+        {
+          "id": "basket",
+          "label": "水果篮",
+          "speech": "篮子里有好多水果！",
+          "bubble": "好多水果！",
+          "sfx": "pop",
+          "at": {
+            "x": 53,
+            "y": 76
+          }
+        },
+        {
+          "id": "rabbit",
+          "label": "小兔子",
+          "speech": "苹果真甜！",
+          "bubble": "苹果真甜！",
+          "sfx": "boing",
+          "at": {
+            "x": 33,
+            "y": 69
+          }
+        },
+        {
+          "id": "squirrel",
+          "label": "小松鼠",
+          "speech": "松果真香！",
+          "bubble": "松果真香！",
+          "sfx": "pop",
+          "at": {
+            "x": 48,
+            "y": 70
+          }
+        },
+        {
+          "id": "duck",
+          "label": "小鸭子",
+          "speech": "饼干嘎嘣脆！",
+          "bubble": "嘎嘣脆！",
+          "sfx": "quack",
+          "at": {
+            "x": 66,
+            "y": 70
+          }
+        },
+        {
+          "id": "sun",
+          "label": "太阳公公",
+          "speech": "太阳公公也笑啦！",
+          "bubble": "太阳公公笑啦！",
+          "sfx": "chime",
+          "at": {
+            "x": 15,
+            "y": 16
+          }
+        }
+      ],
+      "next": "goodnight"
+    },
+    {
+      "id": "dance-ending",
+      "type": "story",
+      "art": "dance",
+      "title": "音乐派对",
+      "narration": [
+        "小鸟唱起了歌。",
+        "小鸭子嘎嘎嘎！",
+        "小兔子跳呀跳，小松鼠转呀转。",
+        "嘟嘟也按响了喇叭！嘟——嘟——"
+      ],
+      "interactions": [
+        {
+          "id": "rabbit",
+          "label": "小兔子跳舞",
+          "speech": "跳呀跳！",
+          "bubble": "跳呀跳！",
+          "sfx": "boing",
+          "at": {
+            "x": 30,
+            "y": 67
+          }
+        },
+        {
+          "id": "squirrel",
+          "label": "小松鼠转圈",
+          "speech": "转呀转！",
+          "bubble": "转呀转！",
+          "sfx": "pop",
+          "at": {
+            "x": 43,
+            "y": 69
+          }
+        },
+        {
+          "id": "duck",
+          "label": "小鸭子唱歌",
+          "speech": "嘎嘎嘎！",
+          "bubble": "嘎嘎嘎！",
+          "sfx": "quack",
+          "at": {
+            "x": 56,
+            "y": 68
+          }
+        },
+        {
+          "id": "bird",
+          "label": "小鸟唱歌",
+          "speech": "啾啾！啦啦啦！",
+          "bubble": "啾啾！",
+          "sfx": "bird",
+          "at": {
+            "x": 69,
+            "y": 48
+          }
+        },
+        {
+          "id": "bus",
+          "label": "嘟嘟",
+          "speech": "嘟嘟，嘟嘟！",
+          "bubble": "嘟嘟，嘟嘟！",
+          "sfx": "horn",
+          "at": {
+            "x": 79,
+            "y": 65
+          }
+        }
+      ],
+      "next": "goodnight"
+    },
+    {
+      "id": "goodnight",
+      "type": "story",
+      "art": "goodnight",
+      "title": "晚安，嘟嘟",
+      "narration": [
+        "太阳慢慢下山啦。",
+        "嘟嘟今天帮助了好朋友。",
+        "大家一起玩耍，真是快乐的一天！",
+        "嘟嘟说：“明天，我们再去旅行吧！”",
+        "晚安，小朋友。"
+      ],
+      "interactions": [
+        {
           "id": "star",
           "label": "星星",
-          "speech": "星星眨眨眼。",
-          "bubble": "星星眨眨眼。",
-          "sfx": "sparkle",
+          "speech": "星星一闪一闪！",
+          "bubble": "一闪一闪！",
+          "sfx": "chime",
           "at": {
             "x": 66,
             "y": 13
           }
         },
         {
+          "id": "sun",
+          "label": "月亮",
+          "speech": "月亮出来啦。",
+          "bubble": "月亮出来啦～",
+          "sfx": "chime",
+          "at": {
+            "x": 15,
+            "y": 18
+          }
+        },
+        {
           "id": "bus",
           "label": "嘟嘟",
-          "speech": "晚安，嘟嘟。",
-          "bubble": "晚安，嘟嘟。",
-          "sfx": "chime",
-          "flag": "bus_sleeping",
+          "speech": "晚安～",
+          "bubble": "晚安～",
+          "sfx": "sleepy",
           "at": {
             "x": 46,
-            "y": 44
+            "y": 60
           }
         }
       ],
@@ -525,23 +1062,71 @@
     }
   ],
   "ending": {
-    "title": "🌙 故事结束啦！",
-    "message": "今天，你和嘟嘟一起帮助了三个好朋友。",
-    "cheer": "一、二、三！你真棒！",
-    "hint": "再听一次，或者回书架看看别的故事。",
+    "title": "今天的旅行真开心！",
+    "message": {
+      "route": {
+        "forest": "嘟嘟在森林里认识了小鸟和松鼠，还帮小兔子找到了家。",
+        "beach": "嘟嘟在海边追着浪花，还帮小海龟找到了妈妈。"
+      },
+      "fallback": "嘟嘟和你一起做了很棒的选择，帮助了好朋友们。"
+    },
+    "cheer": "你今天真棒！",
+    "recap": {
+      "vehicle": {
+        "bus": {
+          "emoji": "🚌",
+          "label": "开了公交车"
+        },
+        "firetruck": {
+          "emoji": "🚒",
+          "label": "开了消防车"
+        }
+      },
+      "route": {
+        "forest": {
+          "emoji": "🌲",
+          "label": "去了森林"
+        },
+        "beach": {
+          "emoji": "🌊",
+          "label": "去了海边"
+        }
+      },
+      "ending": {
+        "picnic": {
+          "emoji": "🍎",
+          "label": "一起野餐"
+        },
+        "dance": {
+          "emoji": "🎵",
+          "label": "唱歌跳舞"
+        }
+      }
+    },
     "friends": [
       {
         "name": "小兔子",
         "emoji": "🐰"
       },
       {
-        "name": "小熊",
-        "emoji": "🐻"
+        "name": "小松鼠",
+        "emoji": "🐿️",
+        "when": {
+          "route": "forest"
+        }
+      },
+      {
+        "name": "小海龟",
+        "emoji": "🐢",
+        "when": {
+          "route": "beach"
+        }
       },
       {
         "name": "小鸭子",
         "emoji": "🐤"
       }
-    ]
+    ],
+    "hint": "再玩一次，换一辆车、换一条路试试看吧。"
   }
 }

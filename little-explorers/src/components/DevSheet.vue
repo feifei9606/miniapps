@@ -30,6 +30,46 @@
         </figure>
         <figure class="char">
           <div class="char__frame">
+            <svg viewBox="0 0 400 300" role="img" aria-label="消防车嘟嘟">
+              <BusArt :x="200" :y="170" :scale="0.9" vehicle="firetruck" eyes="happy" :light-on="true" />
+            </svg>
+          </div>
+          <figcaption>嘟嘟 · 消防车</figcaption>
+        </figure>
+        <figure class="char">
+          <div class="char__frame">
+            <svg viewBox="0 0 400 300" role="img" aria-label="小海龟">
+              <FriendArt kind="turtle" :x="200" :y="180" :scale="1.5" happy />
+            </svg>
+          </div>
+          <figcaption>小海龟</figcaption>
+        </figure>
+        <figure class="char">
+          <div class="char__frame">
+            <svg viewBox="0 0 400 300" role="img" aria-label="小松鼠">
+              <FriendArt kind="squirrel" :x="200" :y="180" :scale="1.5" happy />
+            </svg>
+          </div>
+          <figcaption>小松鼠</figcaption>
+        </figure>
+        <figure class="char">
+          <div class="char__frame">
+            <svg viewBox="0 0 400 300" role="img" aria-label="小螃蟹">
+              <FriendArt kind="crab" :x="200" :y="180" :scale="1.5" happy />
+            </svg>
+          </div>
+          <figcaption>小螃蟹</figcaption>
+        </figure>
+        <figure class="char">
+          <div class="char__frame">
+            <svg viewBox="0 0 400 300" role="img" aria-label="小贝壳">
+              <FriendArt kind="shell" :x="200" :y="180" :scale="1.6" />
+            </svg>
+          </div>
+          <figcaption>小贝壳</figcaption>
+        </figure>
+        <figure class="char">
+          <div class="char__frame">
             <svg viewBox="0 0 400 300" role="img" aria-label="嘟嘟睡觉">
               <BusArt :x="200" :y="170" :scale="0.9" eyes="sleep" />
             </svg>
@@ -95,6 +135,20 @@
       </div>
     </section>
 
+    <section class="sheet__section">
+      <h2 class="sheet__h2">选择卡缩略图</h2>
+      <div class="sheet__chars">
+        <figure v-for="art in choiceArts" :key="art" class="char">
+          <div class="char__frame char__frame--wide">
+            <svg viewBox="0 0 200 130" role="img" :aria-label="art">
+              <ChoiceArt :art="art" />
+            </svg>
+          </div>
+          <figcaption>{{ art }}</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section v-for="(scene, index) in story.scenes" :key="scene.id" class="sheet__section">
       <h2 class="sheet__h2">
         {{ index + 1 }}. {{ scene.title }}
@@ -103,7 +157,13 @@
       <div class="sheet__frame">
         <SceneArt :art="scene.art" :flags="previewFlags" light="green" :view-box="'0 0 1000 620'" />
       </div>
-      <ul class="sheet__chips">
+      <ul v-if="scene.type === 'choice'" class="sheet__chips">
+        <li v-for="choice in scene.choices" :key="choice.id">
+          <strong>{{ choice.id }}</strong> {{ choice.emoji }} {{ choice.label }}
+          <span class="sheet__at">set {{ JSON.stringify(choice.set) }} → {{ choice.next }}</span>
+        </li>
+      </ul>
+      <ul v-else class="sheet__chips">
         <li v-for="item in scene.interactions" :key="item.id">
           <strong>{{ item.id }}</strong> {{ item.label }}
           <span class="sheet__at">{{ item.at?.x }}%, {{ item.at?.y }}%</span>
@@ -122,6 +182,7 @@ import SunArt from './art/SunArt.vue'
 import TrafficLightArt from './art/TrafficLightArt.vue'
 import UmbrellaArt from './art/UmbrellaArt.vue'
 import RainbowArt from './art/RainbowArt.vue'
+import ChoiceArt from './art/ChoiceArt.vue'
 
 const props = defineProps({
   story: { type: Object, required: true },
@@ -129,12 +190,17 @@ const props = defineProps({
 
 defineEmits(['exit'])
 
+const choiceArts = ['bus', 'firetruck', 'forest', 'beach', 'picnic', 'dance']
+
+// 把所有交互会置位的标记和门槛需要的标记都打开，这样隐藏的元素（小木屋、海龟妈妈）也能预览
 const previewFlags = computed(() => {
-  const flags = {}
+  const flags = { ...(props.story.vars || {}) }
   for (const scene of props.story.scenes) {
     for (const item of scene.interactions || []) {
       if (item.flag) flags[item.flag] = true
     }
+    const need = scene.gate?.flag
+    for (const flag of Array.isArray(need) ? need : need ? [need] : []) flags[flag] = true
   }
   return flags
 })
@@ -192,6 +258,10 @@ const previewFlags = computed(() => {
   background: #efe2d1;
   color: #8a6a4f;
   font-size: 12px;
+}
+
+.char__frame--wide {
+  aspect-ratio: 200 / 130;
 }
 
 .sheet__chars {

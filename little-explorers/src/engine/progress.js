@@ -51,6 +51,8 @@ function normalize(raw) {
       progress[storyId] = {
         sceneIndex: Math.max(0, Number(entry.sceneIndex) || 0),
         flags: entry.flags && typeof entry.flags === 'object' ? { ...entry.flags } : {},
+        // 分支剧情变量（vehicle / route / ending …），旧存档里没有就当作空对象
+        vars: entry.vars && typeof entry.vars === 'object' ? { ...entry.vars } : {},
         finished: Boolean(entry.finished),
         updatedAt: Number(entry.updatedAt) || 0,
         startedAt: Number(entry.startedAt) || 0,
@@ -104,6 +106,7 @@ export function saveStoryProgress(storyId, data) {
   store.progress[storyId] = {
     sceneIndex: Math.max(0, Number(data.sceneIndex) || 0),
     flags: { ...(data.flags || {}) },
+    vars: { ...(data.vars || {}) },
     finished: Boolean(data.finished),
     startedAt: previous.startedAt || Date.now(),
     updatedAt: Date.now(),

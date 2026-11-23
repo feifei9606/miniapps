@@ -29,7 +29,7 @@
       <div class="story-card__actions">
         <button class="lx-btn lx-btn--primary" type="button" @click="open">
           <span aria-hidden="true">{{ hasProgress ? '▶' : '🎧' }}</span>
-          {{ hasProgress ? '继续听' : '开始故事' }}
+          {{ hasProgress ? (isBranching ? '继续旅行' : '继续听') : '开始故事' }}
         </button>
         <button
           v-if="hasProgress || finished"
@@ -56,14 +56,24 @@ const props = defineProps({
 const emit = defineEmits(['open'])
 
 const finished = computed(() => Boolean(props.progress?.finished))
-const hasProgress = computed(
-  () => Boolean(props.progress) && !finished.value && Number(props.progress.sceneIndex) > 0,
-)
+
+// 分支故事的场景顺序是按剧情树排的，下标不等于页码，所以只显示“接着玩”
+const isBranching = computed(() => Boolean(props.story?.vars))
+
+const hasProgress = computed(() => {
+  if (!props.progress || finished.value) return false
+  const index = Number(props.progress.sceneIndex) || 0
+  if (index > 0) return true
+  // 分支故事：只要做出过选择（变量有值）就算真正开始了；全为 null 的初始变量不算
+  const vars = props.progress.vars || {}
+  return isBranching.value && Object.values(vars).some((value) => Boolean(value))
+})
 
 const progressLabel = computed(() => {
-  if (finished.value) return '已听完 🌟'
-  if (hasProgress.value) return `继续听 · 第 ${Number(props.progress.sceneIndex) + 1} 页`
-  return ''
+  if (finished.value) return isBranching.value ? '已玩过 🌟' : '已听完 🌟'
+  if (!hasProgress.value) return ''
+  if (isBranching.value) return '继续旅行 🚌'
+  return `继续听 · 第 ${Number(props.progress.sceneIndex) + 1} 页`
 })
 
 function open() {

@@ -50,14 +50,16 @@
         :aria-pressed="store.settings.ageFilter === age.id"
         @click="setAge(age.id)"
       >
-        <span aria-hidden="true">{{ age.emoji }}</span> {{ age.label }}
+        <span aria-hidden="true">{{ age.emoji }}</span>
+        <span class="age-pill__full">{{ age.label }}</span>
+        <span class="age-pill__short">{{ age.short }}</span>
       </button>
     </div>
 
     <section class="shelf" aria-label="故事书架">
       <div class="shelf__head">
         <h2 class="shelf__title">故事书架</h2>
-        <p class="shelf__count">{{ filteredStories.length }} 个故事 · 可以反复听</p>
+        <p class="shelf__count">{{ filteredStories.length }} 个故事 · 可以反复玩</p>
       </div>
 
       <div class="shelf__grid">
@@ -334,6 +336,10 @@ function comingStyle(item) {
   display: none;
 }
 
+.age-pill__short {
+  display: none;
+}
+
 .age-pill {
   flex: none;
   padding: 9px 18px;
@@ -587,6 +593,15 @@ function comingStyle(item) {
   .age-pill {
     padding: 8px 14px;
     font-size: 13px;
+  }
+
+  /* 窄屏用短标签，四个 pill 才能两行排开 */
+  .age-pill__full {
+    display: none;
+  }
+
+  .age-pill__short {
+    display: inline;
   }
 
   .library-top__settings-text {

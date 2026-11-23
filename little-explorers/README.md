@@ -1,8 +1,15 @@
 # 🌙 小小探险家 · Little Explorers
 
-面向 2–5 岁儿童的互动数字绘本。孩子打开网页 → 选故事 → 听旁白、看动画 → 点画面里的东西探索 → 翻到下一页。
+面向 2–5 岁儿童的互动数字绘本。孩子打开网页 → 选故事 → 听旁白、看动画 → 点画面里的东西探索 → 做选择 → 故事继续。
 
-第一本：《小巴士嘟嘟去接朋友》—— 8 个场景，黄色小巴士嘟嘟依次接上小兔子、小熊、小鸭子，经过红绿灯、下雨和彩虹，最后到公园野餐。
+第一本：《嘟嘟巴士的奇妙旅行》—— 分支互动冒险。早上醒来选**公交车 / 消防车**，岔路口选**森林 / 海边**，各走 3 个帮忙场景，公园汇合后选**野餐 / 跳舞**，最后都是同一个温暖的晚安结局。一次 5–8 分钟，同一条故事线重玩可以换车、换路、换活动。
+
+分支设计规则（新增故事也遵守）：
+
+- 每次只给 **2 个选项**，两张卡片的画面区别明显（黄公交 vs 红消防车、绿森林 vs 蓝海边），孩子看图就能选。
+- 选择后立刻有反馈（音效 + 气泡 + 卡片放大），不会点了没反应。
+- 分支只决定**中间经历什么**，最后一定收敛到同一个温暖结局，不存在“走错”。
+- 选择写进 `vars`（`vehicle` / `route` / `ending`），后面的旁白、画面、结尾摘要都用它。
 
 - 纯前端、无后端、无账号、无广告
 - 故事内容与程序分离：新增故事 = 新增 JSON + 复用角色组件
@@ -31,7 +38,7 @@ little-explorers/
 │   │   ├── stories.js                   # 故事注册表
 │   │   └── categories.js                # 年龄筛选、分类、即将上线
 │   ├── engine/
-│   │   ├── story-engine.js              # 纯函数：旁白、门槛、翻页
+│   │   ├── story-engine.js              # 纯函数：旁白、门槛、分支解析
 │   │   ├── progress.js                  # localStorage 进度与设置
 │   │   ├── audio.js                     # 旁白 / 语音合成 / 音频解锁
 │   │   ├── music.js                     # 程序化 BGM（Web Audio）
@@ -52,31 +59,82 @@ little-explorers/
 
 故事是数据，不是代码。播放器只解释有限的字段，**不会执行 JSON 里的任意 JS**。
 
+顶层结构：
+
 ```jsonc
 {
   "id": "bus-adventure",
-  "title": "小巴士嘟嘟去接朋友",
-  "shortTitle": "小巴士嘟嘟",
-  "ageRange": [2, 4],
-  "ageLabel": "2–4 岁",
+  "title": "嘟嘟巴士的奇妙旅行",
+  "shortTitle": "嘟嘟巴士",
+  "ageRange": [2, 5],
+  "ageLabel": "2–5 岁",
+  "duration": 7,
   "cover": { "art": "cover" },
-  "scenes": [
+  "vars": { "vehicle": null, "route": null, "ending": null },
+  "scenes": [ /* 故事页与选择页混排 */ ],
+  "ending": {
+    "title": "故事结束啦！",
+    "message": { "route": { "forest": "…", "beach": "…" }, "fallback": "…" },
+    "recap": {
+      "vehicle": { "bus": { "emoji": "🚌", "label": "开了公交车" }, "firetruck": { "emoji": "🚒", "label": "开了消防车" } },
+      "route":   { "forest": { "emoji": "🌲", "label": "去了森林" }, "beach": { "emoji": "🌊", "label": "去了海边" } },
+      "ending":  { "picnic": { "emoji": "🍎", "label": "一起野餐" }, "dance": { "emoji": "🎵", "label": "唱歌跳舞" } }
+    },
+    "friends": [ { "name": "小兔子", "emoji": "🐰" }, { "name": "小松鼠", "emoji": "🐿️", "when": { "route": "forest" } } ],
+    "hint": "再玩一次，换一辆车、换一条路试试看吧。"
+  }
+}
+```
+
+**故事页（`type` 省略）** 和以前一样，重点是 `interactions`、`gate`、`next`：
+
+```jsonc
+{
+  "id": "forest-2",
+  "art": "forest-2",
+  "title": "小兔子找不到家",
+  "narration": ["嘟嘟开进森林，听见小小的哭声。", { "when": { "vehicle": "firetruck" }, "text": "消防车嘟嘟说：我云梯上有小灯，看得更清楚！" }],
+  "interactions": [
+    { "id": "rabbit", "label": "小兔子", "bubble": "呜呜，我找不到家了…", "sfx": "boing", "at": { "x": 60, "y": 62 } },
+    { "id": "rabbit-home", "label": "小木屋", "bubble": "找到啦！这就是我的家！", "sfx": "chime", "flag": "rabbit_home", "at": { "x": 76, "y": 60 } }
+  ],
+  "gate": { "flag": "rabbit_home", "hint": "找一找，小兔子的家藏在树丛后面", "hintAfter": 9000, "releaseAfter": 45000 },
+  "next": "forest-3"
+}
+```
+
+**选择页（`type: "choice"`）** 不画点画面的交互，只放两张卡片：
+
+```jsonc
+{
+  "id": "vehicle-choice",
+  "type": "choice",
+  "art": "wake-up",
+  "title": "今天开什么车呢？",
+  "prompt": "今天开哪一辆车出门呀？",
+  "narration": ["嘟嘟的车库里有两位好朋友。"],
+  "choices": [
     {
-      "id": "scene-01",
-      "art": "morning",
-      "title": "早上好，嘟嘟",
-      "narration": ["早上好！太阳公公出来啦。", "小巴士嘟嘟，醒来啦。"],
-      "interactions": [
-        {
-          "id": "sun",
-          "label": "太阳公公",
-          "bubble": "太阳公公笑啦！",
-          "speech": "太阳公公笑啦！",
-          "sfx": "chime",
-          "at": { "x": 17, "y": 18 }
-        }
-      ],
-      "next": "scene-02"
+      "id": "bus",
+      "label": "公交巴士",
+      "hint": "接好朋友",
+      "emoji": "🚌",
+      "art": "bus",              // ChoiceArt 缩略图：bus / firetruck / forest / beach / picnic / dance
+      "set": { "vehicle": "bus" },
+      "speech": "我们开公交车，去接好朋友吧！",
+      "sfx": "horn",
+      "next": "fork"
+    },
+    {
+      "id": "firetruck",
+      "label": "消防车",
+      "hint": "帮助好朋友",
+      "emoji": "🚒",
+      "art": "firetruck",
+      "set": { "vehicle": "firetruck" },
+      "speech": "我们开消防车，去帮助好朋友吧！",
+      "sfx": "siren",
+      "next": "fork"
     }
   ]
 }
@@ -86,12 +144,23 @@ little-explorers/
 
 | 字段 | 说明 |
 | --- | --- |
-| `art` | 场景画面类型，对应 `SceneArt.vue` 里的分支：`cover` / `morning` / `rabbit-stop` / `bear-hide` / `traffic-light` / `rainy-duck` / `rainbow` / `park` / `goodnight` |
+| `art` | 场景画面类型，对应 `SceneArt.vue` 里的分支：`cover` / `wake-up` / `fork` / `forest-1` / `forest-2` / `forest-3` / `beach-1` / `beach-2` / `beach-3` / `park` / `picnic` / `dance` / `goodnight` |
 | `narration` | 字符串数组，逐句播放；也可以写 `{ "text": "...", "audio": "..." }` |
+| `narration[].when` | 条件台词，例如 `{ "when": { "route": "forest" }, "text": "…" }`，只有变量匹配时才播 |
 | `interactions[].at` | 气泡位置，画面百分比坐标（1000×620 基准） |
 | `interactions[].flag` | 点击后置位的标记，供后续场景/门槛使用 |
-| `gate` | 例如 `{ "flag": "bear_found", "hint": "...", "hintAfter": 14, "releaseAfter": 45 }`：未找到小熊时“继续”不可用，14 秒给提示，45 秒自动放行，不会卡死 |
-| `next` | 字符串，或 `{ "default": "...", "conditions": [{ "condition": "flag", "target": "..." }] }` |
+| `gate.flag` | 可以是一个标记名，也可以是数组：`["shell_a","shell_b","shell_c"]` 表示三个都完成才放行 |
+| `gate` | 例如 `{ "flag": "rabbit_home", "hint": "…", "hintAfter": 9000, "releaseAfter": 45000 }`：门槛没开时“继续”不可用，9 秒给提示，45 秒自动放行，不会卡死 |
+| `next` | 字符串；或 `{ "default": "…", "cases": [{ "when": { "route": "beach" }, "target": "…" }] }` |
+| `type: "choice"` | 选择页，渲染 `.choice-panel` 里的两张卡片，点卡片即选 |
+| `choices[].set` | 选择结果写进 `vars`，后面的旁白 `when`、`next` 分支、结尾摘要都读它 |
+
+分支解析逻辑在 `src/engine/story-engine.js`：
+
+- `resolveNext(scene, vars, flags)` —— 依次尝试 `cases`，都不匹配就回退 `default`；字符串 `next` 直接返回。
+- `narrationLines(scene, vars)` —— 过滤掉 `when` 不成立的旁白。
+- `isGateOpen(scene, flags, released)` —— 数组形式的 `gate.flag` 会 `every()` 检查。
+- `choiceOutcome(choice, vars)` —— 返回 `{ vars: {...vars, ...choice.set}, next: choice.next }`。
 
 ## 新增一个故事
 
@@ -186,11 +255,15 @@ GitHub Pages 由根目录的 `.github/workflows/deploy.yml` 负责：
 已实现：
 
 - 书架、年龄筛选、继续阅读、家长设置、localStorage 进度
-- 8 页完整故事、点击探索、找小熊门槛、红黄绿灯、彩虹三色、结尾卡
-- 旁白逐句、BGM、音效、音量/语速/减少动画设置
+- **分支互动冒险**：15 个场景（12 个故事页 + 3 个选择页），4 条主路线都收敛到同一个晚安结局
+- 选择写进 `vars` 并持久化，深链 / 继续旅行都能还原上一次的车、路、活动和已经帮过的朋友
+- 点击探索、找一找门槛（小鸟、小兔子的家、松果、大海方向、三颗贝壳）
+- 旁白逐句（支持按变量分支的台词）、BGM、音效、音量/语速/减少动画设置
 - 手机 / 平板 / 桌面响应式；键盘可 Tab 聚焦 + Enter 触发，←/→ 翻页
-- 结束页为全屏覆盖层，移动端不会被 278px 高的舞台裁切
+- 结束页为全屏覆盖层，显示本次的车辆 / 路线 / 活动，移动端不会被舞台裁切
 
 交互兜底：`PlayerView.vue` 里的 `PART_FALLBACK = { door: 'bus', wheel: 'bus', star: 'sun' }`。某个场景没有单独定义车门/车轮/星星的交互时，自动退回整车/太阳的交互，保证“点哪里都有回应”，不会出现点了没反应。
 
-后续可以加：小恐龙找妈妈、消防车忙碌的一天、真实录音、更多场景组件、故事分支。
+以后新增分支故事只需换 JSON：`type: "choice"` + `choices[].set/next` + 旁白 `when` + `next.cases`，引擎和组件都不用改。新角色画在 `FriendArt.vue`（`kind`），新场景画在 `SceneArt.vue`（`art`），选择卡缩略图画在 `ChoiceArt.vue`（`art`）。
+
+后续可以加：小恐龙找妈妈、消防车忙碌的一天、真实录音、更多选择点（比如“雨天走哪条路”）、故事库分类。

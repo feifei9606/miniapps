@@ -10,13 +10,8 @@
         <span class="player-title__scene">{{ scene.title }}</span>
       </div>
 
-      <div class="dots" aria-hidden="true">
-        <span
-          v-for="dot in dots"
-          :key="dot.index"
-          class="dot"
-          :class="{ 'is-current': dot.current, 'is-done': dot.done }"
-        />
+      <div class="progress" :aria-label="progressLabel" role="img">
+        <span class="progress__fill" :style="{ width: `${progressPercent}%` }" />
       </div>
 
       <button class="lx-icon-btn" type="button" aria-label="家长设置" @click="$emit('settings')">
@@ -25,15 +20,47 @@
     </header>
 
     <main class="stage-wrap">
-      <div class="stage">
+      <div class="stage" :class="{ 'is-choice': isChoice }">
         <SceneArt
           :art="scene.art"
+          :vehicle="vehicleName"
           :flags="flags"
           :light="light"
           :fx="fx"
           :view-box="viewBox"
           @interact="handleInteract"
         />
+
+        <!-- 选择页：画面本身就是选项，孩子直接点大卡片 -->
+        <transition name="choice">
+          <section v-if="isChoice && !finished" class="choice-panel">
+            <p class="choice-prompt">{{ scene.prompt }}</p>
+            <div class="choice-grid">
+              <button
+                v-for="choice in scene.choices"
+                :key="choice.id"
+                class="choice-card"
+                :class="{
+                  'is-picked': pickedId === choice.id,
+                  'is-dimmed': pickedId && pickedId !== choice.id,
+                }"
+                type="button"
+                :disabled="Boolean(pickedId)"
+                :aria-label="`${choice.label}：${choice.hint || ''}`"
+                @click="pick(choice)"
+              >
+                <span class="choice-card__art">
+                  <ChoiceArt :art="choice.art" :label="choice.label" />
+                </span>
+                <span class="choice-card__label">
+                  <span aria-hidden="true">{{ choice.emoji }}</span>
+                  {{ choice.label }}
+                </span>
+                <span v-if="choice.hint" class="choice-card__hint">{{ choice.hint }}</span>
+              </button>
+            </div>
+          </section>
+        </transition>
 
         <transition name="bubble">
           <div v-if="bubble" class="speech-bubble" :style="bubbleStyle" role="status">
@@ -54,11 +81,10 @@
         </transition>
 
         <transition name="fade">
-          <p v-if="narrationText && !finished" class="caption" aria-live="polite">
+          <p v-if="narrationText && !finished && !isChoice" class="caption" aria-live="polite">
             {{ narrationText }}
           </p>
         </transition>
-
       </div>
     </main>
 
@@ -66,6 +92,7 @@
       <EndingCard
         v-if="finished"
         :story="story"
+        :vars="vars"
         @replay="restart"
         @exit="exit"
       />
@@ -98,20 +125,21 @@
           class="arrow"
           type="button"
           aria-label="上一页"
-          :disabled="sceneIndex === 0 || finished"
+          :disabled="stepIndex === 0 || finished"
           @click="goPrev"
         >
           <span aria-hidden="true">‹</span>
         </button>
 
         <button
+          v-if="!isChoice"
           class="continue-btn"
           :class="{ 'is-ready': canContinue && !finished }"
           type="button"
           :disabled="!canContinue || finished"
           @click="goNext"
         >
-          <span>{{ isLast ? '故事结束啦' : '继续' }}</span>
+          <span>{{ hasNext ? '继续' : '故事结束啦' }}</span>
           <span aria-hidden="true">➜</span>
         </button>
 
@@ -119,7 +147,7 @@
           class="arrow"
           type="button"
           aria-label="下一页"
-          :disabled="!gateOpen || finished"
+          :disabled="isChoice || !gateOpen || finished"
           @click="goNext"
         >
           <span aria-hidden="true">›</span>
@@ -138,16 +166,20 @@
 
 <script setup>
 import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
+import ChoiceArt from '../components/art/ChoiceArt.vue'
 import SceneArt from '../components/art/SceneArt.vue'
 import EndingCard from '../components/EndingCard.vue'
 import { audio } from '../engine/audio'
 import {
-  clampScene,
+  choiceOutcome,
   findInteraction,
+  isChoiceScene,
   isGateOpen,
   narrationLines,
-  progressDots,
-  totalScenes,
+  resolveNext,
+  sceneById,
+  sceneIndexById,
+  storyScenes,
 } from '../engine/story-engine'
 import { saveStoryProgress, store } from '../engine/progress'
 
@@ -155,13 +187,24 @@ const props = defineProps({
   story: { type: Object, required: true },
   initialScene: { type: Number, default: 0 },
   initialFlags: { type: Object, default: () => ({}) },
+  initialVars: { type: Object, default: () => ({}) },
   autoplay: { type: Boolean, default: true },
 })
 
 const emit = defineEmits(['exit', 'settings'])
 
-const sceneIndex = ref(clampScene(props.initialScene, props.story))
+const scenes = computed(() => storyScenes(props.story))
+const firstScene = computed(() => scenes.value[0] || { id: '', art: 'cover', title: '' })
+
+function initialSceneId() {
+  const byIndex = scenes.value[Math.max(0, Number(props.initialScene) || 0)]
+  return (byIndex || firstScene.value).id
+}
+
+const sceneId = ref(initialSceneId())
 const flags = reactive({ ...props.initialFlags })
+// 剧情变量：vehicle / route / ending …… 由选择页写入，用来决定台词、场景和结尾
+const vars = reactive({ ...(props.story.vars || {}), ...props.initialVars })
 const released = ref(false)
 const finished = ref(false)
 const narrationText = ref('')
@@ -174,19 +217,61 @@ const hintVisible = ref(false)
 const welcomeVisible = ref(false)
 const viewBox = ref('0 0 1000 620')
 const autoNarrate = ref(Boolean(props.autoplay))
+const pickedId = ref('')
 
 let bubbleTimer = null
 let fxTimer = null
 let hintTimer = null
 let releaseTimer = null
 let welcomeTimer = null
+let pickTimer = null
 
-const scene = computed(() => props.story.scenes[sceneIndex.value])
-const total = computed(() => totalScenes(props.story))
-const isLast = computed(() => sceneIndex.value >= total.value - 1)
-const dots = computed(() => progressDots(props.story, sceneIndex.value))
+const scene = computed(() => sceneById(props.story, sceneId.value) || firstScene.value)
+const isChoice = computed(() => isChoiceScene(scene.value))
+const vehicleName = computed(() => vars.vehicle || 'bus')
 const gateOpen = computed(() => isGateOpen(scene.value, flags, released.value))
 const canContinue = computed(() => gateOpen.value && narrationDone.value)
+const nextId = computed(() =>
+  isChoice.value ? null : resolveNext(scene.value, vars, flags),
+)
+const hasNext = computed(() => Boolean(nextId.value))
+
+// 走过的页（用于“上一页”和页数圆点）。分支故事不能靠下标回退，
+// 所以记一条真实走过的路径。
+const history = ref([sceneId.value])
+
+/**
+ * 从当前页往后还能走几页（选择页按第一个选项估算），
+ * 只用于显示进度圆点的总数，不影响真实跳转。
+ */
+const stepsAhead = computed(() => {
+  const ids = []
+  const seen = new Set()
+  let current = scene.value
+  let guard = 0
+  while (current && guard < 20) {
+    const next = isChoiceScene(current)
+      ? current.choices?.[0]?.next
+      : resolveNext(current, vars, flags)
+    if (!next || seen.has(next)) break
+    seen.add(next)
+    const target = sceneById(props.story, next)
+    if (!target) break
+    ids.push(target.id)
+    current = target
+    guard += 1
+  }
+  return ids
+})
+
+const stepIndex = computed(() => Math.max(0, history.value.length - 1))
+const estTotal = computed(() => history.value.length + stepsAhead.value.length)
+const progressPercent = computed(() =>
+  Math.min(100, Math.max(4, Math.round((history.value.length / Math.max(1, estTotal.value)) * 100))),
+)
+const progressLabel = computed(
+  () => `故事进度 ${stepIndex.value + 1} / ${estTotal.value}`,
+)
 
 const bubbleStyle = computed(() => {
   const at = bubble.value?.at
@@ -210,6 +295,7 @@ function clearTimers() {
   clearTimeout(hintTimer)
   clearTimeout(releaseTimer)
   clearTimeout(welcomeTimer)
+  clearTimeout(pickTimer)
 }
 
 function showBubble(item) {
@@ -242,7 +328,7 @@ function triggerFx(id) {
 const PART_FALLBACK = { door: 'bus', wheel: 'bus', star: 'sun' }
 
 function handleInteract(id) {
-  if (finished.value) return
+  if (finished.value || isChoice.value) return
   const item = findInteraction(scene.value, id) || findInteraction(scene.value, PART_FALLBACK[id])
   if (!item) return
 
@@ -253,13 +339,39 @@ function handleInteract(id) {
   triggerFx(id)
   showBubble(item)
 
-  if (scene.value.gate && id === 'bear') {
+  if (scene.value.gate) {
     hintVisible.value = false
-    clearTimeout(hintTimer)
-    clearTimeout(releaseTimer)
   }
 
   if (item.speech) audio.speakShort(item.speech)
+}
+
+/**
+ * 点选择卡：先给即时反馈（卡片放大 + 音效 + 一句旁白），
+ * 再把变量写进故事状态，随后跳到下一页。
+ */
+function pick(choice) {
+  if (pickedId.value || finished.value) return
+
+  pickedId.value = choice.id
+  if (choice.sfx) audio.playSfx(choice.sfx)
+  showBubble({ text: choice.speech || choice.label })
+
+  const outcome = choiceOutcome(choice, vars)
+  Object.assign(vars, outcome.vars)
+  if (choice.set?.vehicle) flags.vehicle = choice.set.vehicle
+  if (choice.set?.route) flags.route = choice.set.route
+  if (choice.set?.ending) flags.ending = choice.set.ending
+
+  persist()
+
+  if (choice.speech) audio.speakShort(choice.speech)
+
+  clearTimeout(pickTimer)
+  pickTimer = setTimeout(() => {
+    pickedId.value = ''
+    if (outcome.next) enterScene(outcome.next)
+  }, 1150)
 }
 
 function armGate() {
@@ -285,8 +397,9 @@ function armGate() {
 
 function persist() {
   saveStoryProgress(props.story.id, {
-    sceneIndex: sceneIndex.value,
+    sceneIndex: sceneIndexById(props.story, sceneId.value),
     flags: { ...flags },
+    vars: { ...vars },
     finished: finished.value,
   })
 }
@@ -294,7 +407,7 @@ function persist() {
 async function startNarration() {
   const current = scene.value
   if (!current || finished.value) return
-  const lines = narrationLines(current)
+  const lines = narrationLines(current, vars)
   if (!lines.length) {
     narrationDone.value = true
     return
@@ -319,12 +432,14 @@ async function startNarration() {
   }
 }
 
-function enterScene(index, { autoplay = autoNarrate.value, welcome = false } = {}) {
+function enterScene(id, { autoplay = autoNarrate.value, welcome = false, trail = true } = {}) {
   audio.stopNarration()
   clearTimeout(bubbleTimer)
   clearTimeout(welcomeTimer)
+  clearTimeout(pickTimer)
   bubble.value = null
   fx.value = ''
+  pickedId.value = ''
   hintVisible.value = false
   released.value = false
   finished.value = false
@@ -332,9 +447,16 @@ function enterScene(index, { autoplay = autoNarrate.value, welcome = false } = {
   narrationDone.value = false
   narrating.value = false
 
-  sceneIndex.value = clampScene(index, props.story)
+  sceneId.value = sceneById(props.story, id) ? id : firstScene.value.id
   const current = scene.value
   light.value = current?.art === 'traffic-light' ? 'red' : ''
+
+  if (trail) {
+    // 往回走时把后面的记录截掉，再记上当前页，避免路径越堆越长
+    const at = history.value.indexOf(sceneId.value)
+    if (at >= 0) history.value = history.value.slice(0, at + 1)
+    else history.value = [...history.value, sceneId.value]
+  }
 
   welcomeVisible.value = Boolean(welcome)
   if (welcome) {
@@ -353,7 +475,7 @@ function enterScene(index, { autoplay = autoNarrate.value, welcome = false } = {
     }, 280)
   } else {
     narrationDone.value = true
-    narrationText.value = narrationLines(current)[0]?.text || ''
+    narrationText.value = narrationLines(current, vars)[0]?.text || ''
   }
 }
 
@@ -364,24 +486,27 @@ function replay() {
 }
 
 function goNext() {
-  if (finished.value) return
+  if (finished.value || isChoice.value) return
   if (!gateOpen.value) {
     hintVisible.value = true
     audio.playSfx('click')
     return
   }
-  if (isLast.value) {
+  if (!nextId.value) {
     finishStory()
     return
   }
   audio.playSfx('page')
-  enterScene(sceneIndex.value + 1)
+  enterScene(nextId.value)
 }
 
 function goPrev() {
-  if (sceneIndex.value === 0 || finished.value) return
+  if (stepIndex.value === 0 || finished.value) return
+  const previous = history.value[history.value.length - 2]
+  if (!previous) return
   audio.playSfx('page')
-  enterScene(sceneIndex.value - 1)
+  enterScene(previous, { trail: false })
+  history.value = history.value.slice(0, -1)
 }
 
 function finishStory() {
@@ -394,9 +519,12 @@ function finishStory() {
 
 function restart() {
   for (const key of Object.keys(flags)) delete flags[key]
+  // 重新开始时清空剧情变量，让孩子可以走另一条路
+  for (const key of Object.keys(vars)) delete vars[key]
+  Object.assign(vars, props.story.vars || {})
   audio.stopNarration()
   finished.value = false
-  enterScene(0, { welcome: false })
+  enterScene(firstScene.value.id, { welcome: false })
 }
 
 function exit() {
@@ -423,7 +551,7 @@ watch(
   flags,
   () => {
     persist()
-    if (scene.value?.gate && flags[scene.value.gate.flag]) {
+    if (scene.value?.gate) {
       hintVisible.value = false
       clearTimeout(hintTimer)
       clearTimeout(releaseTimer)
@@ -467,7 +595,10 @@ onMounted(() => {
   audio.setMusicEnabled(store.settings.music)
   if (store.settings.music && audio.isUnlocked) audio.startMusic()
 
-  enterScene(sceneIndex.value, { autoplay: props.autoplay, welcome: sceneIndex.value === 0 && !props.initialScene })
+  enterScene(sceneId.value, {
+    autoplay: props.autoplay,
+    welcome: sceneId.value === firstScene.value.id && !props.initialScene,
+  })
 })
 
 onBeforeUnmount(() => {
@@ -530,29 +661,22 @@ onBeforeUnmount(() => {
   text-overflow: ellipsis;
 }
 
-.dots {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+.progress {
+  position: relative;
   flex: none;
-}
-
-.dot {
-  width: 8px;
+  width: clamp(70px, 12vw, 132px);
   height: 8px;
-  border-radius: 50%;
-  background: #e6d8c6;
-  transition: all 0.3s var(--ease-soft);
+  border-radius: 999px;
+  background: #ecdfcc;
+  overflow: hidden;
 }
 
-.dot.is-done {
-  background: var(--sun);
-}
-
-.dot.is-current {
-  width: 22px;
-  border-radius: 8px;
-  background: var(--coral);
+.progress__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--sun), var(--coral));
+  transition: width 0.45s var(--ease-soft);
 }
 
 .stage-wrap {
@@ -576,6 +700,124 @@ onBeforeUnmount(() => {
     0 6px 18px rgba(88, 74, 66, 0.08);
 }
 
+/* ---------------- 选择页 ---------------- */
+
+.choice-panel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 1.4vw, 16px);
+  padding: clamp(14px, 2.4vw, 30px) clamp(14px, 3vw, 40px) clamp(56px, 6vw, 74px);
+  background: linear-gradient(180deg, rgba(255, 251, 243, 0.9), rgba(255, 245, 231, 0.88));
+  z-index: 7;
+}
+
+.choice-prompt {
+  margin: 0;
+  padding: 8px 24px;
+  border-radius: 999px;
+  background: rgba(255, 253, 247, 0.95);
+  color: var(--ink);
+  font-size: clamp(15px, 1.9vw, 23px);
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(88, 74, 66, 0.14);
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 26px);
+  width: min(720px, 100%);
+}
+
+.choice-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: clamp(10px, 1.4vw, 18px) clamp(10px, 1.4vw, 18px) clamp(8px, 1.1vw, 14px);
+  border: 4px solid #fff;
+  border-radius: clamp(20px, 2.4vw, 30px);
+  background: var(--cream);
+  color: var(--ink);
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow:
+    0 6px 0 #eadac2,
+    0 18px 30px rgba(88, 74, 66, 0.16);
+  transition:
+    transform 0.18s var(--ease-soft),
+    box-shadow 0.18s var(--ease-soft),
+    opacity 0.28s ease;
+  animation: card-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.choice-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.choice-card__art {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: clamp(14px, 1.8vw, 22px);
+}
+
+.choice-card__label {
+  font-size: clamp(15px, 1.9vw, 22px);
+  font-weight: 700;
+}
+
+.choice-card__hint {
+  font-size: clamp(11px, 1.3vw, 15px);
+  color: var(--ink-2);
+}
+
+.choice-card:hover:not(:disabled),
+.choice-card:focus-visible:not(:disabled) {
+  transform: translateY(-4px);
+}
+
+.choice-card:focus-visible:not(:disabled) {
+  outline: none;
+  box-shadow:
+    0 6px 0 #eadac2,
+    0 0 0 5px rgba(247, 198, 75, 0.55),
+    0 18px 30px rgba(88, 74, 66, 0.16);
+}
+
+.choice-card:active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #eadac2;
+}
+
+.choice-card.is-picked {
+  animation: card-pick 0.5s ease both;
+  border-color: var(--sun);
+}
+
+.choice-card.is-dimmed {
+  opacity: 0.45;
+  transform: scale(0.96);
+}
+
+.choice-enter-active,
+.choice-leave-active {
+  transition: opacity 0.35s ease, transform 0.35s var(--ease-soft);
+}
+
+.choice-enter-from,
+.choice-leave-to {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+}
+
+/* ---------------- 其它 ---------------- */
+
 .speech-bubble {
   position: absolute;
   transform: translate(-50%, -112%);
@@ -591,7 +833,7 @@ onBeforeUnmount(() => {
   text-align: center;
   box-shadow: 0 12px 26px rgba(88, 74, 66, 0.18);
   pointer-events: none;
-  z-index: 6;
+  z-index: 8;
 }
 
 .speech-bubble::after {
@@ -754,6 +996,12 @@ onBeforeUnmount(() => {
     aspect-ratio: 4 / 3;
   }
 
+  /* 选择页没有画面可看，让舞台长高一点，卡片才不会挤在中间一小条里 */
+  .stage.is-choice {
+    aspect-ratio: auto;
+    min-height: min(62dvh, 460px);
+  }
+
   .player-controls {
     flex-wrap: wrap;
     justify-content: center;
@@ -778,7 +1026,31 @@ onBeforeUnmount(() => {
     flex: none;
   }
 
-  .dots {
+  .progress {
+    width: 64px;
+  }
+
+  .choice-panel {
+    padding: 10px 10px 46px;
+    gap: 8px;
+  }
+
+  .choice-grid {
+    gap: 10px;
+  }
+
+  .choice-card {
+    padding: 8px 8px 6px;
+    border-width: 3px;
+    border-radius: 18px;
+  }
+
+  .choice-prompt {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+
+  .choice-card__hint {
     display: none;
   }
 
@@ -816,6 +1088,29 @@ onBeforeUnmount(() => {
   50% {
     opacity: 1;
     box-shadow: 0 8px 26px rgba(239, 139, 123, 0.3);
+  }
+}
+
+@keyframes card-pop {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes card-pick {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1.03);
   }
 }
 </style>

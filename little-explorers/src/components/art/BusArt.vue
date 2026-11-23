@@ -7,17 +7,10 @@
       :class="{ 'is-bouncing': fx === 'bounce', 'is-sleeping': eyes === 'sleep' }"
       role="button"
       tabindex="0"
-      aria-label="小巴士嘟嘟"
+      :aria-label="isFire ? '消防车嘟嘟' : '小巴士嘟嘟'"
       @click="$emit('part', 'bus')"
       @keydown.enter.prevent="$emit('part', 'bus')"
     >
-      <!-- 车顶小灯 -->
-      <g class="roof-light" :class="{ 'is-on': lightOn }">
-        <rect x="52" y="-88" width="26" height="12" rx="6" fill="#D9675D" />
-        <circle cx="65" cy="-88" r="7" fill="#E3695F" />
-        <circle cx="65" cy="-88" r="15" fill="#FFD9A0" opacity="0.55" />
-      </g>
-
       <!-- 车身 -->
       <rect
         x="-186"
@@ -25,11 +18,37 @@
         width="372"
         height="150"
         rx="44"
-        fill="#F5C24B"
-        stroke="#E0A93B"
+        :fill="isFire ? '#E96A5C' : '#F5C24B'"
+        :stroke="isFire ? '#C24A3D' : '#E0A93B'"
         stroke-width="4"
       />
-      <path d="M-168 -70 Q0 -92 168 -70" fill="none" stroke="#FFD97A" stroke-width="7" stroke-linecap="round" opacity="0.8" />
+      <path
+        d="M-168 -70 Q0 -92 168 -70"
+        fill="none"
+        :stroke="isFire ? '#FFB4A2' : '#FFD97A'"
+        stroke-width="7"
+        stroke-linecap="round"
+        opacity="0.8"
+      />
+      <!-- 消防车的白色腰线 -->
+      <rect v-if="isFire" x="-186" y="14" width="372" height="26" rx="13" fill="#FFF7E6" opacity="0.92" />
+      <!-- 消防车的云梯（画在车身之后，支架才不会被车身盖住） -->
+      <g v-if="isFire" class="fire-ladder">
+        <rect x="-96" y="-122" width="200" height="11" rx="5.5" fill="#E4E8EF" stroke="#C3C9D4" stroke-width="2" />
+        <g stroke="#C3C9D4" stroke-width="5">
+          <line x1="-70" y1="-121" x2="-70" y2="-92" />
+          <line x1="-35" y1="-121" x2="-35" y2="-92" />
+          <line x1="0" y1="-121" x2="0" y2="-92" />
+          <line x1="35" y1="-121" x2="35" y2="-92" />
+          <line x1="70" y1="-121" x2="70" y2="-92" />
+        </g>
+        <rect x="-96" y="-97" width="200" height="8" rx="4" fill="#D5DAE3" />
+        <!-- 两个支架把云梯和车顶连起来 -->
+        <rect x="-74" y="-96" width="10" height="22" rx="4" fill="#B4BAC6" />
+        <rect x="64" y="-96" width="10" height="22" rx="4" fill="#B4BAC6" />
+        <circle cx="-68" cy="-118" r="6" fill="#B4BAC6" />
+        <circle cx="76" cy="-118" r="6" fill="#B4BAC6" />
+      </g>
 
       <!-- 车窗 -->
       <g>
@@ -63,6 +82,20 @@
           <circle cx="34" cy="-20" r="2.4" fill="#584A42" />
           <circle cx="46" cy="-20" r="2.4" fill="#584A42" />
           <ellipse cx="40" cy="-10" rx="8" ry="4.5" fill="#F0A24E" />
+        </g>
+        <g v-if="friends.turtle" class="window-friend">
+          <circle cx="40" cy="-18" r="16" fill="#9ED8B6" />
+          <circle cx="34" cy="-20" r="2.2" fill="#584A42" />
+          <circle cx="46" cy="-20" r="2.2" fill="#584A42" />
+          <path d="M36 -12 q4 4 8 0" fill="none" stroke="#584A42" stroke-width="2" stroke-linecap="round" />
+        </g>
+        <g v-if="friends.squirrel" class="window-friend">
+          <circle cx="-42" cy="-18" r="14" fill="#D9A15E" />
+          <circle cx="-52" cy="-30" r="7" fill="#D9A15E" />
+          <circle cx="-32" cy="-30" r="7" fill="#D9A15E" />
+          <circle cx="-46" cy="-20" r="2.2" fill="#584A42" />
+          <circle cx="-38" cy="-20" r="2.2" fill="#584A42" />
+          <path d="M-46 -12 q4 4 8 0" fill="none" stroke="#584A42" stroke-width="2" stroke-linecap="round" />
         </g>
       </g>
 
@@ -126,7 +159,7 @@
       <circle r="37" fill="#4A4038" />
       <circle r="27" fill="#FFF7E6" />
       <g class="wheel-rot" :class="{ 'is-spinning': fx === 'wheel' || moving }">
-        <circle r="9" fill="#E0A93B" />
+        <circle r="9" :fill="isFire ? '#C24A3D' : '#E0A93B'" />
         <rect x="-3.5" y="-24" width="7" height="16" rx="3.5" fill="#D9C7A8" />
         <rect x="-3.5" y="8" width="7" height="16" rx="3.5" fill="#D9C7A8" />
         <rect x="-24" y="-3.5" width="16" height="7" rx="3.5" fill="#D9C7A8" />
@@ -137,6 +170,8 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
 const props = defineProps({
   x: { type: Number, default: 0 },
   y: { type: Number, default: 0 },
@@ -144,9 +179,10 @@ const props = defineProps({
   eyes: { type: String, default: 'open' },
   doorOpen: { type: Boolean, default: false },
   lightOn: { type: Boolean, default: true },
+  vehicle: { type: String, default: 'bus' },
   friends: {
     type: Object,
-    default: () => ({ rabbit: false, bear: false, duck: false }),
+    default: () => ({ rabbit: false, bear: false, duck: false, turtle: false, squirrel: false }),
   },
   fx: { type: String, default: '' },
   moving: { type: Boolean, default: false },
@@ -159,8 +195,7 @@ const wheels = [
   { id: 'front', x: 108 },
 ]
 
-// props 仅用于模板绑定
-void props
+const isFire = computed(() => props.vehicle === 'firetruck')
 </script>
 
 <style scoped>
@@ -216,6 +251,20 @@ void props
 .headlight.is-on circle:last-child {
   opacity: 0.65;
   animation: light-pulse 2.2s ease-in-out infinite;
+}
+
+.siren circle {
+  animation: siren-blink 1.1s steps(1, end) infinite;
+}
+
+.siren circle:last-child {
+  animation-delay: 0.55s;
+}
+
+.fire-ladder {
+  animation: ladder-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-box: fill-box;
+  transform-origin: center bottom;
 }
 
 .bus-face,
@@ -290,6 +339,28 @@ void props
   }
   to {
     transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes siren-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes ladder-pop {
+  from {
+    transform: scaleY(0.2);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
     opacity: 1;
   }
 }

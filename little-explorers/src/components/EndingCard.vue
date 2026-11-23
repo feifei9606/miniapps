@@ -8,11 +8,19 @@
     <div class="ending-card">
       <p class="ending-kicker">今天的故事</p>
       <h2 class="ending-title">{{ story.ending?.title || '故事结束啦！' }}</h2>
-      <p class="ending-message">{{ story.ending?.message }}</p>
+      <p class="ending-message">{{ endingMessage }}</p>
       <p v-if="story.ending?.cheer" class="ending-cheer">{{ story.ending.cheer }}</p>
 
-      <ul v-if="story.ending?.friends?.length" class="ending-friends" aria-label="今天帮助过的朋友">
-        <li v-for="friend in story.ending.friends" :key="friend.name" class="ending-friend">
+      <!-- 本次走的是哪条路：让孩子看见“这是我选的” -->
+      <ul v-if="recap.length" class="ending-recap" aria-label="今天的选择">
+        <li v-for="item in recap" :key="item.key" class="ending-recap__item">
+          <span aria-hidden="true">{{ item.emoji }}</span>
+          {{ item.label }}
+        </li>
+      </ul>
+
+      <ul v-if="friends.length" class="ending-friends" aria-label="今天帮助过的朋友">
+        <li v-for="friend in friends" :key="friend.name" class="ending-friend">
           <span class="ending-friend__emoji" aria-hidden="true">{{ friend.emoji }}</span>
           <span>{{ friend.name }}</span>
         </li>
@@ -20,7 +28,7 @@
 
       <div class="ending-actions">
         <button class="lx-btn lx-btn--primary" type="button" @click="$emit('replay')">
-          <span aria-hidden="true">🔁</span> 再听一次
+          <span aria-hidden="true">🔁</span> 再玩一次
         </button>
         <button class="lx-btn lx-btn--ghost" type="button" @click="$emit('exit')">
           <span aria-hidden="true">🏠</span> 回书架
@@ -33,11 +41,49 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue'
+import { matchWhen } from '../engine/story-engine'
+
+const props = defineProps({
   story: { type: Object, required: true },
+  vars: { type: Object, default: () => ({}) },
 })
 
 defineEmits(['replay', 'exit'])
+
+// 结尾文案可以按路线变化，例如 { route: { forest: '...' } }
+const endingMessage = computed(() => {
+  const message = props.story.ending?.message
+  if (message && typeof message === 'object') {
+    for (const [key, options] of Object.entries(message)) {
+      if (!options || typeof options !== 'object') continue
+      const picked = options[props.vars?.[key]]
+      if (picked) return picked
+    }
+    return message.fallback || ''
+  }
+  return message || ''
+})
+
+// story.ending.recap 定义每个变量取值对应的徽章，例如 vehicle: { bus: {emoji,label} }
+const recap = computed(() => {
+  const config = props.story.ending?.recap || {}
+  return Object.entries(config)
+    .map(([key, options]) => {
+      const value = props.vars?.[key]
+      const picked = value ? options?.[value] : null
+      if (!picked) return null
+      return { key, emoji: picked.emoji, label: picked.label }
+    })
+    .filter(Boolean)
+})
+
+// 朋友列表可以带 when 条件：森林路线出现松鼠、海边路线出现小海龟
+const friends = computed(() => {
+  const value = props.story.ending?.friends
+  if (!Array.isArray(value)) return []
+  return value.filter((friend) => matchWhen(friend?.when, props.vars))
+})
 
 function starStyle(n) {
   const seed = (n * 37) % 100
@@ -130,6 +176,28 @@ function starStyle(n) {
   background: #fff0c8;
   color: #8a5c1c;
   font-size: clamp(16px, 1.9vw, 20px);
+  font-weight: 700;
+}
+
+.ending-recap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ending-recap__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #eef6ea;
+  color: #40603f;
+  font-size: clamp(13px, 1.5vw, 16px);
   font-weight: 700;
 }
 

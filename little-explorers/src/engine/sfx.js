@@ -176,6 +176,78 @@ const SOUNDS = {
   yawn(ctx, out) {
     blip(ctx, out, { freq: 420, to: 300, dur: 0.5, gain: 0.035, filterFreq: 900 })
   },
+
+  // 小鸟：两声短促的上滑音，像啾啾
+  bird(ctx, out) {
+    ;[0, 0.16].forEach((when) => {
+      blip(ctx, out, { freq: 1250, to: 2100, when, dur: 0.12, gain: 0.05, type: 'sine', attack: 0.012 })
+    })
+    blip(ctx, out, { freq: 1900, to: 1500, when: 0.34, dur: 0.11, gain: 0.038 })
+  },
+
+  // 海浪：一段缓起缓落的白噪声，用低通滤掉刺耳的高频
+  wave(ctx, out) {
+    noiseBurst(ctx, out, {
+      dur: 1.7,
+      gain: 0.07,
+      type: 'lowpass',
+      freq: 900,
+      sweepTo: 320,
+      q: 0.6,
+    })
+    noiseBurst(ctx, out, {
+      when: 0.5,
+      dur: 1.4,
+      gain: 0.045,
+      type: 'lowpass',
+      freq: 1400,
+      sweepTo: 500,
+      q: 0.5,
+    })
+  },
+
+  // 树叶沙沙
+  leaf(ctx, out) {
+    noiseBurst(ctx, out, {
+      dur: 0.5,
+      gain: 0.05,
+      type: 'highpass',
+      freq: 2600,
+      sweepTo: 5200,
+      q: 0.8,
+    })
+  },
+
+  // 消防车：故意做成柔和的两声，不用真实刺耳警笛
+  siren(ctx, out) {
+    ;[0, 0.42].forEach((when) => {
+      blip(ctx, out, {
+        freq: 520,
+        to: 720,
+        when,
+        dur: 0.34,
+        gain: 0.05,
+        type: 'triangle',
+        filterFreq: 1800,
+      })
+      blip(ctx, out, {
+        freq: 720,
+        to: 540,
+        when: when + 0.34,
+        dur: 0.3,
+        gain: 0.04,
+        type: 'triangle',
+        filterFreq: 1800,
+      })
+    })
+  },
+
+  // 晚安：一个很轻的下行音
+  sleepy(ctx, out) {
+    ;[523.25, 440, 349.23].forEach((freq, index) => {
+      blip(ctx, out, { freq, when: index * 0.28, dur: 0.8, gain: 0.04, attack: 0.03 })
+    })
+  },
 }
 
 export function playSfx(ctx, destination, name, amount = 1) {

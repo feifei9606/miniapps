@@ -8,6 +8,7 @@
       :story="currentStory"
       :initial-scene="initialScene"
       :initial-flags="initialFlags"
+      :initial-vars="initialVars"
       :autoplay="autoplay"
       @exit="closePlayer"
       @settings="showSettings = true"
@@ -33,6 +34,7 @@ const view = ref('library')
 const currentStory = ref(null)
 const initialScene = ref(0)
 const initialFlags = ref({})
+const initialVars = ref({})
 const autoplay = ref(true)
 const showSettings = ref(false)
 const playerKey = ref(0)
@@ -55,9 +57,17 @@ function parseDeepLink() {
   const story = getStory(storyId)
   if (!story) return
 
+  // 深链打开时沿用本地存档里的 flags / vars，保证分支剧情（车辆、路线）前后一致
+  const saved = getStoryProgress(storyId)
+  const requested = Number(params.get('scene'))
+  const hasScene = Number.isFinite(requested) && requested >= 0
+
   currentStory.value = story
-  initialScene.value = Math.max(0, Number(params.get('scene') || 0))
-  initialFlags.value = {}
+  initialScene.value = hasScene
+    ? requested
+    : Math.max(0, Number(saved?.sceneIndex) || 0)
+  initialFlags.value = { ...(saved?.flags || {}) }
+  initialVars.value = { ...(saved?.vars || {}) }
   autoplay.value = params.get('narration') !== '0'
   playerKey.value += 1
   view.value = 'player'
@@ -77,10 +87,12 @@ function openStory({ story, resume = false }) {
   if (resume && saved && !saved.finished) {
     initialScene.value = Number(saved.sceneIndex) || 0
     initialFlags.value = { ...(saved.flags || {}) }
+    initialVars.value = { ...(saved.vars || {}) }
   } else {
     clearStoryProgress(story.id)
     initialScene.value = 0
     initialFlags.value = {}
+    initialVars.value = {}
   }
 
   currentStory.value = story
