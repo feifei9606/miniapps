@@ -1,5 +1,6 @@
 import { createMusicEngine } from './music'
 import { playSfx } from './sfx'
+import { pickMandarinVoice } from './voices'
 
 const clamp = (value, min, max, fallback) => {
   const number = Number(value)
@@ -35,6 +36,7 @@ class AudioEngine {
     this.narrationToken = 0
     this.voice = null
     this.voices = []
+    this.mandarinMissing = false
     this.currentAudio = null
     this.speechReady = typeof window !== 'undefined' && 'speechSynthesis' in window
 
@@ -50,7 +52,7 @@ class AudioEngine {
   }
 
   get canSpeak() {
-    return this.speechReady && this.voices.length > 0
+    return this.speechReady && Boolean(this.voice)
   }
 
   refreshVoices() {
@@ -58,11 +60,13 @@ class AudioEngine {
     try {
       const voices = window.speechSynthesis.getVoices() || []
       this.voices = voices
-      const chinese = voices.filter((voice) => /^(zh|cmn)/i.test(voice.lang || ''))
-      const preferred = chinese.find((voice) =>
-        /Ting|Xiaoxiao|Xiaoyi|Mei|Yao|female|女|普通话/i.test(voice.name || ''),
-      )
-      this.voice = preferred || chinese[0] || null
+      this.voice = pickMandarinVoice(voices)
+      if (!this.voice && voices.length && !this.mandarinMissing) {
+        this.mandarinMissing = true
+        console.info(
+          '[little-explorers] 设备上没有找到普通话语音，旁白将改用字幕节奏，避免用粤语朗读。',
+        )
+      }
     } catch (error) {
       console.warn('[little-explorers] 读取语音列表失败', error)
     }
@@ -184,7 +188,7 @@ class AudioEngine {
     if (!text || this.narrating || !this.narrationEnabled || !this.canSpeak) return
     this.cancelSpeech()
     const utterance = new SpeechSynthesisUtterance(String(text))
-    utterance.lang = 'zh-CN'
+    utterance.lang = this.voice?.lang || 'zh-CN'
     utterance.rate = 0.98
     utterance.pitch = 1.08
     utterance.volume = 1
@@ -210,7 +214,7 @@ class AudioEngine {
         resolve()
       }
       const utterance = new SpeechSynthesisUtterance(text)
-      utterance.lang = 'zh-CN'
+      utterance.lang = this.voice?.lang || 'zh-CN'
       utterance.rate = rate
       utterance.pitch = 1.06
       utterance.volume = 1
