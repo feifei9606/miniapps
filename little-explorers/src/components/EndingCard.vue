@@ -243,4 +243,56 @@ function starStyle(n) {
   font-size: 13px;
   color: #b3a292;
 }
+
+/* 手机横屏：卡片变宽、内边距收紧，一屏放得下 */
+@media (orientation: landscape) and (max-height: 560px) {
+  .ending {
+    padding: 8px 12px;
+  }
+
+  .ending-card {
+    width: min(560px, 100%);
+    max-height: calc(100dvh - 16px);
+    padding: 14px 20px 16px;
+    border-radius: 22px;
+    text-align: left;
+  }
+
+  .ending-kicker {
+    margin-bottom: 2px;
+    font-size: 11px;
+  }
+
+  .ending-title {
+    font-size: 24px;
+  }
+
+  .ending-message {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .ending-cheer {
+    margin-top: 8px;
+    padding: 5px 16px;
+    font-size: 14px;
+  }
+
+  .ending-recap,
+  .ending-friends {
+    margin-top: 8px;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .ending-actions {
+    margin-top: 12px;
+    justify-content: flex-start;
+  }
+
+  .ending-next {
+    display: none;
+  }
+}
 </style>

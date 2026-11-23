@@ -580,6 +580,128 @@ function comingStyle(item) {
   }
 }
 
+/* 手机横屏：高度只有 300~400px，首屏要把「开始故事」和故事卡一起露出来 */
+@media (orientation: landscape) and (max-height: 560px) {
+  .library {
+    padding: 10px clamp(12px, 2vw, 20px) 28px;
+  }
+
+  .library-top {
+    gap: 10px;
+  }
+
+  .brand__mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 14px;
+    font-size: 20px;
+  }
+
+  .brand__name {
+    font-size: 20px;
+  }
+
+  .brand__tag {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 18px;
+    margin-top: 12px;
+    padding: 16px 20px;
+    border-radius: 26px;
+  }
+
+  .hero__art {
+    order: 0;
+    max-width: none;
+    width: auto;
+  }
+
+  .hero__frame {
+    border-radius: 20px;
+  }
+
+  .hero__eyebrow {
+    font-size: 11px;
+  }
+
+  .hero__title {
+    margin-top: 4px;
+    font-size: 24px;
+  }
+
+  .hero__sub {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .hero__actions {
+    margin-top: 12px;
+    gap: 10px;
+  }
+
+  .hero__start {
+    min-width: 140px;
+    font-size: 16px;
+  }
+
+  .hero__hint {
+    display: none;
+  }
+
+  .age-filter {
+    margin-top: 12px;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  .age-pill {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+
+  .shelf {
+    margin-top: 14px;
+  }
+}
+
+/* 更矮的横屏（≤430 高）：压间距并收起装饰插画，保证首屏能看到故事卡 */
+@media (orientation: landscape) and (max-height: 430px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 14px 18px;
+  }
+
+  .hero__art {
+    display: none;
+  }
+
+  .hero__title {
+    font-size: 22px;
+  }
+
+  .hero__sub {
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .hero__actions {
+    margin-top: 10px;
+  }
+
+  .age-filter {
+    margin-top: 10px;
+  }
+
+  .shelf {
+    margin-top: 12px;
+  }
+}
+
 @media (max-width: 640px) {
   .brand__tag {
     display: none;

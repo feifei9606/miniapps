@@ -654,13 +654,17 @@
         </g>
       </g>
 
+      <!-- 贝壳本身很小，外面套一圈透明热区，手指点得中（推荐触控尺寸 ≥44px） -->
       <g v-if="!flags.shell_a" class="tap shell-float" role="button" tabindex="0" aria-label="贝壳一" @click="tap('shell-a')" @keydown.enter.prevent="tap('shell-a')">
+        <rect x="332" y="464" width="96" height="96" fill="transparent" />
         <FriendArt kind="shell" :x="380" :y="512" :scale="0.72" :happy="fx === 'shell-a'" />
       </g>
       <g v-if="!flags.shell_b" class="tap shell-float" role="button" tabindex="0" aria-label="贝壳二" @click="tap('shell-b')" @keydown.enter.prevent="tap('shell-b')">
+        <rect x="422" y="498" width="96" height="96" fill="transparent" />
         <FriendArt kind="shell" :x="470" :y="546" :scale="0.62" :happy="fx === 'shell-b'" />
       </g>
       <g v-if="!flags.shell_c" class="tap shell-float" role="button" tabindex="0" aria-label="贝壳三" @click="tap('shell-c')" @keydown.enter.prevent="tap('shell-c')">
+        <rect x="242" y="510" width="96" height="96" fill="transparent" />
         <FriendArt kind="shell" :x="290" :y="558" :scale="0.58" :happy="fx === 'shell-c'" />
       </g>
 

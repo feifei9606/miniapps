@@ -20,7 +20,7 @@
     </header>
 
     <main class="stage-wrap">
-      <div class="stage" :class="{ 'is-choice': isChoice }">
+      <div ref="stageEl" class="stage" :class="{ 'is-choice': isChoice }">
         <SceneArt
           :art="scene.art"
           :vehicle="vehicleName"
@@ -52,11 +52,13 @@
                 <span class="choice-card__art">
                   <ChoiceArt :art="choice.art" :label="choice.label" />
                 </span>
-                <span class="choice-card__label">
-                  <span aria-hidden="true">{{ choice.emoji }}</span>
-                  {{ choice.label }}
+                <span class="choice-card__body">
+                  <span class="choice-card__label">
+                    <span aria-hidden="true">{{ choice.emoji }}</span>
+                    {{ choice.label }}
+                  </span>
+                  <span v-if="choice.hint" class="choice-card__hint">{{ choice.hint }}</span>
                 </span>
-                <span v-if="choice.hint" class="choice-card__hint">{{ choice.hint }}</span>
               </button>
             </div>
           </section>
@@ -215,6 +217,7 @@ const bubble = ref(null)
 const fx = ref('')
 const hintVisible = ref(false)
 const welcomeVisible = ref(false)
+const stageEl = ref(null)
 const viewBox = ref('0 0 1000 620')
 const autoNarrate = ref(Boolean(props.autoplay))
 const pickedId = ref('')
@@ -285,8 +288,15 @@ const bubbleStyle = computed(() => {
   }
 })
 
+/**
+ * 按舞台自身的宽高比决定取景框，而不是按窗口宽度。
+ * 手机横屏时窗口很宽（>760），但舞台不一定宽；竖屏时舞台窄，要裁掉两侧空白把画面放大。
+ */
 function updateViewBox() {
-  viewBox.value = window.innerWidth < 760 ? '110 0 780 620' : '0 0 1000 620'
+  const el = stageEl.value
+  const width = el?.clientWidth || window.innerWidth
+  const height = el?.clientHeight || Math.round(width / 1.6)
+  viewBox.value = width / Math.max(1, height) >= 1.45 ? '0 0 1000 620' : '110 0 780 620'
 }
 
 function clearTimers() {
@@ -584,8 +594,14 @@ watch(
   (rate) => audio.setRate(rate),
 )
 
+let stageObserver = null
+
 onMounted(() => {
   updateViewBox()
+  if (typeof ResizeObserver !== 'undefined' && stageEl.value) {
+    stageObserver = new ResizeObserver(updateViewBox)
+    stageObserver.observe(stageEl.value)
+  }
   window.addEventListener('resize', updateViewBox)
   window.addEventListener('keydown', onKeydown)
 
@@ -607,6 +623,8 @@ onBeforeUnmount(() => {
   audio.stopMusic()
   window.removeEventListener('resize', updateViewBox)
   window.removeEventListener('keydown', onKeydown)
+  stageObserver?.disconnect()
+  stageObserver = null
 })
 </script>
 
@@ -767,6 +785,13 @@ onBeforeUnmount(() => {
   border-radius: clamp(14px, 1.8vw, 22px);
 }
 
+.choice-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
 .choice-card__label {
   font-size: clamp(15px, 1.9vw, 22px);
   font-weight: 700;
@@ -820,6 +845,8 @@ onBeforeUnmount(() => {
 
 .speech-bubble {
   position: absolute;
+  /* 气泡、提示都只是说明文字，不能挡住下面的可点物体 */
+  pointer-events: none;
   transform: translate(-50%, -112%);
   max-width: min(440px, 66%);
   padding: 10px 20px;
@@ -866,10 +893,12 @@ onBeforeUnmount(() => {
 
 .welcome-hint {
   top: 16px;
+  pointer-events: none;
 }
 
 .gate-hint {
   bottom: 88px;
+  pointer-events: none;
   color: #a86b4f;
   animation: hint-pulse 2.4s ease-in-out infinite;
 }
@@ -878,6 +907,8 @@ onBeforeUnmount(() => {
   position: absolute;
   left: 50%;
   bottom: 14px;
+  /* 字幕只负责显示，不要挡住下面的可点物体 */
+  pointer-events: none;
   transform: translateX(-50%);
   max-width: min(820px, 88%);
   margin: 0;
@@ -1067,6 +1098,153 @@ onBeforeUnmount(() => {
 
   .gate-hint {
     bottom: 64px;
+  }
+}
+
+/* ===== 手机横屏：高度才是瓶颈，把上下留白和按钮都压紧，舞台尽量撑满 ===== */
+@media (orientation: landscape) and (max-height: 560px) {
+  .player {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+    padding: 6px 10px;
+    gap: 4px;
+  }
+
+  .player-top {
+    flex: none;
+    gap: 8px;
+  }
+
+  .player-top .lx-icon-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+  }
+
+  .player-title__story {
+    display: none;
+  }
+
+  .player-title__scene {
+    font-size: 15px;
+  }
+
+  .stage-wrap {
+    flex: 1;
+    min-height: 0;
+  }
+
+  /* 高度决定画面大小：保持绘本比例，横屏下宽出来的是留白而不是裁切 */
+  .stage {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 18px;
+  }
+
+  /* 选择页没有画面，直接铺满整块舞台 */
+  .stage.is-choice {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    min-height: 0;
+  }
+
+  .player-controls {
+    flex: none;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .controls-center {
+    order: 0;
+    width: auto;
+  }
+
+  .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .continue-btn {
+    min-width: 128px;
+    height: 42px;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+
+  .progress {
+    width: 90px;
+  }
+
+  .caption {
+    bottom: 6px;
+    max-width: 76%;
+    padding: 4px 12px;
+    font-size: 13px;
+  }
+
+  .gate-hint {
+    bottom: 50px;
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+
+  .welcome-hint {
+    top: 8px;
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+
+  /* 两张选择卡横过来：左图右字，矮屏也能占到足够高度 */
+  .choice-panel {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .choice-prompt {
+    padding: 4px 16px;
+    font-size: 15px;
+  }
+
+  .choice-grid {
+    gap: 10px;
+    width: 100%;
+  }
+
+  .choice-card {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    padding: 6px 12px 6px 6px;
+    border-width: 3px;
+    border-radius: 18px;
+  }
+
+  .choice-card__art {
+    width: 46%;
+    flex: none;
+    border-radius: 12px;
+  }
+
+  .choice-card__body {
+    flex: 1;
+    align-items: flex-start;
+    gap: 3px;
+  }
+
+  .choice-card__label {
+    font-size: 15px;
+  }
+
+  .choice-card__hint {
+    display: block;
+    font-size: 12px;
+    line-height: 1.35;
   }
 }
 
