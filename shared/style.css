@@ -107,3 +107,24 @@ a:hover { text-decoration: underline; }
   font-size: 12px;
   text-align: center;
 }
+
+/* ---------- 互动绘本入口 ---------- */
+.tool-card--story {
+  position: relative;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(247, 198, 75, .32), transparent 42%),
+    linear-gradient(160deg, #FFF9EF 0%, #FFE9D2 58%, #E8F4EA 100%);
+  border-color: #F0DCC0;
+}
+.tool-card--story:hover { border-color: #E9B96A; }
+.tool-badge {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .72);
+  color: #A96A2C;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+}

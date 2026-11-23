@@ -6,6 +6,11 @@ Thumbs.db
 .idea/
 .vscode/
 
+# build output
+little-explorers/node_modules/
+little-explorers/dist/
+_site/
+
 # logs
 *.log
 

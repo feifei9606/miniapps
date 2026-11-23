@@ -1,0 +1,19 @@
+{
+  "name": "little-explorers",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "小小探险家 · 面向 2–5 岁儿童的互动数字绘本",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.46"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.11",
+    "vite": "^7.3.8"
+  }
+}

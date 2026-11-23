@@ -10,6 +10,7 @@
 
 | 工具 | 说明 |
 | --- | --- |
+| [小小探险家 · 互动绘本](little-explorers/) | 面向 2–5 岁的互动数字绘本：听故事、点一点、找一找。第一本《小巴士嘟嘟去接朋友》含 8 个可探索场景，纯前端、无登录 |
 | [提前还款计算器](tools/prepayment-calculator/index.html) | 等额本息 / 等额本金，支持多笔提前还款、缩短期限或减少月供、LPR 浮动利率，图表对比还款计划变化 |
 | [古今数学思想 · 伴读](tools/math-thought-companion/index.html) | 克莱因《古今数学思想》全三册（51 章）伴读手册：读前门槛诊断、历史语境卡、现代翻译注、卡点回溯，配合章节导读、159 个概念卡片跨章追踪、读后自测与本地笔记（可导出 Markdown） |
 
@@ -22,6 +23,13 @@ miniapps/
 ├── scripts/
 │   ├── extract_gjsx.py                   # 内容生产：azw3/epub → 每章素材（输出到 /tmp，不入库）
 │   └── check_content.py                  # 内容校验：schema、引用完整性、小节与 toc 对齐
+├── little-explorers/                    # 互动绘本（Vue 3 + Vite 子应用）
+│   ├── src/
+│   │   ├── data/                        # 故事 JSON、分类与年龄筛选
+│   │   ├── engine/                      # 故事引擎、音频、进度
+│   │   ├── components/art/              # 原创内联 SVG 角色与场景
+│   │   └── views/                       # 书架、播放器
+│   └── README.md                        # 开发、故事 JSON 与视觉验证说明
 └── tools/
     ├── prepayment-calculator/            # 提前还款计算器
     │   ├── index.html
@@ -46,6 +54,7 @@ miniapps/
 - 原生 HTML / CSS / JavaScript（ES Modules），无构建流程
 - 图表使用 Chart.js（CDN 引入，加载失败时自动降级，不影响核心计算）
 - 新增工具时：在 `tools/` 下新建目录，并在首页 `index.html` 的工具卡片网格中添加入口
+- 互动绘本是独立的 Vue 3 + Vite 子应用（`little-explorers/`），构建产物由部署工作流放入 `_site/little-explorers/`
 - 伴读应用不引任何外部字体或 CDN：纸纹与装饰全部由 CSS 渐变实现，衬线标题走系统字体栈
 
 ## 伴读的四个动作
@@ -80,5 +89,5 @@ python3 scripts/check_content.py
 采用 GitHub Actions 自动部署（`.github/workflows/deploy.yml`）：
 
 1. 仓库 Settings → Pages → Source 选择 **GitHub Actions**
-2. 推送到 `main` 分支即自动部署（也可在 Actions 页手动 Run workflow）
+2. 推送到 `main` 分支即自动部署（也可在 Actions 页手动 Run workflow）；工作流会先 `npm ci && npm run build` 构建 `little-explorers/`，再把静态站点与构建产物一起上传
 3. 部署成功后访问 `https://feifei9606.github.io/miniapps/`
